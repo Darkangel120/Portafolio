@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inicio XAMPP - Plataforma de Desarrollo Web</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="icon" href="../assets/img/inicio-xampp/IX-logo.png" type="image/png">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Inicio XAMPP</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre el Proyecto</a></li>
+                <li><a href="#features">Características</a></li>
+                <li><a href="#tech">Tecnologías</a></li>
+                <li><a href="#screenshots">Capturas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <img src="../assets/img/inicio-xampp/IX-logo.png" alt="Logo Inicio XAMPP" class="hero-photo">
+                <div class="hero-text">
+                    <h1>Inicio XAMPP</h1>
+                    <p class="hero-subtitle">Plataforma de Desarrollo Web</p>
+                    <p class="hero-description"> <span id="typed-text" class="typed-text"></span> <br>Un entorno completo para el desarrollo y gestión de aplicaciones web utilizando XAMPP, diseñado para desarrolladores y empresas.</p>
+                    <a href="#about" class="cta-button">Conocer Más</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <h2>Sobre Inicio XAMPP</h2>
+            <ul>
+                <li>
+                    <p>Inicio XAMPP es una plataforma web desarrollada con XAMPP que facilita el desarrollo y gestión de aplicaciones web. Diseñada con una interfaz intuitiva y moderna, permite a los usuarios crear, administrar y desplegar proyectos web de manera eficiente.</p>
+                </li>
+                <li>
+                    <p>El sistema incluye funcionalidades avanzadas como gestión de usuarios, bases de datos MySQL, integración con Apache, y un completo módulo de administración que ayuda a los desarrolladores a gestionar sus proyectos de forma organizada.</p>
+                </li>
+                <li>
+                    <p>Desarrollado con tecnologías web modernas como PHP, HTML, CSS y JavaScript, Inicio XAMPP ofrece una experiencia de usuario fluida con diseño responsivo que se adapta a diferentes dispositivos y tamaños de pantalla.</p>
+                </li>
+                <li>
+                    <p>Ideal para desarrolladores web, freelancers y pequeñas empresas que buscan un entorno local para probar y desarrollar aplicaciones web, eliminando la necesidad de servidores remotos durante el desarrollo.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="features" class="section skills">
+            <h2>Características Principales</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <p>Gestión de proyectos</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-search"></i>
+                    <p>Búsqueda Integrada</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="section projects">
+            <h2>Tecnologías Utilizadas</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <i class="fab fa-php"></i><h3>PHP</h3>
+                    <p>Lenguaje de servidor utilizado para el desarrollo del backend y lógica de negocio.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fab fa-html5"></i><h3>HTML</h3>
+                    <p>Lenguaje de marcado para estructurar el contenido de las páginas web.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fab fa-css3-alt"></i><h3>CSS</h3>
+                    <p>Hojas de estilo para diseñar y maquetar las interfaces de usuario.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fab fa-js-square"></i><h3>JavaScript</h3>
+                    <p>Lenguaje de programación para agregar interactividad y dinamismo a las páginas web.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="section clients">
+            <h2>Capturas de Pantalla</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="assets/favicon.png" alt="Dashboard Principal" onclick="openModal(this)">
+                    <h3>Dashboard Principal</h3>
+                    <p>Vista general del panel de control con navegación y estadísticas.</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/favicon.png" alt="Gestión de Proyectos" onclick="openModal(this)">
+                    <h3>Gestión de Proyectos</h3>
+                    <p>Interfaz para crear y administrar proyectos web.</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/favicon.png" alt="Base de Datos" onclick="openModal(this)">
+                    <h3>Base de Datos</h3>
+                    <p>Herramientas para gestionar tablas y datos en MySQL.</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/favicon.png" alt="Configuración" onclick="openModal(this)">
+                    <h3>Configuración</h3>
+                    <p>Opciones avanzadas para personalizar el entorno XAMPP.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para visualización de imágenes -->
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div class="zoom-controls">
+                        <button onclick="zoomIn()" title="Acercar">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button onclick="zoomOut()" title="Alejar">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button onclick="resetZoom()" title="Tamaño original">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button onclick="fitToScreen()" title="Ajustar a pantalla">
+                            <i class="fas fa-compress"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" draggable="true">
+                </div>
+            </div>
+        </div>
+
+        <section id="contact" class="section contact">
+            <h2>Contacto</h2>
+            <p class="contact-description">¡Estoy disponible para nuevos proyectos! Contáctame a través de cualquiera de estos medios:</p>
+            <div class="contact-links">
+                <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                    <span>Enviar Email</span>
+                </a>
+                <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Darkangel120. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/proyects.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VentaEnterprise - Sistema de Gestión de Ventas</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="icon" href="../assets/img/ventasentreprise/VP-logo.png" type="image/png">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">VentaEnterprise</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#about">Sobre el Proyecto</a></li>
+                <li><a href="#features">Características</a></li>
+                <li><a href="#tech">Tecnologías</a></li>
+                <li><a href="#screenshots">Capturas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <img src="../assets/img/ventasentreprise/VP-logo.png" alt="Logo VentaEnterprise" class="hero-photo">
+                <div class="hero-text">
+                    <h1>VentaEnterprise</h1>
+                    <p class="hero-subtitle">Sistema de Gestión Empresarial</p>
+                    <a href="#about" class="cta-button">Conocer Más</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <h2>Sobre VentaEnterprise</h2>
+            <ul>
+                <li>
+                    <p>VentaEnterprise es una aplicación de escritorio desarrollada en Python que facilita la gestión integral de ventas e inventarios para empresas. Diseñada con una interfaz intuitiva y moderna, permite a los usuarios administrar productos, procesar ventas, generar facturas y obtener reportes detallados de manera eficiente.</p>
+                </li>
+                <li>
+                    <p>El sistema incluye funcionalidades avanzadas como control de stock en tiempo real, integración con tasas de cambio, gestión de catálogo de productos, y un completo módulo de reportes que ayuda a los empresarios a tomar decisiones informadas basadas en datos precisos.</p>
+                </li>
+                <li>
+                    <p>Desarrollado con tecnologías modernas como Python y Flet para la interfaz gráfica, VentaEnterprise ofrece una experiencia de usuario fluida con modo oscuro/claro, navegación intuitiva y diseño responsivo que se adapta a diferentes tamaños de pantalla.</p>
+                </li>
+                <li>
+                    <p>Ideal para tiendas, comercios y pequeñas empresas que buscan digitalizar sus procesos de venta y gestión de inventario, eliminando el uso de papel y reduciendo errores humanos en el registro de transacciones.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="features" class="section skills">
+            <h2>Características Principales</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Gestión de Ventas</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-boxes"></i>
+                    <p>Control de Inventario</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>Reportes y Estadísticas</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <p>Facturación Automática</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-exchange-alt"></i>
+                    <p>Tasas de Cambio</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-moon"></i>
+                    <p>Modo Oscuro/Claro</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-search"></i>
+                    <p>Búsqueda Avanzada</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-database"></i>
+                    <p>Base de Datos SQLite</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tech" class="section projects">
+            <h2>Tecnologías Utilizadas</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <i class="fab fa-python"></i><h3>Python</h3>
+                    <p>Lenguaje de programación principal utilizado para el desarrollo del backend y lógica de negocio.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fa-regular fa-object-group"></i><h3>Flet</h3>
+                    <p>Framework moderno para crear aplicaciones de escritorio con interfaz web-like usando Python.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fas fa-database"></i><h3>SQLite</h3>
+                    <p>Base de datos ligera y eficiente para almacenar toda la información del sistema.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fas fa-globe"></i><h3>Requests</h3>
+                    <p>Librería para consumir APIs externas y obtener tasas de cambio en tiempo real.</p>
+            </div>
+        </section>
+
+        <section id="screenshots" class="section clients">
+            <h2>Capturas de Pantalla</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="VP-logo.png" alt="Dashboard Principal" onclick="openModal(this)">
+                    <h3>Dashboard Principal</h3>
+                    <p>Vista general del sistema con estadísticas y navegación intuitiva.</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="Portafolio/assets/img/foto.jpg" alt="Gestión de Productos" onclick="openModal(this)">
+                    <h3>Gestión de Productos</h3>
+                    <p>Interfaz para agregar, editar y eliminar productos del inventario.</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="VP-logo.png" alt="Módulo de Ventas" onclick="openModal(this)">
+                    <h3>Módulo de Ventas</h3>
+                    <p>Procesamiento eficiente de ventas con carrito de compras integrado.</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="Portafolio/assets/img/foto.jpg" alt="Reportes y Analytics" onclick="openModal(this)">
+                    <h3>Reportes y Analytics</h3>
+                    <p>Análisis detallado de ventas, productos más vendidos y tendencias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para visualización de imágenes -->
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <div class="zoom-controls">
+                        <button onclick="zoomIn()" title="Acercar">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button onclick="zoomOut()" title="Alejar">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button onclick="resetZoom()" title="Tamaño original">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <button onclick="fitToScreen()" title="Ajustar a pantalla">
+                            <i class="fas fa-compress"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" draggable="true">
+                </div>
+            </div>
+        </div>
+
+        <section id="contact" class="section contact">
+            <h2>Contacto</h2>
+            <p class="contact-description">¡Estoy disponible para nuevos proyectos! Contáctame a través de cualquiera de estos medios:</p>
+            <div class="contact-links">
+                <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                    <span>Enviar Email</span>
+                </a>
+                <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Darkangel120. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/projects.js"></script>
+
+</body>
+</html>

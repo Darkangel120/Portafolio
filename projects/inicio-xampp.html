@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inicio XAMPP - Plataforma de Desarrollo Web</title>
+    <title>Inicio-XAMPP - Dashboard de Proyectos Locales</title>
     <link rel="stylesheet" href="../assets/css/styles.css" />
     <link rel="stylesheet" href="../assets/css/projects.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -13,7 +13,7 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">Inicio XAMPP</div>
+            <div class="logo">Inicio-XAMPP</div>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#about">Sobre el Proyecto</a></li>
@@ -29,30 +29,29 @@
     <main>
         <section id="hero" class="hero">
             <div class="hero-content">
-                <img src="../assets/img/inicio-xampp/IX-logo.png" alt="Logo Inicio XAMPP" class="hero-photo">
+                <img src="../assets/img/inicio-xampp/IX-logo.png" alt="Logo Inicio-XAMPP" class="hero-photo">
                 <div class="hero-text">
-                    <h1>Inicio XAMPP</h1>
-                    <p class="hero-subtitle">Plataforma de Desarrollo Web</p>
-                    <p class="hero-description"> <span id="typed-text" class="typed-text"></span> <br>Un entorno completo para el desarrollo y gestión de aplicaciones web utilizando XAMPP, diseñado para desarrolladores y empresas.</p>
+                    <h1>Inicio-XAMPP</h1>
+                    <p class="hero-subtitle">Dashboard de Proyectos Locales para XAMPP</p>
                     <a href="#about" class="cta-button">Conocer Más</a>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section about">
-            <h2>Sobre Inicio XAMPP</h2>
+            <h2>Sobre Inicio-XAMPP</h2>
             <ul>
                 <li>
-                    <p>Inicio XAMPP es una plataforma web desarrollada con XAMPP que facilita el desarrollo y gestión de aplicaciones web. Diseñada con una interfaz intuitiva y moderna, permite a los usuarios crear, administrar y desplegar proyectos web de manera eficiente.</p>
+                    <p>Inicio-XAMPP es un dashboard visual y moderno para gestionar tus proyectos locales cuando cambias la ruta de `htdocs` en XAMPP. Reemplaza el listado básico de Apache con una interfaz atractiva y funcional.</p>
                 </li>
                 <li>
-                    <p>El sistema incluye funcionalidades avanzadas como gestión de usuarios, bases de datos MySQL, integración con Apache, y un completo módulo de administración que ayuda a los desarrolladores a gestionar sus proyectos de forma organizada.</p>
+                    <p>El sistema lista automáticamente todas tus carpetas de proyectos, muestra información útil como tamaño, fecha de actualización y estado, y permite navegación directa a proyectos con archivos de inicio.</p>
                 </li>
                 <li>
-                    <p>Desarrollado con tecnologías web modernas como PHP, HTML, CSS y JavaScript, Inicio XAMPP ofrece una experiencia de usuario fluida con diseño responsivo que se adapta a diferentes dispositivos y tamaños de pantalla.</p>
+                    <p>Desarrollado con PHP y JavaScript, ofrece una experiencia de usuario fluida con tema oscuro inspirado en GitHub, diseño y animaciones suaves que se adaptan a diferentes tamaños de pantalla.</p>
                 </li>
                 <li>
-                    <p>Ideal para desarrolladores web, freelancers y pequeñas empresas que buscan un entorno local para probar y desarrollar aplicaciones web, eliminando la necesidad de servidores remotos durante el desarrollo.</p>
+                    <p>Ideal para desarrolladores que usan XAMPP para gestionar múltiples proyectos locales, eliminando la necesidad de recordar rutas y proporcionando una vista organizada de todos tus trabajos.</p>
                 </li>
             </ul>
         </section>
@@ -61,12 +60,28 @@
             <h2>Características Principales</h2>
             <div class="skills-grid">
                 <div class="skill">
-                    <i class="fas fa-database"></i>
-                    <p>Gestión de proyectos</p>
+                    <i class="fas fa-list"></i>
+                    <p>Lista Automática de Proyectos</p>
                 </div>
                 <div class="skill">
                     <i class="fas fa-search"></i>
-                    <p>Búsqueda Integrada</p>
+                    <p>Búsqueda Instantánea</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-info-circle"></i>
+                    <p>Información Detallada</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-external-link-alt"></i>
+                    <p>Navegación Directa</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-chart-bar"></i>
+                    <p>Estadísticas del Servidor</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-file-alt"></i>
+                    <p>Selector de Archivos</p>
                 </div>
             </div>
         </section>
@@ -76,19 +91,15 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <i class="fab fa-php"></i><h3>PHP</h3>
-                    <p>Lenguaje de servidor utilizado para el desarrollo del backend y lógica de negocio.</p>
-                </div>
-                <div class="project-card">
-                    <i class="fab fa-html5"></i><h3>HTML</h3>
-                    <p>Lenguaje de marcado para estructurar el contenido de las páginas web.</p>
-                </div>
-                <div class="project-card">
-                    <i class="fab fa-css3-alt"></i><h3>CSS</h3>
-                    <p>Hojas de estilo para diseñar y maquetar las interfaces de usuario.</p>
+                    <p>Lenguaje de servidor principal utilizado para generar dinámicamente la lista de proyectos y calcular estadísticas.</p>
                 </div>
                 <div class="project-card">
                     <i class="fab fa-js-square"></i><h3>JavaScript</h3>
-                    <p>Lenguaje de programación para agregar interactividad y dinamismo a las páginas web.</p>
+                    <p>Framework moderno para interactividad del lado cliente, búsqueda en tiempo real y animaciones.</p>
+                </div>
+                <div class="project-card">
+                    <i class="fab fa-css3-alt"></i><h3>CSS3</h3>
+                    <p>Hojas de estilo para diseño, tema oscuro y animaciones suaves.</p>
                 </div>
             </div>
         </section>
@@ -97,24 +108,24 @@
             <h2>Capturas de Pantalla</h2>
             <div class="screenshots-grid">
                 <div class="screenshot-card">
-                    <img src="assets/favicon.png" alt="Dashboard Principal" onclick="openModal(this)">
-                    <h3>Dashboard Principal</h3>
-                    <p>Vista general del panel de control con navegación y estadísticas.</p>
+                    <img src="../assets/img/inicio-xampp/inicio.webp" alt="Dashboard Principal" onclick="openModal(this)">
+                    <h3>Inicio</h3>
+                    <p>Vista general con lista de proyectos y estadísticas.</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/favicon.png" alt="Gestión de Proyectos" onclick="openModal(this)">
-                    <h3>Gestión de Proyectos</h3>
-                    <p>Interfaz para crear y administrar proyectos web.</p>
+                    <img src="../assets/img/inicio-xampp/busqueda.webp" alt="Búsqueda de Proyectos" onclick="openModal(this)">
+                    <h3>Búsqueda de Proyectos</h3>
+                    <p>Interfaz de búsqueda para encontrar proyectos rápidamente.</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/favicon.png" alt="Base de Datos" onclick="openModal(this)">
-                    <h3>Base de Datos</h3>
-                    <p>Herramientas para gestionar tablas y datos en MySQL.</p>
+                    <img src="../assets/img/inicio-xampp/detalles.webp" alt="Información del Proyecto" onclick="openModal(this)">
+                    <h3>Información del Proyecto</h3>
+                    <p>Detalles de cada proyecto incluyendo tamaño y fecha de actualización.</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/favicon.png" alt="Configuración" onclick="openModal(this)">
-                    <h3>Configuración</h3>
-                    <p>Opciones avanzadas para personalizar el entorno XAMPP.</p>
+                    <img src="../assets/img/inicio-xampp/seleccion.webp" alt="Información del Proyecto" onclick="openModal(this)">
+                    <h3>Seleccion del archivo</h3>
+                    <p> Muestra los archivos que hay en el proyecto dado el caso de que el archivo principal no sea index.HTML </p>
                 </div>
             </div>
         </section>
@@ -147,7 +158,7 @@
 
         <section id="contact" class="section contact">
             <h2>Contacto</h2>
-            <p class="contact-description">¡Estoy disponible para nuevos proyectos! Contáctame a través de cualquiera de estos medios:</p>
+            <p class="contact-description">¡Estoy disponible para colaboraciones y mejoras! Contáctame a través de cualquiera de estos medios:</p>
             <div class="contact-links">
                 <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
                     <i class="fas fa-envelope"></i>
@@ -169,8 +180,8 @@
         <p>© 2025 Darkangel120. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/proyects.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/projects.js"></script>
 
 </body>
 </html>

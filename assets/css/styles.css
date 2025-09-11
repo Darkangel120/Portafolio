@@ -69,6 +69,12 @@ header {
     background-clip: text;
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+    margin: 5px;
+    vertical-align: middle;
+}
 .nav-links {
     list-style: none;
     display: flex;

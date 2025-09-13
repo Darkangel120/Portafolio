@@ -18,7 +18,8 @@
                 <li><a href="#about">Sobre mí</a></li>
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#clients">Clientes</a></li>
+                <!-- <li><a href="#clients">Clientes</a></li> -->
+                <li><a href="#testimonials">Testimonios</a></li>
                 <li><a href="#experience">Experiencia</a></li>
                 <li><a href="#contact">Contacto</a></li>
             </ul>
@@ -100,42 +101,70 @@
 
         <section id="projects" class="section projects">
             <h2>Proyectos Destacados</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Inicio Xampp</h3>
-                    <p>Interfaz interactiva para XAMPP que facilita el cambio de la ubicación raíz de los proyectos, mejorando la experiencia de desarrollo.</p>
-                    <a href="projects/inicio-xampp.html" target="_blank" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+            <div class="projects-slider">
+                <button class="slider-btn prev-btn" aria-label="Anterior">&#10094;</button>
+                <div class="projects-wrapper">
+                    <div class="project-card active">
+                        <h3>Inicio Xampp</h3>
+                        <p>Interfaz interactiva para XAMPP que facilita el cambio de la ubicación raíz de los proyectos, mejorando la experiencia de desarrollo.</p>
+                        <a href="projects/inicio-xampp.html" target="_blank" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Ventas Entreprise</h3>
+                        <p>Aplicación completa para la venta, administración y gestión de inventarios, diseñada para optimizar procesos comerciales.</p>
+                        <a href="projects/ventasentreprise.html" target="_blank" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Ventas Entreprise</h3>
-                    <p>Aplicación completa para la venta, administración y gestión de inventarios, diseñada para optimizar procesos comerciales.</p>
-                    <a href="projects/ventasentreprise.html" target="_blank" class="project-link">Ver proyecto <i class="fas fa-external-link-alt"></i></a>
+                <button class="slider-btn next-btn" aria-label="Siguiente">&#10095;</button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
                 </div>
-
             </div>
         </section>
 
+        <section id="testimonials" class="section testimonials">
+            <h2>Testimonios</h2>
+            <div class="testimonials-slider">
+                <button class="slider-btn prev-btn" aria-label="Anterior">&#10094;</button>
+                <div class="testimonials-wrapper">
+                    <div class="testimonial-card active">
+                        <h3>Yajaira Hermoso</h3>
+                        <p class="testimonial-role">Profesión o rol</p>
+                        <p>"Trabajar con Oswaldo fue una experiencia excelente. Su asesoría personalizada me ayudó a optimizar el manejo de mis sistemas de contabilidad y nómina, mejorando significativamente la eficiencia y precisión en mis procesos administrativos."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <h3>Yelitza Marcano</h3>
+                        <p class="testimonial-role">Licda en administración y gestion municipal / emprendedora</p>
+                        <p>"Confío plenamente en Oswaldo para desarrollar aplicaciones a medida. La aplicación que creó para mi negocio facilitó enormemente la venta y gestión de inventarios, adaptada perfectamente a mis necesidades específicas."</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <h3>Rebeca Suniaga</h3>
+                        <p class="testimonial-role">Licda en Turismo</p>
+                        <p>"Estoy encantada con el portafolio web que Oswaldo diseñó y desarrolló para mí. Logró una presencia digital elegante y funcional que refleja perfectamente mi profesionalismo y estilo único."</p>
+                    </div>
+                </div>
+                <button class="slider-btn next-btn" aria-label="Siguiente">&#10095;</button>
+                <div class="slider-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Clientes comentada para futuros clientes -->
+        <!--
         <section id="clients" class="section clients">
             <h2>Clientes</h2>
             <div class="clients-grid">
                 <div class="client-card">
-                    <h3>Yajaira Hermoso</h3>
-                    <p>Yajaira recibió asesoría personalizada para optimizar el manejo de sus sistemas de contabilidad y nómina, mejorando la eficiencia y precisión en sus procesos administrativos.</p>
-                </div>
-                <div class="client-card">
-                    <h3>Yelitza Marcano</h3>
-                    <p>Yelitza confió en mí para desarrollar una aplicación a medida que facilitara la venta y gestión de inventarios, adaptada a las necesidades específicas de su negocio.</p>
-                </div>
-                <div class="client-card">
-                    <h3>Stephanny Sanchez</h3>
-                    <p>Stephanny encargó la creación de un sitio web moderno para la gestión administrativa de su centro educativo, logrando una plataforma intuitiva y funcional.</p>
-                </div>
-                <div class="client-card">
-                    <h3>Rebeca Suniaga</h3>
-                    <p>Rebeca confió en mí para diseñar y desarrollar su portafolio web, logrando una presencia digital elegante y funcional que refleja su profesionalismo y estilo único.</p>
+                    <h3>Nombre del Cliente</h3>
+                    <p>Descripción del trabajo realizado para el cliente.</p>
                 </div>
             </div>
         </section>
+        -->
 
         <section id="experience" class="section experience">
             <h2>Experiencia Laboral</h2>

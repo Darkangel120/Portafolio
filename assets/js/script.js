@@ -41,3 +41,81 @@ function typeWriter() {
 document.addEventListener('DOMContentLoaded', function() {
     typeWriter();
 });
+document.addEventListener('DOMContentLoaded', () => {
+    function createSlider(sliderSelector, wrapperSelector, cardSelector, prevBtnSelector, nextBtnSelector, dotSelector) {
+        const sliderWrapper = document.querySelector(wrapperSelector);
+        const cards = document.querySelectorAll(cardSelector);
+        const prevBtn = document.querySelector(prevBtnSelector);
+        const nextBtn = document.querySelector(nextBtnSelector);
+        const dots = document.querySelectorAll(dotSelector);
+        let currentIndex = 0;
+        let autoSlideTimer;
+
+        if (!sliderWrapper || cards.length === 0 || !prevBtn || !nextBtn || dots.length === 0) {
+            return;
+        }
+
+        function updateSlider(index) {
+            cards.forEach((card, i) => {
+                card.classList.toggle('active', i === index);
+            });
+            sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+            currentIndex = index;
+        }
+
+        function startAutoSlide() {
+            clearInterval(autoSlideTimer);
+            autoSlideTimer = setInterval(() => {
+                let newIndex = (currentIndex + 1) % cards.length;
+                updateSlider(newIndex);
+            }, 8000);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            let newIndex = currentIndex - 1;
+            if (newIndex < 0) newIndex = cards.length - 1;
+            updateSlider(newIndex);
+            startAutoSlide();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            let newIndex = currentIndex + 1;
+            if (newIndex >= cards.length) newIndex = 0;
+            updateSlider(newIndex);
+            startAutoSlide();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                updateSlider(index);
+                startAutoSlide();
+            });
+        });
+
+        updateSlider(0);
+        startAutoSlide();
+    }
+
+    // Initialize sliders
+    createSlider(
+        '.testimonials-slider',
+        '.testimonials-wrapper',
+        '.testimonial-card',
+        '.testimonials-slider .prev-btn',
+        '.testimonials-slider .next-btn',
+        '.testimonials-slider .dot'
+    );
+
+    createSlider(
+        '.projects-slider',
+        '.projects-wrapper',
+        '.project-card',
+        '.projects-slider .prev-btn',
+        '.projects-slider .next-btn',
+        '.projects-slider .dot'
+    );
+});

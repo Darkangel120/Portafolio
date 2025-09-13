@@ -108,8 +108,14 @@ header {
     transition: width 0.3s ease;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a.active {
+    color: #8a2be2;
+    transform: translateY(-2px);
 }
 
 .menu-toggle {
@@ -301,6 +307,82 @@ header {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* About Section */
+.about ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Remove grid layout for unified block */
+    display: block;
+}
+
+.about li {
+    /* Remove card styles for unified block */
+    background: transparent;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    border-left: none;
+    transition: none;
+    position: static;
+    overflow: visible;
+    animation: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.about li::before {
+    content: none;
+}
+
+.about li:hover::before {
+    left: auto;
+}
+
+.about li:hover {
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    border-left-color: transparent;
+}
+
+@keyframes aboutFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about li i {
+    font-size: 2rem;
+    color: #8a2be2;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.about li:hover i {
+    transform: scale(1.2) rotate(5deg);
+    color: #da70d6;
+}
+
+.about li p {
+    margin: 0;
+    flex: 1;
+    line-height: 1.7;
+    color: #e6e6fa;
+}
+
+/* Add border below the h2 title in about section */
+.about h2 {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 h1, h2, h3 {

@@ -38,10 +38,35 @@ function typeWriter() {
 }
 
 // Iniciar el efecto de máquina de escribir cuando la página cargue
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     typeWriter();
 });
 document.addEventListener('DOMContentLoaded', () => {
+    // Active navigation link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    function setActiveLink() {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+
     function createSlider(sliderSelector, wrapperSelector, cardSelector, prevBtnSelector, nextBtnSelector, dotSelector) {
         const sliderWrapper = document.querySelector(wrapperSelector);
         const cards = document.querySelectorAll(cardSelector);

@@ -151,19 +151,54 @@
     font-size: 0.9rem;
 }
 
-/* Estilos para los íconos en las tarjetas de proyectos */
+/* Estilos para la cuadrícula de proyectos (tecnologías) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-card {
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    border-left: 6px solid #8a2be2;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(138, 43, 226, 0.5);
+    background: rgba(138, 43, 226, 0.15);
+    border-left-color: #da70d6;
+}
+
 .project-card i {
     font-size: 2em;
     margin-right: 10px;
     display: inline-block;
-    vertical-align: middle;
-    color: #dda0dd;
-}
-
-/* Estilos para los íconos en la sección de características */
-.skill i {
-    font-size: 2em;
-    margin-right: 10px;
     vertical-align: middle;
     color: #dda0dd;
 }
@@ -173,4 +208,18 @@
     vertical-align: middle;
     color: #dda0dd;
     margin: 0;
+}
+
+.project-card p {
+    color: #e6e6fa;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Estilos para los íconos en la sección de características */
+.skill i {
+    font-size: 2em;
+    margin-right: 10px;
+    vertical-align: middle;
+    color: #dda0dd;
 }

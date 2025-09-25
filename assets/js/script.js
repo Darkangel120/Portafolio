@@ -6,6 +6,20 @@ menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
 
+// Script para encogimiento de la barra de navegación al hacer scroll
+const navbar = document.querySelector('.navbar');
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        navbar.classList.add('shrunk');
+        header.classList.add('shrunk');
+    } else {
+        navbar.classList.remove('shrunk');
+        header.classList.remove('shrunk');
+    }
+});
+
 // Función para el efecto de máquina de escribir
 function typeWriter() {
     const text = "Desarrollador Front End Jr";

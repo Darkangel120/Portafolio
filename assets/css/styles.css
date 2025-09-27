@@ -776,10 +776,10 @@ footer:hover::before {
         margin-right: 1rem;
     }
 
-.menu-toggle {
-    display: block;
-    cursor: pointer;
-}
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
 
 /* Hero responsive adjustments for tablets and larger mobiles */
 .hero-content {
@@ -801,6 +801,7 @@ footer:hover::before {
 .hero-subtitle,
 .hero-description {
     text-align: center;
+}
 }
 
 @media (max-width: 480px) {
@@ -830,5 +831,4 @@ footer:hover::before {
         min-width: 120px;
         padding: 1.5rem;
     }
-}
 }

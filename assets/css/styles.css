@@ -776,8 +776,59 @@ footer:hover::before {
         margin-right: 1rem;
     }
 
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
+.menu-toggle {
+    display: block;
+    cursor: pointer;
+}
+
+/* Hero responsive adjustments for tablets and larger mobiles */
+.hero-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-photo {
+    width: 200px;
+    height: 200px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.hero-subtitle,
+.hero-description {
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .hero-photo {
+        width: 180px;
+        height: 180px;
     }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .contact-links {
+        gap: 1rem;
+    }
+
+    .contact-link {
+        min-width: 120px;
+        padding: 1.5rem;
+    }
+}
 }

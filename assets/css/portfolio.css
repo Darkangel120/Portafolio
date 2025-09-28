@@ -294,7 +294,7 @@
 
 svg {
     width: 2.5rem;
-    height: 1.5rem;
+    height: 2.5rem;
 }
 
 .skill-info {
@@ -357,8 +357,8 @@ svg {
     }
 
     svg {
-        width: 2rem;
-        height: 2rem;
+        width: 1rem;
+        height: 1rem;
     }
 }
 

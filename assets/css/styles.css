@@ -799,7 +799,8 @@ footer:hover::before {
 }
 
 .hero-subtitle,
-.hero-description {
+.hero-description,
+.hero-text {
     text-align: center;
 }
 }

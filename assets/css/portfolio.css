@@ -294,7 +294,7 @@
 
 svg {
     width: 2.5rem;
-    height: 3.5rem;
+    height: 1.5rem;
 }
 
 .skill-info {
@@ -354,6 +354,11 @@ svg {
 
     .skill-card .stars {
         font-size: 1.2rem;
+    }
+
+    svg {
+        width: 2rem;
+        height: 2rem;
     }
 }
 

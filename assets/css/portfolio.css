@@ -290,7 +290,11 @@
 .skill-icon {
     font-size: 2.5rem;
     color: #8a2be2;
-    flex-shrink: 0;
+}
+
+svg {
+    width: 2.5rem;
+    height: 3.5rem;
 }
 
 .skill-info {

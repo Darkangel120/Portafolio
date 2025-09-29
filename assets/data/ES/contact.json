@@ -2,29 +2,9 @@
     "description": "Estoy disponible para nuevos proyectos. Contáctame a través de cualquiera de estos medios:",
     "direct_contact": "Contáctame directamente",
     "links": [
-        {
-            "href": "mailto:dark_angel_12011@hotmail.com",
-            "icon": "fas fa-envelope",
-            "text": "Enviar Email",
-            "class": "email-link"
-        },
-        {
-            "href": "https://github.com/Darkangel120",
-            "icon": "fab fa-github",
-            "text": "GitHub",
-            "class": "github-link"
-        },
-        {
-            "href": "https://www.linkedin.com/in/oswaldo-gómez-5b6570383",
-            "icon": "fab fa-linkedin",
-            "text": "LinkedIn",
-            "class": "linkedin-link"
-        },
-        {
-            "href": "https://www.instagram.com/dark_angel_1200?igsh=cXp0OHBudGtwdmdp",
-            "icon": "fab fa-instagram",
-            "text": "Instagram",
-            "class": "instagram-link"
-        }
+        {"text": "Enviar Email"},
+        {"text": "GitHub"},
+        {"text": "LinkedIn"},
+        {"text": "Instagram"}
     ]
 }

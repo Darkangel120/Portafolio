@@ -1,22 +1,17 @@
 [
     {
-        "icon": "fas fa-user-graduate",
         "text": "Soy estudiante de Ingeniería en Sistemas, apasionado por la tecnología accesible. Desde 2024, me he dedicado al desarrollo tanto web como de aplicaciones de escritorio, siempre buscando crear soluciones intuitivas y fáciles de usar para personas de todos los niveles de experiencia tecnológica."
     },
     {
-        "icon": "fas fa-code",
         "text": "Mi especialidad es el desarrollo front-end, donde fusiono creatividad y funcionalidad para diseñar interfaces modernas. Domino tecnologías para desarrollo web y aplicaciones de escritorio, lo que me permite abordar proyectos desde diversas perspectivas y seleccionar la herramienta más adecuada para cada necesidad."
     },
     {
-        "icon": "fas fa-lightbulb",
         "text": "Me apasionan los proyectos que impactan directamente en la vida de las personas, especialmente aquellos con dificultades para acceder a la tecnología. Creo firmemente que la innovación debe ser inclusiva, por lo que me esfuerzo en crear aplicaciones accesibles para todo público, con diseños limpios y experiencias de usuario excepcionales."
     },
     {
-        "icon": "fas fa-book-open",
         "text": "Además de mi formación académica, he completado cursos especializados en Programación Orientada a Objetos, Diseño Web y PHP, lo que me ha brindado una base sólida tanto en desarrollo web como en aplicaciones de escritorio. Normalmente trabajo de forma independiente, aunque también tengo experiencia colaborando en equipos multidisciplinarios."
     },
     {
-        "icon": "fas fa-music",
         "text": "Fuera del ámbito del desarrollo, disfruto de la música, los videojuegos y el anime, actividades que me inspiran creativamente y me conectan con diversas formas de expresión artística. Esta diversidad de intereses enriquece mi visión holística del diseño y la tecnología."
     }
 ]

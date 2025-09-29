@@ -39,7 +39,7 @@ header {
     backdrop-filter: blur(10px);
     animation: slideDown 0.8s ease-out;
     transition: padding 0.3s ease;
-    position: relative;
+    position: sticky;
 }
 
 .language-switcher {
@@ -604,42 +604,34 @@ footer:hover::before {
 
 /* Estilos específicos del portafolio */
 
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
+/* Projects Slider */
+.projects-slider {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+    overflow: visible;
 }
 
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+.projects-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .project-card {
-    background: rgba(138, 43, 226, 0.2);
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    min-width: 100%;
+    background: rgba(138, 43, 226, 0.1);
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
     transition: all 0.4s ease;
+    opacity: 0;
+    transform: scale(0.9);
     text-align: center;
     cursor: pointer;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-@media (max-width: 768px) {
-    .project-card {
-        padding: 1.5rem;
-        min-height: 180px;
-    }
 }
 
 .project-card.active {
@@ -651,6 +643,13 @@ footer:hover::before {
     transform: translateY(-8px) scale(1.02);
     box-shadow: 0 15px 40px rgba(138, 43, 226, 0.4);
     background: rgba(138, 43, 226, 0.15);
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        padding: 1.5rem;
+        min-height: 180px;
+    }
 }
 
 .project-card h3 {

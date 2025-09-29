@@ -83,10 +83,10 @@ function generateHeroHTML(data) {
                 <img src="assets/img/foto.webp" alt="Foto de Oswaldo Gómez" class="hero-photo">
                 <div class="hero-text">
                     <h1>${data.name}</h1>
-                    <p class="hero-subtitle">${data.subtitle}</p>
+                    <p class="hero-subtitle">@Darkangel120</p>
                     <p class="hero-description"><span id="typed-text"></span> <br>${data.description}</p>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                        <a href="${data.ctaLink}" class="cta-button">${data.ctaText}</a>
+                        <a href="#about" class="cta-button">${data.ctaText}</a>
                     </div>
                 </div>
             </div>
@@ -95,9 +95,10 @@ function generateHeroHTML(data) {
 }
 
 function generateAboutHTML(data) {
-    const cards = data.map(card => `
+    const icons = ["fas fa-user-graduate", "fas fa-code", "fas fa-lightbulb", "fas fa-book-open", "fas fa-music"];
+    const cards = data.map((card, index) => `
         <div class="about-card">
-            <i class="${card.icon}"></i>
+            <i class="${icons[index] || card.icon}"></i>
             <p>${card.text}</p>
         </div>
     `).join('');
@@ -112,7 +113,44 @@ function generateAboutHTML(data) {
 }
 
 function generateSkillsHTML(data) {
-    const subsections = data.subsections.map(sub => {
+    const skillData = [
+        {
+            icon: "fas fa-laptop-code",
+            skills: [
+                { name: "Python", icon: "fab fa-python", progress: 60 },
+                { name: "HTML5", icon: "fab fa-html5", progress: 60 },
+                { name: "CSS3", icon: "fab fa-css3-alt", progress: 60 },
+                { name: "JavaScript", icon: "fab fa-js-square", progress: 40 },
+                { name: "Java", icon: "fab fa-java", progress: 40 },
+                { name: "C#", icon: "svg", progress: 40 },
+                { name: "PHP", icon: "fab fa-php", progress: 40 },
+                { name: "C++", icon: "svg", progress: 20 }
+            ]
+        },
+        {
+            icon: "fas fa-rocket",
+            skills: [
+                { name: "Flask", icon: "fas fa-flask", progress: 20 },
+                { name: "Flet", icon: "fas fa-object-group", progress: 20 }
+            ]
+        },
+        {
+            icon: "fas fa-database",
+            skills: [
+                { name: "MySQL", icon: "fas fa-database", progress: 60 },
+                { name: "SQLite", icon: "fas fa-database", progress: 60 },
+                { name: "SQL", icon: "fas fa-database", progress: 60 }
+            ]
+        },
+        {
+            icon: "fas fa-tools",
+            skills: [
+                { name: "Git", icon: "fab fa-git-alt", progress: 40 },
+                { name: "GitHub", icon: "fab fa-github", progress: 40 }
+            ]
+        }
+    ];
+    const subsections = skillData.map((sub, index) => {
         const skills = sub.skills.map(skill => {
             let iconHTML;
             if (skill.icon === 'svg') {
@@ -137,7 +175,7 @@ function generateSkillsHTML(data) {
         }).join('');
         return `
             <div class="skill-subsection">
-                <h4><i class="${sub.icon}"></i> ${sub.title}</h4>
+                <h4><i class="${sub.icon}"></i> ${data.subsections[index].title}</h4>
                 <div class="skills-grid">
                     ${skills}
                 </div>
@@ -247,6 +285,10 @@ function generateExperienceHTML(data) {
 }
 
 function generateContactHTML(data) {
+    const hrefs = ["mailto:dark_angel_12011@hotmail.com", "https://github.com/Darkangel120", "https://www.linkedin.com/in/oswaldo-gómez-5b6570383", "https://www.instagram.com/dark_angel_1200?igsh=cXp0OHbudGtwdmdp"];
+    const icons = ["fas fa-envelope", "fab fa-github", "fab fa-linkedin", "fab fa-instagram"];
+    const classes = ["email-link", "github-link", "linkedin-link", "instagram-link"];
+    const texts = data.links.map(link => link.text);
     return `
         <section id="contact" class="section contact">
             <h2><i class="fas fa-envelope"></i> Contacto</h2>
@@ -255,10 +297,10 @@ function generateContactHTML(data) {
                 <div class="contact-links-container">
                     <h3>${data.direct_contact}</h3>
                     <div class="contact-links">
-                        ${data.links.map(link => `
-                            <a href="${link.href}" class="contact-link ${link.class}" target="_blank">
-                                <i class="${link.icon}"></i>
-                                <span>${link.text}</span>
+                        ${texts.map((text, index) => `
+                            <a href="${hrefs[index]}" class="contact-link ${classes[index]}" target="_blank">
+                                <i class="${icons[index]}"></i>
+                                <span>${text}</span>
                             </a>
                         `).join('')}
                     </div>
@@ -269,10 +311,10 @@ function generateContactHTML(data) {
 }
 
 function generateFooterHTML(data) {
-    return `<p>${data}</p>`;
+    return `<p>© 2025 Darkangel120. ${data}</p>`;
 }
 
-// Función para cambiar idioma y generar HTML
+// Función para cambiar idioma y actualizar textos
 async function changeLanguage(lang) {
     // Cargar traducciones si no están cargadas
     if (!translations[lang]) {
@@ -303,67 +345,81 @@ async function changeLanguage(lang) {
         <li><a href="#contact">${t.nav.contacto}</a></li>
     `;
 
-    // Generar y actualizar secciones
-    const main = document.querySelector('main');
+    // Actualizar hero
+    document.getElementById('hero-name').textContent = t.hero.name;
+    document.getElementById('hero-description').textContent = t.hero.description;
+    document.getElementById('hero-cta').textContent = t.hero.ctaText;
 
-    // Limpiar main excepto modales
-    const modals = document.querySelectorAll('.modal, #imageModal');
-    modals.forEach(modal => modal.remove());
+    // Actualizar about
+    document.getElementById('about-title').innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
+    t.about.forEach((card, index) => {
+        document.getElementById(`about-text-${index}`).textContent = card.text;
+    });
 
-    // Generar HTML para cada sección
-    const sectionsHTML = await Promise.all([
-        generateHeroHTML(t.hero),
-        generateAboutHTML(t.about),
-        generateSkillsHTML(t.skills),
-        generateProjectsHTML([{key: 'inicio-xampp'}, {key: 'ventasenterprise'}]), // Hardcoded projects for now
-        generateTestimonialsHTML(t.testimonials),
-        generateExperienceHTML(t.experience),
-        generateContactHTML(t.contact)
-    ]);
+    // Actualizar skills
+    document.getElementById('skills-title').innerHTML = `<i class="fas fa-cog"></i> ${t.general.sections.skills}`;
+    const skillIcons = ["fas fa-laptop-code", "fas fa-rocket", "fas fa-database", "fas fa-tools"];
+    t.skills.subsections.forEach((sub, index) => {
+        document.getElementById(`skills-sub-title-${index}`).innerHTML = `<i class="${skillIcons[index]}"></i> ${sub.title}`;
+    });
+    document.getElementById('skills-legend').textContent = t.skills.legend;
 
-    main.innerHTML = sectionsHTML.join('');
+    // Actualizar projects
+    document.getElementById('projects-title').innerHTML = `<i class="fas fa-folder-open"></i> ${t.general.sections.projects}`;
+    const projectKeys = Array.isArray(t.general.projects) ? t.general.projects : ['inicio-xampp', 'ventasenterprise'];
+    const projectsWrapper = document.querySelector('.projects-wrapper');
+    projectsWrapper.innerHTML = (await Promise.all(projectKeys.map(async (key, index) => {
+        const projectData = await fetch(`assets/data/${lang.toUpperCase()}/${key}.json`).then(r => r.json());
+        return `
+            <div class="project-card ${index === 0 ? 'active' : ''}" data-project="${key}" onclick="openProjectModal(this)">
+                <h3>${projectData.title}</h3>
+                <p>${projectData.about ? projectData.about[0] : ''}</p>
+                <div class="project-link">${t.general.projects.view_details} <i class="fas fa-eye"></i></div>
+            </div>
+        `;
+    }))).join('');
+    const projectDots = document.querySelector('.projects-slider .slider-dots');
+    projectDots.innerHTML = projectKeys.map((_, index) => `<span class="dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>`).join('');
+
+    // Actualizar testimonials
+    document.getElementById('testimonials-title').innerHTML = `<i class="fas fa-comments"></i> ${t.general.sections.testimonials}`;
+    const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+    testimonialsWrapper.innerHTML = t.testimonials.map((testimonial, index) => `
+        <div class="testimonial-card ${index === 0 ? 'active' : ''}">
+            <div class="testimonial-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h3>${testimonial.name}</h3>
+            <p class="testimonial-role">${testimonial.role}</p>
+            <p>${testimonial.text}</p>
+        </div>
+    `).join('');
+    const dots = document.querySelector('.testimonials-slider .slider-dots');
+    dots.innerHTML = t.testimonials.map((_, index) => `<span class="dot ${index === 0 ? 'active' : ''}" data-index="${index}"></span>`).join('');
+
+    // Actualizar experience
+    document.getElementById('experience-title').innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
+    const exp = t.experience[0];
+    document.getElementById('experience-job-title').textContent = exp.title;
+    document.getElementById('experience-period').textContent = exp.period;
+    document.getElementById('experience-desc').textContent = exp.description;
+    exp.highlights.forEach((highlight, index) => {
+        document.getElementById(`experience-highlight-${index}`).textContent = highlight;
+    });
+
+    // Actualizar contact
+    document.getElementById('contact-title').innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
+    document.getElementById('contact-desc').textContent = t.contact.description;
+    document.getElementById('contact-direct-title').textContent = t.contact.direct_contact;
+    t.contact.links.forEach((link, index) => {
+        document.getElementById(`contact-${['email', 'github', 'linkedin', 'instagram'][index]}-text`).textContent = link.text;
+    });
+
+    // Actualizar footer
+    document.querySelector('footer').innerHTML = `<p>© 2025 Darkangel120. ${t.general.footer}</p>`;
 
     // Iniciar efecto de máquina de escribir
     typeWriter(t.hero.role);
-
-    // Agregar modales de vuelta
-    main.insertAdjacentHTML('afterend', `
-        <!-- Project Modal General -->
-        <div id="projectModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 id="projectTitle"></h2>
-                    <span class="close" onclick="closeModal()">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <div id="projectContent" class="project-modal-content">
-                        <!-- Contenido dinámico se cargará aquí -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Image Modal for Screenshots -->
-        <div id="imageModal" class="image-modal">
-            <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
-            <div class="image-modal-content">
-                <img id="imageModalImg" src="" alt="">
-            </div>
-        </div>
-    `);
-
-    // Actualizar footer
-    document.querySelector('footer').innerHTML = generateFooterHTML(t.general.footer);
-
-    // Actualizar títulos de secciones con traducciones
-    document.querySelector('#about h2').innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
-    document.querySelector('#skills h2').innerHTML = `<i class="fas fa-cog"></i> ${t.general.sections.skills}`;
-    document.querySelector('#projects h2').innerHTML = `<i class="fas fa-folder-open"></i> ${t.general.sections.projects}`;
-    document.querySelector('#testimonials h2').innerHTML = `<i class="fas fa-comments"></i> ${t.general.sections.testimonials}`;
-    document.querySelector('#experience h2').innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
-    document.querySelector('#contact h2').innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
-
-    // Form removed, no need to update labels
 
     // Re-inicializar sliders y otros scripts
     initializeSliders();
@@ -378,6 +434,14 @@ function initializeSliders() {
         '.testimonials-slider .prev-btn',
         '.testimonials-slider .next-btn',
         '.testimonials-slider .dot'
+    );
+    createSlider(
+        '.projects-slider',
+        '.projects-wrapper',
+        '.project-card',
+        '.projects-slider .prev-btn',
+        '.projects-slider .next-btn',
+        '.projects-slider .dot'
     );
 }
 

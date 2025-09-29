@@ -1,8 +1,6 @@
 {
     "name": "Hello, I'm Oswaldo Gómez",
-    "subtitle": "@Darkangel120",
     "role": "Front End Developer",
     "description": "Passionate about making technology accessible and creating innovative experiences.",
-    "ctaText": "Learn More About Me",
-    "ctaLink": "#about"
+    "ctaText": "Learn More About Me"
 }

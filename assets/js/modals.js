@@ -1,9 +1,8 @@
-// Modal Functions
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
         modal.classList.add('show');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
     }
 }
 
@@ -12,10 +11,9 @@ function closeModal() {
     modals.forEach(modal => {
         modal.classList.remove('show');
     });
-    document.body.style.overflow = ''; // Restore scrolling
+    document.body.style.overflow = '';
 }
 
-// Image Modal Functions
 function openImageModal(imageSrc) {
     const imageModal = document.getElementById('imageModal');
     const imageModalImg = document.getElementById('imageModalImg');
@@ -35,20 +33,26 @@ function closeImageModal() {
     }
 }
 
-// Close modals when clicking outside
 document.addEventListener('click', function(event) {
-    // Close project modals
     if (event.target.classList.contains('modal')) {
         closeModal();
     }
 
-    // Close image modal
     if (event.target.classList.contains('image-modal')) {
         closeImageModal();
     }
 });
 
-// Project Modal Function
+/**
+ * MODAL DE PROYECTOS: Carga y muestra información detallada de proyectos desde archivos JSON.
+ * Obtiene datos dinámicos según el idioma actual y genera HTML estructurado con secciones:
+ * - Acerca del proyecto (lista de puntos)
+ * - Características (grid con iconos)
+ * - Tecnologías utilizadas (stack técnico)
+ * - Capturas de pantalla (galería con modal de imágenes)
+ * Maneja errores de carga y muestra mensaje alternativo.
+ * @param {HTMLElement} card - Elemento de tarjeta del proyecto que contiene data-project
+ */
 function openProjectModal(card) {
     const projectName = card.dataset.project;
     if (!projectName) return;
@@ -61,10 +65,8 @@ function openProjectModal(card) {
             return response.json();
         })
         .then(data => {
-            // Set title
             document.getElementById('projectTitle').textContent = data.title;
 
-            // Populate content
             const content = document.getElementById('projectContent');
             const modalTitles = window.translations[window.currentLang].general.modal;
             content.innerHTML = `
@@ -94,19 +96,16 @@ function openProjectModal(card) {
                 </div>
             `;
 
-            // Open modal
             openModal('projectModal');
         })
         .catch(error => {
             console.error('Error loading project data:', error);
-            // Optionally show error message in modal
             document.getElementById('projectTitle').textContent = 'Error';
             document.getElementById('projectContent').innerHTML = '<p>Error al cargar los datos del proyecto.</p>';
             openModal('projectModal');
         });
 }
 
-// Close modals with Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeModal();

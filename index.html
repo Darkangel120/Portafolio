@@ -17,13 +17,16 @@
 
 <body>
     <header>
-        <nav class="navbar">
+        <!-- Sección de navegación principal -->
+    <nav class="navbar">
             <div class="logo"><img src="assets/img/logo.png" alt="logo">Darkangel120</div>
             <ul class="nav-links" id="nav-links">
+                <!-- Contenido dinámico: enlaces de navegación -->
             </ul>
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
         </nav>
         <div class="language-switcher">
+            <!-- Selector de idioma, cambia entre ES y EN -->
             <div class="dropdown">
                 <button id="lang-btn" class="lang-btn dropdown-btn">ES <i class="fas fa-chevron-down"></i></button>
                 <ul id="lang-list" class="dropdown-list">
@@ -35,13 +38,16 @@
     </header>
 
     <main>
+        <!-- Sección principal del portafolio -->
         <section id="hero" class="hero">
+            <!-- Sección de presentación (Hero) -->
             <div class="hero-content">
                 <img src="assets/img/foto.webp" alt="Foto de Oswaldo Gómez" class="hero-photo">
                 <div class="hero-text">
                     <h1 id="hero-name">Oswaldo Gómez</h1>
                     <p class="hero-subtitle">@Darkangel120</p>
                     <p class="hero-description"><span id="typed-text" class="typed-text"></span> <br><span id="hero-description"></span></p>
+                    <!-- Contenido dinámico: nombre, descripción y texto animado -->
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
                         <a href="#about" class="cta-button" id="hero-cta">Conóceme más</a>
                     </div>
@@ -50,11 +56,13 @@
         </section>
 
         <section id="about" class="section about">
+            <!-- Sección Sobre mí -->
             <h2 id="about-title"><i class="fas fa-user"></i> Sobre mí</h2>
             <div class="about-grid">
                 <div class="about-card">
                     <i class="fas fa-user-graduate"></i>
                     <p id="about-text-0"></p>
+                    <!-- Contenido dinámico: texto sobre mí -->
                 </div>
                 <div class="about-card">
                     <i class="fas fa-code"></i>
@@ -76,177 +84,41 @@
         </section>
 
         <section id="skills" class="section skills">
-            <h2 id="skills-title"><i class="fas fa-cog"></i> Habilidades Técnicas</h2>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> Lenguajes de Programación & Desarrollo Web</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fab fa-python skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Python</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                            60%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-html5 skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>HTML5</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                            60%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-css3-alt skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>CSS3</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                            60%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-js-square skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>JavaScript</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                            40%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-java skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Java</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                            40%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="15" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">C#</text></svg>
-                        <div class="skill-info">
-                            <h5>C#</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                            40%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-php skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>PHP</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                            40%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="13" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">C++</text></svg>
-                        <div class="skill-info">
-                            <h5>C++</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
-                            20%
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> Frameworks & Librerías</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-flask skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Flask</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
-                            20%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-object-group skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Flet</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
-                            20%
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> Bases de Datos</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-database skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>MySQL</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                            60%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-database skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>SQLite</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                            60%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-database skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>SQL</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 60%;"></div></div>
-                            60%
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> Herramientas de Desarrollo</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fab fa-git-alt skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Git</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                            40%
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-github skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>GitHub</h5>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 40%;"></div></div>
-                            40%
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-legend">
-                <p id="skills-legend" style="text-align: center;">Básico: 20% | Intermedio: 40-60% | Avanzado: 80-100%</p>
-            </div>
+            <!-- Sección de habilidades, contenido dinámico -->
         </section>
 
         <section id="projects" class="section projects">
+            <!-- Sección de proyectos destacados -->
             <h2 id="projects-title"><i class="fas fa-folder-open"></i> Proyectos Destacados</h2>
             <div class="projects-slider">
                 <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="projects-wrapper">
+                    <!-- Contenido dinámico: proyectos -->
                 </div>
                 <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
                 <div class="slider-dots">
+                    <!-- Contenido dinámico: indicadores de slider -->
                 </div>
             </div>
         </section>
 
         <section id="testimonials" class="section testimonials">
+            <!-- Sección de testimonios -->
             <h2 id="testimonials-title"><i class="fas fa-comments"></i> Testimonios</h2>
             <div class="testimonials-slider">
                 <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="testimonials-wrapper">
+                    <!-- Contenido dinámico: testimonios -->
                 </div>
                 <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
                 <div class="slider-dots">
+                    <!-- Contenido dinámico: indicadores de slider -->
                 </div>
             </div>
         </section>
 
         <section id="experience" class="section experience">
+            <!-- Sección de experiencia laboral -->
             <h2 id="experience-title"><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
             <div class="experience-timeline">
                 <div class="experience-card">
@@ -262,11 +134,13 @@
                     <div class="experience-content">
                         <div class="experience-description">
                             <p id="experience-desc"></p>
+                            <!-- Contenido dinámico: descripción de experiencia -->
                         </div>
                         <div class="experience-highlights">
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle"></i>
                                 <span id="experience-highlight-0"></span>
+                                <!-- Contenido dinámico: logros -->
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-check-circle"></i>
@@ -283,12 +157,15 @@
         </section>
 
         <section id="contact" class="section contact">
+            <!-- Sección de contacto -->
             <h2 id="contact-title"><i class="fas fa-envelope"></i> Contacto</h2>
             <p class="contact-description" id="contact-desc"></p>
+            <!-- Contenido dinámico: descripción de contacto -->
             <div class="contact-container">
                 <div class="contact-links-container">
                     <h3 id="contact-direct-title">Contacto Directo</h3>
                     <div class="contact-links">
+                        <!-- Enlaces de contacto directo -->
                         <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
                             <i class="fas fa-envelope"></i>
                             <span id="contact-email-text">Enviar Email</span>
@@ -311,8 +188,8 @@
         </section>
     </main>
 
-    <!-- Project Modal General -->
     <div id="projectModal" class="modal">
+        <!-- Modal para mostrar detalles de proyectos (contenido dinámico) -->
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="projectTitle"></h2>
@@ -326,8 +203,8 @@
         </div>
     </div>
 
-    <!-- Image Modal for Screenshots -->
     <div id="imageModal" class="image-modal">
+        <!-- Modal para mostrar imágenes ampliadas de los proyectos -->
         <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
         <div class="image-modal-content">
             <img id="imageModalImg" src="" alt="">
@@ -335,11 +212,11 @@
     </div>
 
     <footer>
-        <!-- Contenido dinámico se cargará aquí -->
+        <!-- Contenido dinámico: pie de página -->
     </footer>
 
-    <script src="assets/js/script.js"></script>
     <script src="assets/js/dataLoader.js"></script>
+    <script src="assets/js/script.js"></script>
     <script src="assets/js/modals.js"></script>
 </body>
 

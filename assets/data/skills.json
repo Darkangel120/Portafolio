@@ -1,0 +1,87 @@
+{
+  "skills": {
+    "programming": [
+      {
+        "name": "Python",
+        "icon": "fab fa-python",
+        "level": 60
+      },
+      {
+        "name": "HTML5",
+        "icon": "fab fa-html5",
+        "level": 60
+      },
+      {
+        "name": "CSS3",
+        "icon": "fab fa-css3-alt",
+        "level": 60
+      },
+      {
+        "name": "JavaScript",
+        "icon": "fab fa-js-square",
+        "level": 40
+      },
+      {
+        "name": "Java",
+        "icon": "fab fa-java",
+        "level": 40
+      },
+      {
+        "name": "C#",
+        "icon": "custom",
+        "level": 40
+      },
+      {
+        "name": "PHP",
+        "icon": "fab fa-php",
+        "level": 40
+      },
+      {
+        "name": "C++",
+        "icon": "custom",
+        "level": 20
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Flask",
+        "icon": "fas fa-flask",
+        "level": 20
+      },
+      {
+        "name": "Flet",
+        "icon": "fas fa-object-group",
+        "level": 20
+      }
+    ],
+    "databases": [
+      {
+        "name": "MySQL",
+        "icon": "fas fa-database",
+        "level": 60
+      },
+      {
+        "name": "SQLite",
+        "icon": "fas fa-database",
+        "level": 60
+      },
+      {
+        "name": "SQL",
+        "icon": "fas fa-database",
+        "level": 60
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "icon": "fab fa-git-alt",
+        "level": 40
+      },
+      {
+        "name": "GitHub",
+        "icon": "fab fa-github",
+        "level": 40
+      }
+    ]
+  }
+}

@@ -80,7 +80,7 @@ header {
 @media (max-width: 768px) {
     .language-switcher {
         left: 35%;
-        top: 4rem;
+        top: 5.8rem;
         transform: translateX(-50%);
         gap: 0.3rem;
     }

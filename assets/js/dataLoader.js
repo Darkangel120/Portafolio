@@ -101,6 +101,7 @@ async function loadLanguage(lang) {
     currentLang = lang;
     window.currentLang = lang;
 
+    // Nav section
     const navLinks = document.getElementById('nav-links');
     if (navLinks) {
         navLinks.innerHTML = `
@@ -120,6 +121,7 @@ async function loadLanguage(lang) {
         }
     }
 
+    // Hero section
     const heroName = document.getElementById('hero-name');
     if (heroName) heroName.textContent = t.hero.name;
     const heroDescription = document.getElementById('hero-description');
@@ -128,23 +130,22 @@ async function loadLanguage(lang) {
     if (heroCta) heroCta.textContent = t.hero.ctaText;
     typeWriter(t.hero.role);
 
+    // About section
+    const aboutTitle = document.getElementById('about-title');
+    if (aboutTitle) aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
     for (let i = 0; i < t.about.length; i++) {
         const elem = document.getElementById(`about-text-${i}`);
         if (elem) elem.textContent = t.about[i].text;
     }
 
-    /**
-     * CARGA DINÁMICA DE SKILLS: Esta sección genera el HTML completo de la sección de habilidades
-     * desde el archivo assets/data/skills.json. El JSON contiene categorías (programming, frameworks, databases, tools)
-     * con arrays de objetos que incluyen nombre, icono y nivel de habilidad. Se mapean a elementos HTML
-     * con barras de progreso y iconos FontAwesome o SVG personalizados para lenguajes como C# y C++.
-     */
+    // Skills section
+    const skillsTitle = document.getElementById('skills-title');
+    if (skillsTitle) skillsTitle.innerHTML = `<i class="fas fa-tools"></i> ${t.general.sections.skills}`;
     const skillsSection = document.getElementById('skills');
     if (skillsSection && t.skillsExtra && t.skillsExtra.skills) {
         const skillsHTML = `
-            <h2 id="skills-title"><i class="fas fa-cog"></i> Habilidades Técnicas</h2>
             <div class="skill-subsection">
-                <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> Lenguajes de Programación & Desarrollo Web</h4>
+                <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> ${t.skills.subsections[0].title}</h4>
                 <div class="skills-grid">
                     ${t.skillsExtra.skills.programming.map(skill => `
                         <div class="skill-card">
@@ -159,7 +160,7 @@ async function loadLanguage(lang) {
                 </div>
             </div>
             <div class="skill-subsection">
-                <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> Frameworks & Librerías</h4>
+                <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> ${t.skills.subsections[1].title}</h4>
                 <div class="skills-grid">
                     ${t.skillsExtra.skills.frameworks.map(skill => `
                         <div class="skill-card">
@@ -174,7 +175,7 @@ async function loadLanguage(lang) {
                 </div>
             </div>
             <div class="skill-subsection">
-                <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> Bases de Datos</h4>
+                <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> ${t.skills.subsections[2].title}</h4>
                 <div class="skills-grid">
                     ${t.skillsExtra.skills.databases.map(skill => `
                         <div class="skill-card">
@@ -189,7 +190,7 @@ async function loadLanguage(lang) {
                 </div>
             </div>
             <div class="skill-subsection">
-                <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> Herramientas de Desarrollo</h4>
+                <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> ${t.skills.subsections[3].title}</h4>
                 <div class="skills-grid">
                     ${t.skillsExtra.skills.tools.map(skill => `
                         <div class="skill-card">
@@ -204,17 +205,23 @@ async function loadLanguage(lang) {
                 </div>
             </div>
             <div class="skills-legend">
-                <p id="skills-legend" style="text-align: center;">Básico: 20% | Intermedio: 40-60% | Avanzado: 80-100%</p>
+                <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
             </div>
         `;
         skillsSection.innerHTML = skillsHTML;
     }
 
+    // Projects section
+    const projectsTitle = document.getElementById('projects-title');
+    if (projectsTitle) projectsTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${t.general.sections.projects}`;
     const projectsWrapper = document.querySelector('.projects-wrapper');
     if (projectsWrapper) {
         projectsWrapper.innerHTML = generateProjectCardsHTML(t.projects);
     }
 
+    // Testimonials section
+    const testimonialsTitle = document.getElementById('testimonials-title');
+    if (testimonialsTitle) testimonialsTitle.innerHTML = `<i class="fas fa-comments"></i> ${t.general.sections.testimonials}`;
     const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
     if (testimonialsWrapper) {
         testimonialsWrapper.innerHTML = generateTestimonialCardsHTML(t.testimonials);
@@ -226,6 +233,9 @@ async function loadLanguage(lang) {
         window.resetSlidersAnimation();
     }
 
+    // Experience section
+    const experienceTitle = document.getElementById('experience-title');
+    if (experienceTitle) experienceTitle.innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
     const experienceJobTitle = document.getElementById('experience-job-title');
     if (experienceJobTitle) experienceJobTitle.textContent = t.experience[0].title;
     const experiencePeriod = document.getElementById('experience-period');
@@ -242,6 +252,9 @@ async function loadLanguage(lang) {
         `).join('');
     }
 
+    // Contact section
+    const contactTitle = document.getElementById('contact-title');
+    if (contactTitle) contactTitle.innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
     const contactDesc = document.getElementById('contact-desc');
     if (contactDesc) contactDesc.textContent = t.contact.description;
     const contactDirectTitle = document.getElementById('contact-direct-title');
@@ -252,10 +265,13 @@ async function loadLanguage(lang) {
         if (elem) elem.textContent = t.contact.links[i].text;
     }
 
+    // General section (footer)
     const footer = document.querySelector('footer');
     if (footer) {
         footer.innerHTML = generateFooterHTML(t.general.footer);
     }
+
+    // SkillsExtra section (already handled in skills)
 }
 
 // Función para inicializar sliders
@@ -368,4 +384,5 @@ function initializeSliders() {
 // Exportar funciones si se usa módulo
 window.loadLanguage = loadLanguage;
 window.typeWriter = typeWriter;
+window.initializeSliders = initializeSliders;
 window.initializeSliders = initializeSliders;

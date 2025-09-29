@@ -1,5 +1,5 @@
 // Variables globales para modales
-let currentLang = window.currentLang || 'es';
+// currentLang se obtiene de window.currentLang
 
 // Modal Functions
 function openModal(modalId) {
@@ -56,7 +56,7 @@ function openProjectModal(card) {
     const projectName = card.dataset.project;
     if (!projectName) return;
 
-    fetch(`assets/data/${currentLang.toUpperCase()}/${projectName}.json`)
+    fetch(`assets/data/${window.currentLang.toUpperCase()}/${projectName}.json`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');

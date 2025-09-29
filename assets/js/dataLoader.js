@@ -149,7 +149,6 @@ function generateSkillsHTML(data) {
             <h2><i class="fas fa-cog"></i> Habilidades Técnicas</h2>
             ${subsections}
             <div class="skills-legend">
-                <p style="text-align: left;"><strong>Leyenda de Progreso: </strong></p>
                 <p style="text-align: center;">${data.legend}</p>
             </div>
         </section>
@@ -164,7 +163,7 @@ async function generateProjectsHTML(data) {
                 <div class="project-card" data-project="${project.key}" onclick="openProjectModal(this)">
                     <h3>${projectData.title}</h3>
                     <p>${projectData.about ? projectData.about[0] : ''}</p>
-                    <div class="project-link">Ver detalles <i class="fas fa-eye"></i></div>
+                    <div class="project-link">${translations[currentLang].general.projects.view_details} <i class="fas fa-eye"></i></div>
                 </div>
             `;
         } catch (error) {
@@ -198,11 +197,11 @@ function generateTestimonialsHTML(data) {
         <section id="testimonials" class="section testimonials">
             <h2><i class="fas fa-comments"></i> Testimonios</h2>
             <div class="testimonials-slider">
-                <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn prev-btn" aria-label="${translations[currentLang].general.previous}"><i class="fas fa-chevron-left"></i></button>
                 <div class="testimonials-wrapper">
                     ${cards}
                 </div>
-                <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                <button class="slider-btn next-btn" aria-label="${translations[currentLang].general.next}"><i class="fas fa-chevron-right"></i></button>
                 <div class="slider-dots">
                     ${dots}
                 </div>
@@ -253,51 +252,15 @@ function generateContactHTML(data) {
             <h2><i class="fas fa-envelope"></i> Contacto</h2>
             <p class="contact-description">${data.description}</p>
             <div class="contact-container">
-                <div class="contact-form-container">
-                    <h3>Envíame un mensaje</h3>
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nombre *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Asunto</label>
-                            <input type="text" id="subject" name="subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar Mensaje
-                        </button>
-                    </form>
-                    <div id="formMessage" class="form-message"></div>
-                </div>
                 <div class="contact-links-container">
-                    <h3>O contáctame directamente</h3>
+                    <h3>${data.direct_contact}</h3>
                     <div class="contact-links">
-                        <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
-                            <i class="fas fa-envelope"></i>
-                            <span>Enviar Email</span>
-                        </a>
-                        <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://www.instagram.com/dark_angel_1200?igsh=cXp0OHBudGtwdmdp" class="contact-link instagram-link" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
+                        ${data.links.map(link => `
+                            <a href="${link.href}" class="contact-link ${link.class}" target="_blank">
+                                <i class="${link.icon}"></i>
+                                <span>${link.text}</span>
+                            </a>
+                        `).join('')}
                     </div>
                 </div>
             </div>
@@ -400,13 +363,7 @@ async function changeLanguage(lang) {
     document.querySelector('#experience h2').innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
     document.querySelector('#contact h2').innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
 
-    // Actualizar form labels
-    document.querySelector('label[for="name"]').textContent = t.general.form.name;
-    document.querySelector('label[for="email"]').textContent = t.general.form.email;
-    document.querySelector('label[for="subject"]').textContent = t.general.form.subject;
-    document.querySelector('label[for="message"]').textContent = t.general.form.message;
-    document.querySelector('.submit-btn').innerHTML = `<i class="fas fa-paper-plane"></i> ${t.general.form.send}`;
-    document.querySelector('.contact-form-container h3').textContent = 'Envíame un mensaje'; // Assuming it's the same
+    // Form removed, no need to update labels
 
     // Re-inicializar sliders y otros scripts
     initializeSliders();

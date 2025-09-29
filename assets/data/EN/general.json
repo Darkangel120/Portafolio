@@ -8,21 +8,9 @@
         "contact": "Contact"
     },
     "footer": "© 2025 Darkangel120. All rights reserved.",
-    "form": {
-        "name": "Name *",
-        "email": "Email *",
-        "subject": "Subject",
-        "message": "Message *",
-        "send": "Send Message",
-        "sending": "Sending...",
-        "success": "Message sent successfully! I will get back to you soon.",
-        "error": "Error sending message. Please try again.",
-        "validation": {
-            "required": "Please fill in all required fields.",
-            "email": "Please enter a valid email."
-        }
-    },
     "projects": {
         "view_details": "View details"
-    }
+    },
+    "previous": "Previous",
+    "next": "Next"
 }

@@ -133,9 +133,20 @@ async function loadLanguage(lang) {
     // About section
     const aboutTitle = document.getElementById('about-title');
     if (aboutTitle) aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
-    for (let i = 0; i < t.about.length; i++) {
-        const elem = document.getElementById(`about-text-${i}`);
-        if (elem) elem.textContent = t.about[i].text;
+    const aboutSection = document.getElementById('about');
+    if (aboutSection && t.about) {
+        const icons = ['fas fa-user-graduate', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-book-open', 'fas fa-music'];
+        const aboutHTML = `
+            <div class="about-grid">
+                ${t.about.map((item, index) => `
+                    <div class="about-card">
+                        <i class="${icons[index] || 'fas fa-user'}"></i>
+                        <p>${item.text}</p>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+        aboutSection.insertAdjacentHTML('beforeend', aboutHTML);
     }
 
     // Skills section
@@ -208,7 +219,7 @@ async function loadLanguage(lang) {
                 <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
             </div>
         `;
-        skillsSection.innerHTML = skillsHTML;
+        skillsSection.insertAdjacentHTML('beforeend', skillsHTML);
     }
 
     // Projects section
@@ -236,33 +247,72 @@ async function loadLanguage(lang) {
     // Experience section
     const experienceTitle = document.getElementById('experience-title');
     if (experienceTitle) experienceTitle.innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
-    const experienceJobTitle = document.getElementById('experience-job-title');
-    if (experienceJobTitle) experienceJobTitle.textContent = t.experience[0].title;
-    const experiencePeriod = document.getElementById('experience-period');
-    if (experiencePeriod) experiencePeriod.textContent = t.experience[0].period;
-    const experienceDesc = document.getElementById('experience-desc');
-    if (experienceDesc) experienceDesc.textContent = t.experience[0].description;
-    const highlightsContainer = document.querySelector('.experience-highlights');
-    if (highlightsContainer) {
-        highlightsContainer.innerHTML = t.experience[0].highlights.map(highlight => `
-            <div class="highlight-item">
-                <i class="fas fa-check-circle"></i>
-                <span>${highlight}</span>
+    const experienceSection = document.getElementById('experience');
+    if (experienceSection && t.experience && t.experience.length > 0) {
+        const exp = t.experience[0];
+        const experienceHTML = `
+            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="${exp.icon}"></i>
+                        </div>
+                        <div class="experience-info">
+                            <h3>${exp.title}</h3>
+                            <p class="experience-period">${exp.period}</p>
+                        </div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="experience-description">
+                            <p>${exp.description}</p>
+                        </div>
+                        <div class="experience-highlights">
+                            ${exp.highlights.map(highlight => `
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>${highlight}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
             </div>
-        `).join('');
+        `;
+        experienceSection.insertAdjacentHTML('beforeend', experienceHTML);
     }
 
     // Contact section
     const contactTitle = document.getElementById('contact-title');
     if (contactTitle) contactTitle.innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
-    const contactDesc = document.getElementById('contact-desc');
-    if (contactDesc) contactDesc.textContent = t.contact.description;
-    const contactDirectTitle = document.getElementById('contact-direct-title');
-    if (contactDirectTitle) contactDirectTitle.textContent = t.contact.direct_contact;
-    const contactIds = ['email', 'github', 'linkedin', 'instagram'];
-    for (let i = 0; i < t.contact.links.length; i++) {
-        const elem = document.getElementById(`contact-${contactIds[i]}-text`);
-        if (elem) elem.textContent = t.contact.links[i].text;
+    const contactSection = document.getElementById('contact');
+    if (contactSection && t.contact) {
+        const contactHTML = `
+            <p class="contact-description">${t.contact.description}</p>
+            <div class="contact-container">
+                <div class="contact-links-container">
+                    <h3>${t.contact.direct_contact}</h3>
+                    <div class="contact-links">
+                        <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
+                            <i class="fas fa-envelope"></i>
+                            <span>${t.contact.links[0].text}</span>
+                        </a>
+                        <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>${t.contact.links[1].text}</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>${t.contact.links[2].text}</span>
+                        </a>
+                        <a href="https://www.instagram.com/dark_angel_1200?igsh=cXp0OHbudGtwdmdp" class="contact-link instagram-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>${t.contact.links[3].text}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+        contactSection.insertAdjacentHTML('beforeend', contactHTML);
     }
 
     // General section (footer)

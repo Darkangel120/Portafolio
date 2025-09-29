@@ -259,6 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadLanguage(savedLang);
 
     langItems.forEach(item => {
+        item.classList.remove('active');
         if (item.getAttribute('data-lang') === savedLang) {
             item.classList.add('active');
             dropdownBtn.innerHTML = item.textContent + ' <i class="fas fa-chevron-down"></i>';

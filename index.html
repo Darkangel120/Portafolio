@@ -24,8 +24,13 @@
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
         </nav>
         <div class="language-switcher">
-            <button id="lang-es" class="lang-btn active">ES</button>
-            <button id="lang-en" class="lang-btn">EN</button>
+            <div class="dropdown">
+                <button id="lang-btn" class="lang-btn dropdown-btn">ES <i class="fas fa-chevron-down"></i></button>
+                <ul id="lang-list" class="dropdown-list">
+                    <li data-lang="es" class="active">ES</li>
+                    <li data-lang="en">EN</li>
+                </ul>
+            </div>
         </div>
     </header>
 
@@ -36,7 +41,7 @@
                 <div class="hero-text">
                     <h1 id="hero-name">Oswaldo Gómez</h1>
                     <p class="hero-subtitle">@Darkangel120</p>
-                    <p class="hero-description"><span id="typed-text"></span> <br><span id="hero-description"></span></p>
+                    <p class="hero-description"><span id="typed-text" class="typed-text"></span> <br><span id="hero-description"></span></p>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
                         <a href="#about" class="cta-button" id="hero-cta">Conóceme más</a>
                     </div>

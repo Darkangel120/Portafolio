@@ -1,5 +1,6 @@
 // Variables globales para traducciones
 let translations = {};
+window.translations = translations;
 window.currentLang = localStorage.getItem('selectedLanguage') || 'es';
 let currentLang = window.currentLang;
 
@@ -314,8 +315,9 @@ function generateFooterHTML(data) {
     return `<p>© 2025 Darkangel120. ${data}</p>`;
 }
 
-// Función para cambiar idioma y actualizar textos
-async function changeLanguage(lang) {
+// Función para cargar idioma y actualizar textos
+async function loadLanguage(lang) {
+    document.documentElement.lang = lang;
     // Cargar traducciones si no están cargadas
     if (!translations[lang]) {
         const data = await loadTranslations(lang);
@@ -504,10 +506,19 @@ function createSlider(sliderSelector, wrapperSelector, cardSelector, prevBtnSele
 }
 
 // Event listeners para botones de idioma
-document.getElementById('lang-es').addEventListener('click', () => changeLanguage('es'));
-document.getElementById('lang-en').addEventListener('click', () => changeLanguage('en'));
+document.getElementById('lang-es').addEventListener('click', () => {
+    localStorage.setItem('selectedLanguage', 'es');
+    location.reload();
+});
+document.getElementById('lang-en').addEventListener('click', () => {
+    localStorage.setItem('selectedLanguage', 'en');
+    location.reload();
+});
 
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
-    changeLanguage(currentLang);
+    loadLanguage(currentLang);
+    // Asegurar que los botones de idioma tengan la clase 'active' correcta
+    document.getElementById('lang-es').classList.toggle('active', currentLang === 'es');
+    document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
 });

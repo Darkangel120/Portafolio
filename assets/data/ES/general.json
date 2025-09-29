@@ -11,6 +11,12 @@
     "projects": {
         "view_details": "Ver detalles"
     },
+    "modal": {
+        "about": "Sobre el Proyecto",
+        "features": "Características Principales",
+        "tech": "Tecnologías Utilizadas",
+        "screenshots": "Capturas de Pantalla"
+    },
     "previous": "Anterior",
     "next": "Siguiente"
 }

@@ -1,6 +1,3 @@
-// Variables globales para modales
-// currentLang se obtiene de window.currentLang
-
 // Modal Functions
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -69,27 +66,28 @@ function openProjectModal(card) {
 
             // Populate content
             const content = document.getElementById('projectContent');
+            const modalTitles = window.translations[window.currentLang].general.modal;
             content.innerHTML = `
-                <div class="modal-section">
-                    <h3>Sobre el Proyecto</h3>
+                <div class="modal-section modal-about">
+                    <h3>${modalTitles.about}</h3>
                     <ul>
                         ${data.about.map(item => `<li>${item}</li>`).join('')}
                     </ul>
                 </div>
-                <div class="modal-section">
-                    <h3>Características Principales</h3>
+                <div class="modal-section modal-features">
+                    <h3>${modalTitles.features}</h3>
                     <div class="features-grid">
                         ${data.features.map(f => `<div class="feature-item"><i class="${f.icon}"></i><p>${f.text}</p></div>`).join('')}
                     </div>
                 </div>
-                <div class="modal-section">
-                    <h3>Tecnologías Utilizadas</h3>
+                <div class="modal-section modal-tech">
+                    <h3>${modalTitles.tech}</h3>
                     <div class="tech-stack">
                         ${data.tech.map(t => `<div class="tech-item"><i class="${t.icon}"></i><h4>${t.title}</h4><p>${t.desc}</p></div>`).join('')}
                     </div>
                 </div>
                 <div class="modal-section screenshots-section">
-                    <h3>Capturas de Pantalla</h3>
+                    <h3>${modalTitles.screenshots}</h3>
                     <div class="screenshots-grid">
                         ${data.screenshots.map(s => `<div class="screenshot-card" onclick="openImageModal('${s.src}')"><img src="${s.src}" alt="${s.alt}" loading="lazy"><h4>${s.title}</h4><p>${s.desc}</p></div>`).join('')}
                     </div>

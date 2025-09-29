@@ -11,6 +11,12 @@
     "projects": {
         "view_details": "View details"
     },
+    "modal": {
+        "about": "About the Project",
+        "features": "Main Features",
+        "tech": "Technologies Used",
+        "screenshots": "Screenshots"
+    },
     "previous": "Previous",
     "next": "Next"
 }

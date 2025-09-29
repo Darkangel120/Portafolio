@@ -119,6 +119,10 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.modal-about {
+    grid-column: 1 / -1;
+}
+
 .modal-section h3 {
     color: #00d4ff;
     margin-bottom: 15px;

@@ -1,0 +1,28 @@
+{
+    "sections": {
+        "about": "Sobre mí",
+        "skills": "Habilidades Técnicas",
+        "projects": "Proyectos Destacados",
+        "testimonials": "Testimonios",
+        "experience": "Experiencia Laboral",
+        "contact": "Contacto"
+    },
+    "footer": "© 2025 Darkangel120. Todos los derechos reservados.",
+    "form": {
+        "name": "Nombre *",
+        "email": "Email *",
+        "subject": "Asunto",
+        "message": "Mensaje *",
+        "send": "Enviar Mensaje",
+        "sending": "Enviando...",
+        "success": "¡Mensaje enviado exitosamente! Me pondré en contacto contigo pronto.",
+        "error": "Error al enviar el mensaje. Por favor, intenta nuevamente.",
+        "validation": {
+            "required": "Por favor, completa todos los campos obligatorios.",
+            "email": "Por favor, ingresa un email válido."
+        }
+    },
+    "projects": {
+        "view_details": "Ver detalles"
+    }
+}

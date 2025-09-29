@@ -21,8 +21,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Función para el efecto de máquina de escribir
-function typeWriter() {
-    const text = "Desarrollador Front End Jr";
+function typeWriter(text) {
     const typedTextElement = document.getElementById('typed-text');
     let index = 0;
     let isDeleting = false;
@@ -51,110 +50,31 @@ function typeWriter() {
     type();
 }
 
-// Iniciar el efecto de máquina de escribir cuando la página cargue
-document.addEventListener('DOMContentLoaded', function () {
-    typeWriter();
-});
-document.addEventListener('DOMContentLoaded', () => {
-    // Active navigation link on scroll
+// Active navigation link on scroll
+function setActiveLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
+    let current = '';
 
-    function setActiveLink() {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - sectionHeight / 3) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', setActiveLink);
-
-    function createSlider(sliderSelector, wrapperSelector, cardSelector, prevBtnSelector, nextBtnSelector, dotSelector) {
-        const sliderWrapper = document.querySelector(wrapperSelector);
-        const cards = document.querySelectorAll(cardSelector);
-        const prevBtn = document.querySelector(prevBtnSelector);
-        const nextBtn = document.querySelector(nextBtnSelector);
-        const dots = document.querySelectorAll(dotSelector);
-        let currentIndex = 0;
-        let autoSlideTimer;
-
-        if (!sliderWrapper || cards.length === 0 || !prevBtn || !nextBtn || dots.length === 0) {
-            return;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
         }
+    });
 
-        function updateSlider(index) {
-            cards.forEach((card, i) => {
-                card.classList.toggle('active', i === index);
-            });
-            sliderWrapper.style.transform = `translateX(-${index * 100}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-            currentIndex = index;
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
         }
+    });
+}
 
-        function startAutoSlide() {
-            clearInterval(autoSlideTimer);
-            autoSlideTimer = setInterval(() => {
-                let newIndex = (currentIndex + 1) % cards.length;
-                updateSlider(newIndex);
-            }, 8000);
-        }
+window.addEventListener('scroll', setActiveLink);
 
-        prevBtn.addEventListener('click', () => {
-            let newIndex = currentIndex - 1;
-            if (newIndex < 0) newIndex = cards.length - 1;
-            updateSlider(newIndex);
-            startAutoSlide();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            let newIndex = currentIndex + 1;
-            if (newIndex >= cards.length) newIndex = 0;
-            updateSlider(newIndex);
-            startAutoSlide();
-        });
-
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const index = parseInt(dot.getAttribute('data-index'));
-                updateSlider(index);
-                startAutoSlide();
-            });
-        });
-
-        updateSlider(0);
-        startAutoSlide();
-    }
-
-    // Initialize sliders
-    createSlider(
-        '.testimonials-slider',
-        '.testimonials-wrapper',
-        '.testimonial-card',
-        '.testimonials-slider .prev-btn',
-        '.testimonials-slider .next-btn',
-        '.testimonials-slider .dot'
-    );
-
-    createSlider(
-        '.projects-slider',
-        '.projects-wrapper',
-        '.project-card',
-        '.projects-slider .prev-btn',
-        '.projects-slider .next-btn',
-        '.projects-slider .dot'
-    );
+// Iniciar efectos cuando la página cargue
+document.addEventListener('DOMContentLoaded', function () {
+    // typeWriter() now called in dataLoader.js
 });

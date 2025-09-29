@@ -1,0 +1,78 @@
+{
+    "title": "Inicio-XAMPP",
+    "about": [
+        "Inicio-XAMPP es un dashboard visual y moderno para gestionar proyectos locales cuando se cambia la ruta de `htdocs` en XAMPP. Reemplaza el listado básico de Apache con una interfaz atractiva y funcional.",
+        "El sistema lista automáticamente todas las carpetas de proyectos, mostrando información útil como tamaño, fecha de actualización y estado, y permite navegación directa a proyectos con archivos de inicio.",
+        "Desarrollado con PHP y JavaScript, ofrece una experiencia de usuario fluida con tema oscuro inspirado en GitHub, diseño y animaciones suaves que se adaptan a diferentes tamaños de pantalla.",
+        "Ideal para desarrolladores que usan XAMPP para gestionar múltiples proyectos locales, eliminando la necesidad de recordar rutas y proporcionando una vista organizada de todos los trabajos."
+    ],
+    "features": [
+        {
+            "icon": "fas fa-list",
+            "text": "Lista Automática de Proyectos"
+        },
+        {
+            "icon": "fas fa-search",
+            "text": "Búsqueda Instantánea"
+        },
+        {
+            "icon": "fas fa-info-circle",
+            "text": "Información Detallada"
+        },
+        {
+            "icon": "fas fa-external-link-alt",
+            "text": "Navegación Directa"
+        },
+        {
+            "icon": "fas fa-chart-bar",
+            "text": "Estadísticas del Servidor"
+        },
+        {
+            "icon": "fas fa-file-alt",
+            "text": "Selector de Archivos"
+        }
+    ],
+    "tech": [
+        {
+            "icon": "fab fa-php",
+            "title": "PHP",
+            "desc": "Lenguaje de servidor principal utilizado para generar dinámicamente la lista de proyectos y calcular estadísticas."
+        },
+        {
+            "icon": "fab fa-js-square",
+            "title": "JavaScript",
+            "desc": "Framework moderno para interactividad del lado cliente, búsqueda en tiempo real y animaciones."
+        },
+        {
+            "icon": "fab fa-css3-alt",
+            "title": "CSS3",
+            "desc": "Hojas de estilo para diseño, tema oscuro y animaciones suaves."
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/img/inicio-xampp/inicio.webp",
+            "alt": "Dashboard Principal",
+            "title": "Inicio",
+            "desc": "Vista general con lista de proyectos y estadísticas."
+        },
+        {
+            "src": "assets/img/inicio-xampp/busqueda.webp",
+            "alt": "Búsqueda de Proyectos",
+            "title": "Búsqueda de Proyectos",
+            "desc": "Interfaz de búsqueda para encontrar proyectos rápidamente."
+        },
+        {
+            "src": "assets/img/inicio-xampp/detalles.webp",
+            "alt": "Información del Proyecto",
+            "title": "Información del Proyecto",
+            "desc": "Detalles de cada proyecto incluyendo tamaño y fecha de actualización."
+        },
+        {
+            "src": "assets/img/inicio-xampp/seleccion.webp",
+            "alt": "Selección del archivo",
+            "title": "Selección del archivo",
+            "desc": "Muestra los archivos disponibles en el proyecto en caso de que el archivo principal no sea index.html."
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "title": "VentaEnterprise",
+    "about": [
+        "VentaEnterprise es una aplicación de escritorio desarrollada en Python que facilita la gestión integral de ventas e inventarios para empresas. Con una interfaz intuitiva y moderna, permite administrar productos, procesar ventas, generar facturas y obtener reportes detallados de manera eficiente.",
+        "El sistema incluye funcionalidades avanzadas como control de stock en tiempo real, integración con tasas de cambio, gestión de catálogo de productos y un completo módulo de reportes que ayuda a los empresarios a tomar decisiones informadas basadas en datos precisos.",
+        "Desarrollado con tecnologías modernas como Python y Flet para la interfaz gráfica, VentaEnterprise ofrece una experiencia de usuario fluida con modo oscuro/claro, navegación intuitiva y diseño responsivo que se adapta a diferentes tamaños de pantalla.",
+        "Ideal para tiendas, comercios y pequeñas empresas que buscan digitalizar sus procesos de venta y gestión de inventario, eliminando el uso de papel y reduciendo errores humanos en el registro de transacciones."
+    ],
+    "features": [
+        {
+            "icon": "fas fa-shopping-cart",
+            "text": "Gestión de Ventas"
+        },
+        {
+            "icon": "fas fa-boxes",
+            "text": "Control de Inventario"
+        },
+        {
+            "icon": "fas fa-chart-bar",
+            "text": "Reportes y Estadísticas"
+        },
+        {
+            "icon": "fas fa-file-invoice-dollar",
+            "text": "Facturación Automática"
+        },
+        {
+            "icon": "fas fa-exchange-alt",
+            "text": "Tasas de Cambio"
+        },
+        {
+            "icon": "fas fa-search",
+            "text": "Búsqueda Avanzada"
+        }
+    ],
+    "tech": [
+        {
+            "icon": "fab fa-python",
+            "title": "Python",
+            "desc": "Lenguaje de programación principal utilizado para el desarrollo del backend y lógica de negocio."
+        },
+        {
+            "icon": "fa-regular fa-object-group",
+            "title": "Flet",
+            "desc": "Framework moderno para crear aplicaciones de escritorio con interfaz web-like usando Python."
+        },
+        {
+            "icon": "fas fa-database",
+            "title": "SQLite",
+            "desc": "Base de datos ligera y eficiente para almacenar toda la información del sistema."
+        },
+        {
+            "icon": "fas fa-globe",
+            "title": "Requests",
+            "desc": "Librería para consumir APIs externas y obtener tasas de cambio en tiempo real."
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/img/ventasentreprise/dashboard.webp",
+            "alt": "Dashboard Principal",
+            "title": "Dashboard Principal",
+            "desc": "Vista general del sistema con estadísticas y navegación intuitiva."
+        },
+        {
+            "src": "assets/img/ventasentreprise/productos.webp",
+            "alt": "Gestión de Productos",
+            "title": "Gestión de Productos",
+            "desc": "Interfaz para agregar, editar y eliminar productos del inventario."
+        },
+        {
+            "src": "assets/img/ventasentreprise/ventas.webp",
+            "alt": "Módulo de Ventas",
+            "title": "Módulo de Ventas",
+            "desc": "Procesamiento eficiente de ventas con carrito de compras integrado."
+        },
+        {
+            "src": "assets/img/ventasentreprise/reportes.webp",
+            "alt": "Reportes y Analytics",
+            "title": "Reportes y Analytics",
+            "desc": "Análisis detallado de ventas, productos más vendidos y tendencias."
+        }
+    ]
+}

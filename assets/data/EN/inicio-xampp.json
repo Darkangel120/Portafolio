@@ -1,0 +1,78 @@
+{
+    "title": "Inicio-XAMPP",
+    "about": [
+        "Inicio-XAMPP is a visual and modern dashboard to manage local projects when changing the `htdocs` path in XAMPP. It replaces Apache's basic listing with an attractive and functional interface.",
+        "The system automatically lists all project folders, showing useful information such as size, update date, and status, and allows direct navigation to projects with start files.",
+        "Developed with PHP and JavaScript, it offers a smooth user experience with a dark theme inspired by GitHub, smooth design and animations that adapt to different screen sizes.",
+        "Ideal for developers using XAMPP to manage multiple local projects, eliminating the need to remember paths and providing an organized view of all work."
+    ],
+    "features": [
+        {
+            "icon": "fas fa-list",
+            "text": "Automatic Project Listing"
+        },
+        {
+            "icon": "fas fa-search",
+            "text": "Instant Search"
+        },
+        {
+            "icon": "fas fa-info-circle",
+            "text": "Detailed Information"
+        },
+        {
+            "icon": "fas fa-external-link-alt",
+            "text": "Direct Navigation"
+        },
+        {
+            "icon": "fas fa-chart-bar",
+            "text": "Server Statistics"
+        },
+        {
+            "icon": "fas fa-file-alt",
+            "text": "File Selector"
+        }
+    ],
+    "tech": [
+        {
+            "icon": "fab fa-php",
+            "title": "PHP",
+            "desc": "Main server language used to dynamically generate the project list and calculate statistics."
+        },
+        {
+            "icon": "fab fa-js-square",
+            "title": "JavaScript",
+            "desc": "Modern framework for client-side interactivity, real-time search, and animations."
+        },
+        {
+            "icon": "fab fa-css3-alt",
+            "title": "CSS3",
+            "desc": "Stylesheets for design, dark theme, and smooth animations."
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/img/inicio-xampp/inicio.webp",
+            "alt": "Main Dashboard",
+            "title": "Home",
+            "desc": "Overview with project list and statistics."
+        },
+        {
+            "src": "assets/img/inicio-xampp/busqueda.webp",
+            "alt": "Project Search",
+            "title": "Project Search",
+            "desc": "Search interface to find projects quickly."
+        },
+        {
+            "src": "assets/img/inicio-xampp/detalles.webp",
+            "alt": "Project Information",
+            "title": "Project Information",
+            "desc": "Details of each project including size and update date."
+        },
+        {
+            "src": "assets/img/inicio-xampp/seleccion.webp",
+            "alt": "File Selection",
+            "title": "File Selection",
+            "desc": "Shows available files in the project in case the main file is not index.html."
+        }
+    ]
+}

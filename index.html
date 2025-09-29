@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portafolio profesional de Oswaldo Gómez, Desarrollador Front-End Jr. Especializado en desarrollo web y aplicaciones accesibles con tecnologías como Python, HTML, CSS, JavaScript y más.">
+    <meta name="keywords" content="desarrollador web, front-end, Oswaldo Gómez, Python, HTML, CSS, JavaScript, Flask, Flet, MySQL, portafolio, desarrollo accesible">
+    <meta name="author" content="Oswaldo Gómez">
     <title>Portafolio de Oswaldo Gómez</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/portfolio.css" />
+    <link rel="stylesheet" href="assets/css/modals.css" />
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -17,332 +20,27 @@
         <nav class="navbar">
             <div class="logo"><img src="assets/img/logo.png" alt="logo">Darkangel120</div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#hero">Inicio</a></li>
-                <li><a href="#about">Sobre mí</a></li>
-                <li><a href="#skills">Habilidades</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <!-- <li><a href="#clients">Clientes</a></li> -->
-                <li><a href="#testimonials">Testimonios</a></li>
-                <li><a href="#experience">Experiencia</a></li>
-                <li><a href="#contact">Contacto</a></li>
             </ul>
             <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
         </nav>
+        <div class="language-switcher">
+            <button id="lang-es" class="lang-btn active">ES</button>
+            <button id="lang-en" class="lang-btn">EN</button>
+        </div>
     </header>
 
     <main>
-        <section id="hero" class="hero">
-            <div class="hero-content">
-                <img src="assets/img/foto.webp" alt="Foto de Oswaldo Gómez" class="hero-photo">
-                <div class="hero-text">
-                    <h1>Hola, soy Oswaldo Gómez</h1>
-                    <p class="hero-subtitle">@Darkangel120</p>
-                    <p class="hero-description"> <span id="typed-text" class="typed-text"></span> <br>Apasionado por
-                        hacer la tecnología accesible y crear experiencias innovadoras.</p>
-                    <a href="#about" class="cta-button">Más Sobre Mí</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section about">
-            <h2><i class="fas fa-user"></i> Sobre mí</h2>
-            <ul>
-                <li>
-                    <i class="fas fa-user-graduate"></i>
-                    <p>Soy estudiante de Ingeniería en Sistemas, apasionado por la tecnología accesible. Desde 2024, me
-                        he dedicado al desarrollo tanto web como de aplicaciones de escritorio, siempre buscando crear
-                        soluciones intuitivas y fáciles de usar para personas de todos los niveles de experiencia
-                        tecnológica.</p>
-                </li>
-                <li>
-                    <i class="fas fa-code"></i>
-                    <p>Mi especialidad es el desarrollo front-end, donde fusiono creatividad y funcionalidad para
-                        diseñar interfaces modernas. Domino tecnologías para desarrollo web y aplicaciones de
-                        escritorio, lo que me permite abordar proyectos desde diversas perspectivas y seleccionar la
-                        herramienta más adecuada para cada necesidad.</p>
-                </li>
-                <li>
-                    <i class="fas fa-lightbulb"></i>
-                    <p>Me apasionan los proyectos que impactan directamente en la vida de las personas, especialmente
-                        aquellos con dificultades para acceder a la tecnología. Creo firmemente que la innovación debe
-                        ser inclusiva, por lo que me esfuerzo en crear aplicaciones accesibles para todo público, con
-                        diseños limpios y experiencias de usuario excepcionales.</p>
-                </li>
-                <li>
-                    <i class="fas fa-book-open"></i>
-                    <p>Además de mi formación académica, he completado cursos especializados en Programación Orientada a
-                        Objetos, Diseño Web y PHP, lo que me ha brindado una base sólida tanto en desarrollo web como en
-                        aplicaciones de escritorio. Normalmente trabajo de forma independiente, aunque también tengo
-                        experiencia colaborando en equipos multidisciplinarios.</p>
-                </li>
-                <li>
-                    <i class="fas fa-music"></i>
-                    <p>Fuera del ámbito del desarrollo, disfruto de la música, los videojuegos y el anime, actividades
-                        que me inspiran creativamente y me conectan con diversas formas de expresión artística. Esta
-                        diversidad de intereses enriquece mi visión holística del diseño y la tecnología.</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="skills" class="section skills">
-            <h2><i class="fas fa-cog"></i> Habilidades Técnicas</h2>
-            <div class="skill-subsection">
-                <h4><i class="fas fa-laptop-code"></i> Lenguajes de Programación &amp; Desarrollo Web</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fab fa-python skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Python</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-html5 skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>HTML5</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-css3-alt skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>CSS3</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-js-square skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>JavaScript</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-java skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Java</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <svg class="skill-icon" viewBox="0 0 24 24">
-                            <text x="12" y="15" text-anchor="middle" font-size="15" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">C#</text>
-                        </svg>
-                        <div class="skill-info">
-                            <h5>C#</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-php skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>PHP</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆☆</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4><i class="fas fa-rocket"></i> Frameworks & Librerías</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-flask skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Flask</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span>☆☆☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-object-group skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Flet</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span>☆☆☆☆</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4><i class="fas fa-database"></i> Bases de Datos</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fas fa-database skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>MySQL</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-database skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>SQLite</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fas fa-database skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>SQL</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4><i class="fas fa-tools"></i> Herramientas de Desarrollo</h4>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <i class="fab fa-git-alt skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>Git</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆☆</div>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <i class="fab fa-github skill-icon"></i>
-                        <div class="skill-info">
-                            <h5>GitHub</h5>
-                            <div class="stars"><span class="filled"><i class="fas fa-star"></i></span><span class="filled"><i class="fas fa-star"></i></span>☆☆☆</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="skills-legend">
-                <p style="text-align: left;"><strong>Leyenda <i class="fas fa-star"></i>: </strong></p>
-                <p style="text-align: center;">Básico: 1-2 <i class="fas fa-star"></i> | Intermedio: 3 <i class="fas fa-star"></i> | Avanzado: 4-5 <i class="fas fa-star"></i></p>
-            </div>
-        </section>
-
-        <section id="projects" class="section projects">
-            <h2><i class="fas fa-folder-open"></i> Proyectos Destacados</h2>
-            <div class="projects-slider">
-                <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="projects-wrapper">
-                    <div class="project-card active">
-                        <h3>Inicio Xampp</h3>
-                        <p>Interfaz interactiva para XAMPP que facilita el cambio de la ubicación raíz de los proyectos,
-                            mejorando la experiencia de desarrollo.</p>
-                        <a href="projects/inicio-xampp.html" target="_blank" class="project-link">Ver proyecto <i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
-                    <div class="project-card">
-                        <h3>Ventas Entreprise</h3>
-                        <p>Aplicación completa para la venta, administración y gestión de inventarios, diseñada para
-                            optimizar procesos comerciales.</p>
-                        <a href="projects/ventasentreprise.html" target="_blank" class="project-link">Ver proyecto <i
-                                class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-                <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-                <div class="slider-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección de Clientes comentada para futuros clientes -->
-        <!--
-        <section id="clients" class="section clients">
-            <h2><i class="fa-solid fa-users"></i>Clientes</h2>
-            <div class="clients-grid">
-                <div class="client-card">
-                    <h3>Nombre del Cliente</h3>
-                    <p>Descripción del trabajo realizado para el cliente.</p>
-                </div>
-            </div>
-        </section>
-        -->
-
-
-        <section id="testimonials" class="section testimonials">
-            <h2><i class="fas fa-comments"></i> Testimonios</h2>
-            <div class="testimonials-slider">
-                <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="testimonials-wrapper">
-                    <div class="testimonial-card active">
-                        <h3>Yajaira Hermoso</h3>
-                        <p class="testimonial-role">Mgtr. en Ciencias Económicas y Sociales</p>
-                        <p>"Trabajar con Oswaldo fue una experiencia excelente. Su asesoría personalizada me ayudó a
-                            optimizar el manejo de mis sistemas de contabilidad y nómina, mejorando significativamente
-                            la eficiencia y precisión en mis procesos administrativos."</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <h3>Yelitza Marcano</h3>
-                        <p class="testimonial-role">Lcda. en Administración y Gestión Municipal / Emprendedora</p>
-                        <p>"Confío plenamente en Oswaldo para desarrollar aplicaciones a medida. La aplicación que creó
-                            para mi negocio facilitó enormemente la venta y gestión de inventarios, adaptada
-                            perfectamente a mis necesidades específicas."</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <h3>Rebeca Suniaga</h3>
-                        <p class="testimonial-role">Lcda. en Turismo</p>
-                        <p>"Estoy encantada con el portafolio web que Oswaldo diseñó y desarrolló para mí. Logró una
-                            presencia digital elegante y funcional que refleja perfectamente mi profesionalismo y estilo
-                            único."</p>
-                    </div>
-                </div>
-                <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-                <div class="slider-dots">
-                    <span class="dot active" data-index="0"></span>
-                    <span class="dot" data-index="1"></span>
-                    <span class="dot" data-index="2"></span>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="section experience">
-            <h2><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
-            <div class="experience-item">
-                <h3>Desarrollador Independiente</h3>
-                <p class="experience-period">2024 - Presente</p>
-                <ul>
-                    <li>
-                        <p>Trabajo en proyectos personales y para clientes independientes, desarrollando aplicaciones
-                            web a medida y entregando soluciones funcionales y escalables.</p>
-                    </li>
-                    <li>
-                        <p>Asesoro a personas en el manejo de múltiples sistemas, ya sea que no hayan recibido
-                            capacitación o que se les dificulte algún aspecto de dichos sistemas.</p>
-                    </li>
-                    <li>
-                        <p>Además, ayudo a personas a implementar sistemas personalizados, explicándoles conceptos
-                            técnicos de manera accesible y sencilla, facilitando así el acceso a la tecnología.</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="contact" class="section contact">
-            <h2><i class="fas fa-envelope"></i> Contacto</h2>
-            <p class="contact-description">Estoy disponible para nuevos proyectos. Contáctame a través de cualquiera de
-                estos medios:</p>
-            <div class="contact-links">
-                <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                    <span>Enviar Email</span>
-                </a>
-                <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link"
-                    target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://www.instagram.com/dark_angel_1200?igsh=cXp0OHBudGtwdmdp"
-                    class="contact-link instagram-link" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
-            </div>
-        </section>
+        <!-- Contenido dinámico se cargará aquí -->
     </main>
 
+    <!-- Project Modal General -->
+
     <footer>
-        <p>© 2025 Darkangel120. Todos los derechos reservados.</p>
+        <!-- Contenido dinámico se cargará aquí -->
     </footer>
 
+    <script src="assets/js/dataLoader.js"></script>
+    <script src="assets/js/modals.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

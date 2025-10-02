@@ -279,7 +279,7 @@ async function loadLanguage(lang) {
                 `;
                 aboutSection.innerHTML = aboutHTML;
             }
-        }, 1000);
+        }, 2000);
     }
 
     // Skills section
@@ -362,7 +362,7 @@ async function loadLanguage(lang) {
                 `;
                 skillsSection.innerHTML = skillsHTML;
             }
-        }, 1000);
+        }, 2000);
     }
 
     // Projects section
@@ -380,7 +380,7 @@ async function loadLanguage(lang) {
             }
             projectsWrapper.innerHTML = generateProjectCardsHTML(t.projects);
             initializeSliders();
-        }, 1000);
+        }, 2000);
     }
 
     // Testimonials section
@@ -398,7 +398,7 @@ async function loadLanguage(lang) {
             }
             testimonialsWrapper.innerHTML = generateTestimonialCardsHTML(t.testimonials);
             initializeSliders();
-        }, 1000);
+        }, 2000);
     }
 
     initializeSliders();
@@ -451,7 +451,7 @@ async function loadLanguage(lang) {
                 `;
                 experienceSection.innerHTML = experienceHTML;
             }
-        }, 1000);
+        }, 2000);
     }
 
     // Contact section
@@ -495,7 +495,7 @@ async function loadLanguage(lang) {
                 `;
                 contactSection.innerHTML = contactHTML;
             }
-        }, 1000);
+        }, 2000);
     }
 
     // General section (footer)

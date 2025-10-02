@@ -1,5 +1,6 @@
 {
     "title": "VentaEnterprise",
+    "logo": "assets/img/ventasentreprise/ventasentreprise-logo.png",
     "about": [
         "VentaEnterprise is a desktop application developed in Python that facilitates comprehensive sales and inventory management for businesses. With an intuitive and modern interface, it allows managing products, processing sales, generating invoices, and obtaining detailed reports efficiently.",
         "The system includes advanced functionalities such as real-time stock control, integration with exchange rates, product catalog management, and a complete reporting module that helps entrepreneurs make informed decisions based on accurate data.",

@@ -1,5 +1,6 @@
 {
     "title": "Inicio-XAMPP",
+    "logo": "assets/img/inicio-xampp/inicio-xampp-logo.png",
     "about": [
         "Inicio-XAMPP is a visual and modern dashboard to manage local projects when changing the `htdocs` path in XAMPP. It replaces Apache's basic listing with an attractive and functional interface.",
         "The system automatically lists all project folders, showing useful information such as size, update date, and status, and allows direct navigation to projects with start files.",

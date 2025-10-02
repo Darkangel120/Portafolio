@@ -1,5 +1,6 @@
 {
     "title": "Inicio-XAMPP",
+    "logo": "assets/img/inicio-xampp/inicio-xampp-logo.png",
     "about": [
         "Inicio-XAMPP es un dashboard visual y moderno para gestionar proyectos locales cuando se cambia la ruta de `htdocs` en XAMPP. Reemplaza el listado básico de Apache con una interfaz atractiva y funcional.",
         "El sistema lista automáticamente todas las carpetas de proyectos, mostrando información útil como tamaño, fecha de actualización y estado, y permite navegación directa a proyectos con archivos de inicio.",

@@ -300,9 +300,8 @@
 }
 
 .image-modal-content img {
-    width: 1000px;
     height: auto;
-    max-width: 100%;
+    max-width: 200%;
     max-height: 100%;
     object-fit: contain;
     border-radius: 10px;

@@ -46,6 +46,122 @@ async function loadTranslations(lang) {
 
 
 
+// Función para generar skeletons de proyectos
+function generateProjectSkeletonsHTML(count = 3) {
+    return Array(count).fill().map(() => `
+        <div class="skeleton-project-card">
+            <div class="skeleton skeleton-project-image"></div>
+            <div class="skeleton skeleton-project-title"></div>
+            <div class="skeleton skeleton-project-description"></div>
+            <div class="skeleton skeleton-project-description"></div>
+            <div class="skeleton skeleton-project-button"></div>
+        </div>
+    `).join('');
+}
+
+// Función para generar skeletons de testimonios
+function generateTestimonialSkeletonsHTML(count = 3) {
+    return Array(count).fill().map(() => `
+        <div class="skeleton-testimonial-card">
+            <div class="skeleton skeleton-testimonial-name"></div>
+            <div class="skeleton skeleton-testimonial-role"></div>
+            <div class="skeleton skeleton-testimonial-text"></div>
+            <div class="skeleton skeleton-testimonial-text"></div>
+            <div class="skeleton skeleton-testimonial-text"></div>
+        </div>
+    `).join('');
+}
+
+// Función para generar skeletons de habilidades
+function generateSkillsSkeletonsHTML() {
+    const subsections = ['programming', 'frameworks', 'databases', 'tools'];
+    return subsections.map(subsection => `
+        <div class="skill-subsection">
+            <h4><i class="fas fa-tools"></i> <div class="skeleton" style="height: 1.6rem; width: 200px; display: inline-block;"></div></h4>
+            <div class="skills-grid">
+                ${Array(4).fill().map(() => `
+                    <div class="skeleton-skill-card">
+                        <div class="skeleton skeleton-skill-icon"></div>
+                        <div class="skeleton-skill-info">
+                            <div class="skeleton skeleton-skill-name"></div>
+                            <div class="skeleton skeleton-skill-progress"></div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `).join('');
+}
+
+// Función para generar skeletons de about
+function generateAboutSkeletonsHTML(count = 5) {
+    return `
+        <div class="about-grid">
+            ${Array(count).fill().map(() => `
+                <div class="skeleton-about-card">
+                    <div class="skeleton skeleton-about-icon"></div>
+                    <div class="skeleton skeleton-about-text"></div>
+                    <div class="skeleton skeleton-about-text"></div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+// Función para generar skeletons de experiencia
+function generateExperienceSkeletonsHTML() {
+    return `
+        <div class="experience-timeline">
+            <div class="skeleton-experience-card">
+                <div class="skeleton-experience-header">
+                    <div class="skeleton skeleton-experience-icon"></div>
+                    <div class="skeleton-experience-info">
+                        <div class="skeleton skeleton-experience-title"></div>
+                        <div class="skeleton skeleton-experience-period"></div>
+                    </div>
+                </div>
+                <div class="skeleton-experience-content">
+                    <div class="skeleton skeleton-experience-description"></div>
+                    <div class="skeleton skeleton-experience-description"></div>
+                    <div class="skeleton skeleton-experience-highlight"></div>
+                    <div class="skeleton skeleton-experience-highlight"></div>
+                    <div class="skeleton skeleton-experience-highlight"></div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+
+
+// Función para generar skeletons de contacto
+function generateContactSkeletonsHTML() {
+    return `
+        <p class="contact-description"><div class="skeleton" style="height: 1.2rem; width: 80%; margin: 0 auto;"></div></p>
+        <div class="skeleton-contact-container">
+            <div class="skeleton-contact-links-container">
+                <div class="skeleton skeleton-contact-title"></div>
+                <div class="skeleton-contact-link">
+                    <div class="skeleton skeleton-contact-icon"></div>
+                    <div class="skeleton skeleton-contact-text"></div>
+                </div>
+                <div class="skeleton-contact-link">
+                    <div class="skeleton skeleton-contact-icon"></div>
+                    <div class="skeleton skeleton-contact-text"></div>
+                </div>
+                <div class="skeleton-contact-link">
+                    <div class="skeleton skeleton-contact-icon"></div>
+                    <div class="skeleton skeleton-contact-text"></div>
+                </div>
+                <div class="skeleton-contact-link">
+                    <div class="skeleton skeleton-contact-icon"></div>
+                    <div class="skeleton skeleton-contact-text"></div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 // Función para generar solo las tarjetas de proyectos
 function generateProjectCardsHTML(data) {
     if (!data || data.length === 0) {
@@ -101,6 +217,14 @@ async function loadLanguage(lang) {
     currentLang = lang;
     window.currentLang = lang;
 
+    // Ocultar títulos inicialmente para mostrar solo skeletons
+    document.getElementById('about-title').style.display = 'none';
+    document.getElementById('skills-title').style.display = 'none';
+    document.getElementById('projects-title').style.display = 'none';
+    document.getElementById('testimonials-title').style.display = 'none';
+    document.getElementById('experience-title').style.display = 'none';
+    document.getElementById('contact-title').style.display = 'none';
+
     // Nav section
     const navLinks = document.getElementById('nav-links');
     if (navLinks) {
@@ -132,110 +256,149 @@ async function loadLanguage(lang) {
 
     // About section
     const aboutTitle = document.getElementById('about-title');
-    if (aboutTitle) aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
     const aboutSection = document.getElementById('about');
-    if (aboutSection && t.about) {
-        const icons = ['fas fa-user-graduate', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-book-open', 'fas fa-music'];
-        const aboutHTML = `
-            <div class="about-grid">
-                ${t.about.map((item, index) => `
-                    <div class="about-card">
-                        <i class="${icons[index] || 'fas fa-user'}"></i>
-                        <p>${item.text}</p>
+    if (aboutSection) {
+        // Mostrar skeletons primero
+        aboutSection.innerHTML = generateAboutSkeletonsHTML(t.about.length);
+
+        // Después de un pequeño delay, cargar contenido real con título
+        setTimeout(() => {
+            if (t.about && aboutTitle) {
+                aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
+                const icons = ['fas fa-user-graduate', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-book-open', 'fas fa-music'];
+                const aboutHTML = `
+                    <h2 id="about-title"><i class="fas fa-user"></i> ${t.general.sections.about}</h2>
+                    <div class="about-grid">
+                        ${t.about.map((item, index) => `
+                            <div class="about-card">
+                                <i class="${icons[index] || 'fas fa-user'}"></i>
+                                <p>${item.text}</p>
+                            </div>
+                        `).join('')}
                     </div>
-                `).join('')}
-            </div>
-        `;
-        aboutSection.insertAdjacentHTML('beforeend', aboutHTML);
+                `;
+                aboutSection.innerHTML = aboutHTML;
+            }
+        }, 1000);
     }
 
     // Skills section
     const skillsTitle = document.getElementById('skills-title');
-    if (skillsTitle) skillsTitle.innerHTML = `<i class="fas fa-tools"></i> ${t.general.sections.skills}`;
     const skillsSection = document.getElementById('skills');
-    if (skillsSection && t.skillsExtra && t.skillsExtra.skills) {
-        const skillsHTML = `
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> ${t.skills.subsections[0].title}</h4>
-                <div class="skills-grid">
-                    ${t.skillsExtra.skills.programming.map(skill => `
-                        <div class="skill-card">
-                            ${skill.icon === 'custom' ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${skill.name.includes('C#') ? '15' : '13'}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>` : `<i class="${skill.icon} skill-icon"></i>`}
-                            <div class="skill-info">
-                                <h5>${skill.name}</h5>
-                                <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                ${skill.level}%
-                            </div>
+    if (skillsSection) {
+        // Mostrar skeletons primero
+        skillsSection.innerHTML = generateSkillsSkeletonsHTML();
+
+        // Después de un pequeño delay, cargar contenido real con título
+        setTimeout(() => {
+            if (t.skillsExtra && t.skillsExtra.skills && skillsTitle) {
+                skillsTitle.style.display = 'block';
+                skillsTitle.innerHTML = `<i class="fas fa-tools"></i> ${t.general.sections.skills}`;
+                const skillsHTML = `
+                    <h2 id="skills-title"><i class="fas fa-tools"></i> ${t.general.sections.skills}</h2>
+                    <div class="skill-subsection">
+                        <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> ${t.skills.subsections[0].title}</h4>
+                        <div class="skills-grid">
+                            ${t.skillsExtra.skills.programming.map(skill => `
+                                <div class="skill-card">
+                                    ${skill.icon === 'custom' ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${skill.name.includes('C#') ? '15' : '13'}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>` : `<i class="${skill.icon} skill-icon"></i>`}
+                                    <div class="skill-info">
+                                        <h5>${skill.name}</h5>
+                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
+                                        ${skill.level}%
+                                    </div>
+                                </div>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> ${t.skills.subsections[1].title}</h4>
-                <div class="skills-grid">
-                    ${t.skillsExtra.skills.frameworks.map(skill => `
-                        <div class="skill-card">
-                            <i class="${skill.icon} skill-icon"></i>
-                            <div class="skill-info">
-                                <h5>${skill.name}</h5>
-                                <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                ${skill.level}%
-                            </div>
+                    </div>
+                    <div class="skill-subsection">
+                        <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> ${t.skills.subsections[1].title}</h4>
+                        <div class="skills-grid">
+                            ${t.skillsExtra.skills.frameworks.map(skill => `
+                                <div class="skill-card">
+                                    <i class="${skill.icon} skill-icon"></i>
+                                    <div class="skill-info">
+                                        <h5>${skill.name}</h5>
+                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
+                                        ${skill.level}%
+                                    </div>
+                                </div>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> ${t.skills.subsections[2].title}</h4>
-                <div class="skills-grid">
-                    ${t.skillsExtra.skills.databases.map(skill => `
-                        <div class="skill-card">
-                            <i class="${skill.icon} skill-icon"></i>
-                            <div class="skill-info">
-                                <h5>${skill.name}</h5>
-                                <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                ${skill.level}%
-                            </div>
+                    </div>
+                    <div class="skill-subsection">
+                        <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> ${t.skills.subsections[2].title}</h4>
+                        <div class="skills-grid">
+                            ${t.skillsExtra.skills.databases.map(skill => `
+                                <div class="skill-card">
+                                    <i class="${skill.icon} skill-icon"></i>
+                                    <div class="skill-info">
+                                        <h5>${skill.name}</h5>
+                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
+                                        ${skill.level}%
+                                    </div>
+                                </div>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="skill-subsection">
-                <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> ${t.skills.subsections[3].title}</h4>
-                <div class="skills-grid">
-                    ${t.skillsExtra.skills.tools.map(skill => `
-                        <div class="skill-card">
-                            <i class="${skill.icon} skill-icon"></i>
-                            <div class="skill-info">
-                                <h5>${skill.name}</h5>
-                                <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                ${skill.level}%
-                            </div>
+                    </div>
+                    <div class="skill-subsection">
+                        <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> ${t.skills.subsections[3].title}</h4>
+                        <div class="skills-grid">
+                            ${t.skillsExtra.skills.tools.map(skill => `
+                                <div class="skill-card">
+                                    <i class="${skill.icon} skill-icon"></i>
+                                    <div class="skill-info">
+                                        <h5>${skill.name}</h5>
+                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
+                                        ${skill.level}%
+                                    </div>
+                                </div>
+                            `).join('')}
                         </div>
-                    `).join('')}
-                </div>
-            </div>
-            <div class="skills-legend">
-                <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
-            </div>
-        `;
-        skillsSection.insertAdjacentHTML('beforeend', skillsHTML);
+                    </div>
+                    <div class="skills-legend">
+                        <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
+                    </div>
+                `;
+                skillsSection.innerHTML = skillsHTML;
+            }
+        }, 1000);
     }
 
     // Projects section
     const projectsTitle = document.getElementById('projects-title');
-    if (projectsTitle) projectsTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${t.general.sections.projects}`;
     const projectsWrapper = document.querySelector('.projects-wrapper');
     if (projectsWrapper) {
-        projectsWrapper.innerHTML = generateProjectCardsHTML(t.projects);
+        // Mostrar skeletons primero
+        projectsWrapper.innerHTML = generateProjectSkeletonsHTML(t.projects.length || 3);
+
+        // Después de un pequeño delay, cargar contenido real con título
+        setTimeout(() => {
+            if (projectsTitle) {
+                projectsTitle.style.display = 'block';
+                projectsTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${t.general.sections.projects}`;
+            }
+            projectsWrapper.innerHTML = generateProjectCardsHTML(t.projects);
+            initializeSliders();
+        }, 1000);
     }
 
     // Testimonials section
     const testimonialsTitle = document.getElementById('testimonials-title');
-    if (testimonialsTitle) testimonialsTitle.innerHTML = `<i class="fas fa-comments"></i> ${t.general.sections.testimonials}`;
     const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
     if (testimonialsWrapper) {
-        testimonialsWrapper.innerHTML = generateTestimonialCardsHTML(t.testimonials);
+        // Mostrar skeletons primero
+        testimonialsWrapper.innerHTML = generateTestimonialSkeletonsHTML(t.testimonials.length);
+
+        // Después de un pequeño delay, cargar contenido real con título
+        setTimeout(() => {
+            if (testimonialsTitle) {
+                testimonialsTitle.style.display = 'block';
+                testimonialsTitle.innerHTML = `<i class="fas fa-comments"></i> ${t.general.sections.testimonials}`;
+            }
+            testimonialsWrapper.innerHTML = generateTestimonialCardsHTML(t.testimonials);
+            initializeSliders();
+        }, 1000);
     }
 
     initializeSliders();
@@ -246,73 +409,93 @@ async function loadLanguage(lang) {
 
     // Experience section
     const experienceTitle = document.getElementById('experience-title');
-    if (experienceTitle) experienceTitle.innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
     const experienceSection = document.getElementById('experience');
-    if (experienceSection && t.experience && t.experience.length > 0) {
-        const exp = t.experience[0];
-        const experienceHTML = `
-            <div class="experience-timeline">
-                <div class="experience-card">
-                    <div class="experience-header">
-                        <div class="experience-icon">
-                            <i class="${exp.icon}"></i>
-                        </div>
-                        <div class="experience-info">
-                            <h3>${exp.title}</h3>
-                            <p class="experience-period">${exp.period}</p>
-                        </div>
-                    </div>
-                    <div class="experience-content">
-                        <div class="experience-description">
-                            <p>${exp.description}</p>
-                        </div>
-                        <div class="experience-highlights">
-                            ${exp.highlights.map(highlight => `
-                                <div class="highlight-item">
-                                    <i class="fas fa-check-circle"></i>
-                                    <span>${highlight}</span>
+    if (experienceSection) {
+        // Mostrar skeletons primero
+        experienceSection.innerHTML = generateExperienceSkeletonsHTML();
+
+        // Después de un pequeño delay, cargar contenido real con título
+        setTimeout(() => {
+            if (t.experience && t.experience.length > 0 && experienceTitle) {
+                experienceTitle.style.display = 'block';
+                experienceTitle.innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
+                const exp = t.experience[0];
+                const experienceHTML = `
+                    <h2 id="experience-title"><i class="fas fa-briefcase"></i> ${t.general.sections.experience}</h2>
+                    <div class="experience-timeline">
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="experience-icon">
+                                    <i class="${exp.icon}"></i>
                                 </div>
-                            `).join('')}
+                                <div class="experience-info">
+                                    <h3>${exp.title}</h3>
+                                    <p class="experience-period">${exp.period}</p>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <div class="experience-description">
+                                    <p>${exp.description}</p>
+                                </div>
+                                <div class="experience-highlights">
+                                    ${exp.highlights.map(highlight => `
+                                        <div class="highlight-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>${highlight}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        `;
-        experienceSection.insertAdjacentHTML('beforeend', experienceHTML);
+                `;
+                experienceSection.innerHTML = experienceHTML;
+            }
+        }, 1000);
     }
 
     // Contact section
     const contactTitle = document.getElementById('contact-title');
-    if (contactTitle) contactTitle.innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
     const contactSection = document.getElementById('contact');
-    if (contactSection && t.contact) {
-        const contactHTML = `
-            <p class="contact-description">${t.contact.description}</p>
-            <div class="contact-container">
-                <div class="contact-links-container">
-                    <h3>${t.contact.direct_contact}</h3>
-                    <div class="contact-links">
-                        <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
-                            <i class="fas fa-envelope"></i>
-                            <span>${t.contact.links[0].text}</span>
-                        </a>
-                        <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>${t.contact.links[1].text}</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <span>${t.contact.links[2].text}</span>
-                        </a>
-                        <a href="https://www.instagram.com/dark_angel_1200?igsh=cXp0OHbudGtwdmdp" class="contact-link instagram-link" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                            <span>${t.contact.links[3].text}</span>
-                        </a>
+    if (contactSection) {
+        // Mostrar skeletons primero
+        contactSection.innerHTML = generateContactSkeletonsHTML();
+
+        // Después de un pequeño delay, cargar contenido real con título
+        setTimeout(() => {
+            if (t.contact && contactTitle) {
+                contactTitle.style.display = 'block';
+                contactTitle.innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
+                const contactHTML = `
+                    <h2 id="contact-title"><i class="fas fa-envelope"></i> ${t.general.sections.contact}</h2>
+                    <p class="contact-description">${t.contact.description}</p>
+                    <div class="contact-container">
+                        <div class="contact-links-container">
+                            <h3>${t.contact.direct_contact}</h3>
+                            <div class="contact-links">
+                                <a href="mailto:dark_angel_12011@hotmail.com" class="contact-link email-link" target="_blank">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>${t.contact.links[0].text}</span>
+                                </a>
+                                <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    <span>${t.contact.links[1].text}</span>
+                                </a>
+                                <a href="https://www.linkedin.com/in/oswaldo-gómez-5b6570383" class="contact-link linkedin-link" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>${t.contact.links[2].text}</span>
+                                </a>
+                                <a href="https://www.instagram.com/dark_angel_1200?igsh=cXp0OHbudGtwdmdp" class="contact-link instagram-link" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>${t.contact.links[3].text}</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        `;
-        contactSection.insertAdjacentHTML('beforeend', contactHTML);
+                `;
+                contactSection.innerHTML = contactHTML;
+            }
+        }, 1000);
     }
 
     // General section (footer)
@@ -367,15 +550,24 @@ function initializeSliders() {
         }
 
         function updateProjectsSlider() {
-            projectsWrapper.style.transform = `translateX(-${currentIndexProjects * 100}%)`;
             projectCards.forEach((card, index) => {
-                card.classList.toggle('active', index === currentIndexProjects);
+                if (index === currentIndexProjects) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
             });
             const dots = dotsContainerProjects.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndexProjects);
             });
         }
+
+        // Auto-slide para proyectos cada 8 segundos
+        setInterval(() => {
+            currentIndexProjects = (currentIndexProjects + 1) % projectCards.length;
+            updateProjectsSlider();
+        }, 6000);
     }
 
     // Inicializar slider de testimonios
@@ -419,20 +611,28 @@ function initializeSliders() {
         }
 
         function updateTestimonialsSlider() {
-            testimonialsWrapper.style.transform = `translateX(-${currentIndexTestimonials * 100}%)`;
             testimonialCards.forEach((card, index) => {
-                card.classList.toggle('active', index === currentIndexTestimonials);
+                if (index === currentIndexTestimonials) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
             });
             const dots = dotsContainerTestimonials.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndexTestimonials);
             });
         }
+
+        // Auto-slide para testimonios cada 6 segundos
+        setInterval(() => {
+            currentIndexTestimonials = (currentIndexTestimonials + 1) % testimonialCards.length;
+            updateTestimonialsSlider();
+        }, 6000);
     }
 }
 
 // Exportar funciones si se usa módulo
 window.loadLanguage = loadLanguage;
 window.typeWriter = typeWriter;
-window.initializeSliders = initializeSliders;
 window.initializeSliders = initializeSliders;

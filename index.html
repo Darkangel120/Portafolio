@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portafolio profesional de Oswaldo Gómez, Desarrollador Front-End Jr. Especializado en desarrollo web y aplicaciones accesibles con tecnologías como Python, HTML, CSS, JavaScript y más.">
-    <meta name="keywords" content="desarrollador web, front-end, Oswaldo Gómez, Python, HTML, CSS, JavaScript, Flask, Flet, MySQL, portafolio, desarrollo accesible">
     <meta name="author" content="Oswaldo Gómez">
     <title>Portafolio de Oswaldo Gómez</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/modals.css" />
+    <link rel="stylesheet" href="assets/css/skeleton-loading.css" />
+    <link rel="stylesheet" href="assets/css/music-player.css" />
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,6 +36,18 @@
             </div>
         </div>
     </header>
+
+    <!-- Música de fondo del menú -->
+    
+    <!-- Botón del reproductor de música -->
+    <button id="music-player-btn" class="music-player-btn" aria-label="Reproductor de música">
+        <i class="fas fa-music"></i>
+    </button>
+
+    <!-- Lista de reproducción -->
+    <div id="music-playlist" class="music-playlist">
+        <ul id="playlist-ul"></ul>
+    </div>
 
     <main>
         <!-- Sección principal del portafolio -->
@@ -140,6 +152,8 @@
     <script src="assets/js/dataLoader.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/modals.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="assets/js/music-player.js"></script>
 </body>
 
 </html>

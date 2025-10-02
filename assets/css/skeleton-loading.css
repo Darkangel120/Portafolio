@@ -1,0 +1,327 @@
+/* Animaciones de Carga Esquelética (Skeleton Loading) */
+
+/* Animación base de skeleton */
+@keyframes skeleton-loading {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+/* Clase base para elementos skeleton */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+/* Skeleton para tarjetas de proyectos */
+.skeleton-project-card {
+    min-width: 100%;
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.skeleton-project-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.skeleton-project-title {
+    height: 1.5rem;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-project-description {
+    height: 1rem;
+    width: 90%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-project-description:nth-child(2) {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-project-button {
+    height: 2.5rem;
+    width: 120px;
+    border-radius: 25px;
+    align-self: flex-start;
+}
+
+/* Skeleton para tarjetas de testimonios */
+.skeleton-testimonial-card {
+    min-width: 100%;
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.skeleton-testimonial-name {
+    height: 1.5rem;
+    width: 60%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-testimonial-role {
+    height: 1rem;
+    width: 40%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-testimonial-text {
+    height: 1rem;
+    width: 95%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-testimonial-text:nth-child(2) {
+    width: 85%;
+}
+
+.skeleton-testimonial-text:nth-child(3) {
+    width: 90%;
+}
+
+/* Skeleton para tarjetas de habilidades */
+.skeleton-skill-card {
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
+    margin-bottom: 1rem;
+}
+
+.skeleton-skill-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.skeleton-skill-info {
+    flex: 1;
+}
+
+.skeleton-skill-name {
+    height: 1.2rem;
+    width: 70%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-skill-progress {
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+/* Skeleton para tarjetas de about */
+.skeleton-about-card {
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+    text-align: center;
+    flex: 1 1 45%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-about-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+.skeleton-about-text {
+    height: 1rem;
+    width: 90%;
+    margin: 0 auto 0.5rem;
+}
+
+.skeleton-about-text:nth-child(2) {
+    width: 80%;
+}
+
+/* Skeleton para experiencia */
+.skeleton-experience-card {
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+    width: 45%;
+    margin: 2rem 0;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+.skeleton-experience-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.skeleton-experience-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.skeleton-experience-info {
+    flex: 1;
+}
+
+.skeleton-experience-title {
+    height: 1.3rem;
+    width: 60%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-experience-period {
+    height: 1rem;
+    width: 40%;
+}
+
+.skeleton-experience-content {
+    margin-top: 1rem;
+}
+
+.skeleton-experience-description {
+    height: 1rem;
+    width: 95%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-experience-description:nth-child(2) {
+    width: 85%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-experience-highlight {
+    height: 1rem;
+    width: 80%;
+    margin-bottom: 0.5rem;
+}
+
+/* Skeleton para contacto */
+.skeleton-contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(138, 43, 226, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(138, 43, 226, 0.1);
+}
+
+.skeleton-contact-links-container {
+    width: 100%;
+    background: rgba(138, 43, 226, 0.1);
+    border-radius: 15px;
+    padding: 3rem 2rem;
+    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
+}
+
+.skeleton-contact-title {
+    height: 1.8rem;
+    width: 50%;
+    margin: 0 auto 2rem;
+}
+
+.skeleton-contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 1rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(138, 43, 226, 0.1) 100%);
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.skeleton-contact-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.skeleton-contact-text {
+    height: 1.1rem;
+    width: 30%;
+}
+
+/* Responsive para skeletons */
+@media (max-width: 768px) {
+    .skeleton-project-card,
+    .skeleton-testimonial-card {
+        padding: 1.5rem;
+        min-height: 180px;
+    }
+
+    .skeleton-project-image {
+        height: 200px;
+    }
+
+    .skeleton-skill-card {
+        padding: 0.8rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skeleton-about-card {
+        padding: 1.5rem;
+    }
+
+    .skeleton-experience-card {
+        width: calc(100% - 40px);
+        margin-left: 40px;
+        padding: 1.5rem;
+    }
+
+    .skeleton-contact-links-container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skeleton-project-card {
+        padding: 1rem;
+        min-height: 150px;
+    }
+
+    .skeleton-project-image {
+        height: 150px;
+    }
+
+    .skeleton-testimonial-card {
+        padding: 1rem;
+    }
+}
+
+/* Clase para ocultar skeletons */
+.skeleton-hidden {
+    display: none !important;
+}

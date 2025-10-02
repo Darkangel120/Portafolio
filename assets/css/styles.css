@@ -544,7 +544,7 @@ footer {
 /* Resaltado de la Sección Acerca de */
 .about {
     border-radius: 15px;
-    padding: 1rem;
+    padding: 4rem 3rem;
     transition: box-shadow 0.3s ease;
 }
 
@@ -650,6 +650,16 @@ footer:hover::before {
 .hero-text {
     text-align: center;
 }
+
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-card {
+    padding: 1.5rem;
+}
 }
 
 @media (max-width: 480px) {
@@ -679,6 +689,41 @@ footer:hover::before {
         min-width: 120px;
         padding: 1.5rem;
     }
+
+    .project-card {
+        padding: 1rem;
+        min-height: 150px;
+    }
+
+    .project-card img {
+        height: 150px;
+    }
+
+    .project-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    .testimonial-card {
+        padding: 1rem;
+    }
+
+    .testimonial-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .testimonial-card .testimonial-role {
+        font-size: 0.8rem;
+    }
+
+    .testimonial-card p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
 }
 
 /* Tablet Media Query */
@@ -704,7 +749,9 @@ footer:hover::before {
     }
 
     .about-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 1.5rem;
     }
 
@@ -745,23 +792,56 @@ footer:hover::before {
     box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
     transition: all 0.4s ease;
     transform: scale(0.9);
+    opacity: 0;
     text-align: center;
     cursor: pointer;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    display: none;
 }
 
 .project-card.active {
     opacity: 1;
     transform: scale(1);
+    display: block;
 }
 
 @media (max-width: 768px) {
     .project-card {
         padding: 1.5rem;
         min-height: 180px;
+    }
+
+    .project-card img {
+        height: 200px;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-card p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .testimonial-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .testimonial-card .testimonial-role {
+        font-size: 0.9rem;
+    }
+
+    .testimonial-card p {
+        font-size: 1rem;
+        line-height: 1.5;
     }
 }
 
@@ -826,11 +906,14 @@ footer:hover::before {
     box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
     transition: all 0.4s ease;
     transform: scale(0.9);
+    opacity: 0;
+    display: none;
 }
 
 .testimonial-card.active {
     opacity: 1;
     transform: scale(1);
+    display: block;
 }
 
 .testimonial-card h3 {
@@ -1223,8 +1306,9 @@ svg {
 
 /* Cuadrícula Acerca de */
 .about-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -1236,6 +1320,7 @@ svg {
     box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
     transition: all 0.4s ease;
     text-align: center;
+    flex: 1 1 45%;
 }
 
 .about-card:hover {

@@ -11,42 +11,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-/**
- * EFECTO DE MÁQUINA DE ESCRIBIR: Implementa un efecto de escritura y borrado automático
- * en el elemento #typed-text. Escribe el texto carácter por carácter, pausa 3 segundos,
- * luego borra carácter por carácter, y repite el ciclo. Velocidad de escritura: 100ms,
- * velocidad de borrado: 50ms.
- * @param {string} text - El texto a escribir y borrar
- */
-function typeWriter(text) {
-    const typedTextElement = document.getElementById('typed-text');
-    let index = 0;
-    let isDeleting = false;
-
-    function type() {
-        if (!isDeleting) {
-            typedTextElement.textContent = text.substring(0, index + 1);
-            index++;
-            if (index === text.length) {
-                isDeleting = true;
-                setTimeout(type, 3000);
-                return;
-            }
-        } else {
-            typedTextElement.textContent = text.substring(0, index);
-            index--;
-            if (index === 0) {
-                isDeleting = false;
-                setTimeout(type, 500);
-                return;
-            }
-        }
-        setTimeout(type, isDeleting ? 50 : 100);
-    }
-
-    type();
-}
-
 function setActiveLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -69,9 +33,6 @@ function setActiveLink() {
 }
 
 window.addEventListener('scroll', setActiveLink);
-
-
-
 
 // Función para reinicializar la animación de sliders después de actualizar el DOM
 function resetSlidersAnimation() {

@@ -4,8 +4,17 @@ audioPlayer.controls = false;
 audioPlayer.autoplay = false;
 document.body.appendChild(audioPlayer);
 
+// Eventos de audio globales
+audioPlayer.addEventListener('timeupdate', updateProgress);
+audioPlayer.addEventListener('loadedmetadata', () => {
+    const pb = document.querySelector('.progress-bar');
+    if (pb) pb.max = audioPlayer.duration;
+});
+audioPlayer.addEventListener('ended', playNextTrack);
+
 let isPlaying = false;
 let currentTrackIndex = 0;
+let progressBar;
 
 // Lista de pistas con rutas locales
 const tracks = [
@@ -37,12 +46,12 @@ function initPlaylist() {
     // Crear barra de progreso
     const progressDiv = document.createElement('div');
     progressDiv.classList.add('progress-container');
-    const progressBar = document.createElement('input');
+    progressBar = document.createElement('input');
     progressBar.type = 'range';
     progressBar.classList.add('progress-bar');
     progressBar.min = '0';
-    progressBar.max = '100';
-    progressBar.value = '0';
+    progressBar.max = audioPlayer.duration || 100;
+    progressBar.value = audioPlayer.currentTime || 0;
     progressBar.addEventListener('input', seekTo);
     progressDiv.appendChild(progressBar);
     playlistUl.appendChild(progressDiv);
@@ -103,13 +112,6 @@ function initPlaylist() {
         li.addEventListener('click', () => playTrack(index));
         playlistUl.appendChild(li);
     });
-
-    // Eventos de audio
-    audioPlayer.addEventListener('timeupdate', updateProgress);
-    audioPlayer.addEventListener('loadedmetadata', () => {
-        progressBar.max = audioPlayer.duration;
-    });
-    audioPlayer.addEventListener('ended', playNextTrack);
 }
 
 function playTrack(index) {
@@ -212,16 +214,14 @@ function updateCurrentSongName() {
 }
 
 function updateProgress() {
-    const progressBar = playlistUl.querySelector('.progress-bar');
     if (progressBar && audioPlayer.duration) {
-        progressBar.value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.value = audioPlayer.currentTime;
     }
 }
 
 function seekTo() {
-    const progressBar = playlistUl.querySelector('.progress-bar');
     if (progressBar && audioPlayer.duration) {
-        audioPlayer.currentTime = (progressBar.value / 100) * audioPlayer.duration;
+        audioPlayer.currentTime = progressBar.value;
     }
 }
 

@@ -18,9 +18,12 @@ let progressBar;
 
 // Lista de pistas con rutas locales
 const tracks = [
-    { name: 'Robin Thicke - Blurred lines ft. Pharrell', src: 'assets/audio/Robin Thicke - Blurred lines ft. Pharrell.MP3' },
-    { name: 'Skillet - Monster', src: 'assets/audio/Skillet - Monster.mp3' },
+    { name: 'Alexandra Stan - Mr.Saxobeat', src: 'assets/audio/Alexandra Stan - Mr.Saxobeat.mp3' },
     { name: 'Måneskin - GOSSIP ft. Tom Morello', src: 'assets/audio/Måneskin - GOSSIP ft. Tom Morello.mp3' },
+    { name: 'Robin Thicke - Blurred lines ft. Pharrell', src: 'assets/audio/Robin Thicke - Blurred lines ft. Pharrell.MP3' },
+    { name: 'Set It Off - Wolf in Sheeps Clothing Reborn', src: 'assets/audio/Set It Off - Wolf in Sheeps Clothing Reborn.mp3' },
+    { name: 'Skillet - Monster', src: 'assets/audio/Skillet - Monster.mp3' },
+    
     // Agrega más canciones aquí
 ];
 
@@ -137,11 +140,14 @@ function playTrack(index) {
 }
 
 function togglePlayPause() {
+    if (!audioPlayer.src) {
+        audioPlayer.src = tracks[currentTrackIndex].src;
+    }
     if (isPlaying) {
         audioPlayer.pause();
         isPlaying = false;
     } else {
-        audioPlayer.play();
+        audioPlayer.play().catch(error => console.log('Error playing audio:', error));
         isPlaying = true;
     }
     updateButtonIcon();
@@ -150,7 +156,12 @@ function togglePlayPause() {
 
 function updateButtonIcon() {
     const icon = playerBtn.querySelector('i');
-    icon.className = isPlaying ? 'fas fa-pause' : 'fas fa-music';
+    icon.className = 'fas fa-music';
+    if (isPlaying) {
+        playerBtn.classList.add('playing');
+    } else {
+        playerBtn.classList.remove('playing');
+    }
 }
 
 function updatePlayPauseButtonIcon() {
@@ -183,8 +194,9 @@ function showPlaylist() {
     playlist.classList.add('show');
     playerBtn.style.display = 'none';
     initPlaylist();
-    // Cargar la canción actual sin reproducir
-    audioPlayer.src = tracks[currentTrackIndex].src;
+    if (!isPlaying) {
+        audioPlayer.src = tracks[currentTrackIndex].src;
+    }
 }
 
 function hidePlaylist() {
@@ -192,15 +204,52 @@ function hidePlaylist() {
     playerBtn.style.display = 'block';
 }
 
-// Cambiar evento del botón principal para mostrar/ocultar la lista
 playerBtn.removeEventListener('click', togglePlayPause);
-playerBtn.addEventListener('click', togglePlaylist);
+// Cambiar evento del botón principal para mostrar/ocultar la lista
+// Eliminar la pausa/reproducción al pulsar el botón principal cuando la canción está sonando
+playerBtn.addEventListener('click', () => {
+    const isVisible = playlist.classList.contains('show');
+    if (isVisible) {
+        hidePlaylist();
+    } else {
+        showPlaylist();
+    }
+});
 
 // Ocultar playlist al hacer clic fuera
 document.addEventListener('click', (event) => {
     if (!playerBtn.contains(event.target) && !playlist.contains(event.target)) {
         hidePlaylist();
     }
+});
+
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const analyser = audioCtx.createAnalyser();
+const source = audioCtx.createMediaElementSource(audioPlayer);
+source.connect(analyser);
+analyser.connect(audioCtx.destination);
+analyser.fftSize = 64;
+const bufferLength = analyser.frequencyBinCount;
+const dataArray = new Uint8Array(bufferLength);
+
+function updateEqualizerBars() {
+    analyser.getByteFrequencyData(dataArray);
+    const bars = playerBtn.querySelectorAll('.equalizer-bar');
+    bars.forEach((bar, index) => {
+        const value = dataArray[index] || 0;
+        const height = (value / 255) * 30 + 10; // Min 10px, max 40px
+        bar.style.height = height + 'px';
+    });
+    if (isPlaying) {
+        requestAnimationFrame(updateEqualizerBars);
+    }
+}
+
+audioPlayer.addEventListener('play', () => {
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+    updateEqualizerBars();
 });
 
 // Inicializar

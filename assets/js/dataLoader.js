@@ -243,6 +243,13 @@ async function loadLanguage(lang) {
                 navLinks.classList.toggle('active');
             });
         }
+        // Close menu when clicking on a nav link
+        const navLinkElements = navLinks.querySelectorAll('a');
+        navLinkElements.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     }
 
     // Hero section

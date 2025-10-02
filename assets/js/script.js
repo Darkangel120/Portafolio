@@ -1,10 +1,3 @@
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
 const navbar = document.querySelector('.navbar');
 const header = document.querySelector('header');
 

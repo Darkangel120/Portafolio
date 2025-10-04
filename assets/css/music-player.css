@@ -30,7 +30,7 @@
 }
 
 .music-player-btn i {
-    font-size: 28px;
+    font-size: 25px;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
@@ -69,12 +69,12 @@
 
 .playlist-title{
     color: #8c50c7 !important;
-    font-size: 21px !important;
+    font-size: 17px !important;
 }
 
 .music-playlist .playlist-title {
     color: #fff;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 15px;
@@ -84,7 +84,7 @@
 
 .music-playlist .current-song {
     color: #fff;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 15px;
@@ -172,7 +172,7 @@
 }
 
 .control-btn i {
-    font-size: 18px;
+    font-size: 15px;
     filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
 }
 
@@ -187,7 +187,7 @@
 
 .volume-icon {
     color: #fff;
-    font-size: 20px;
+    font-size: 17px;
     cursor: pointer;
     transition: color 0.3s ease;
 }
@@ -234,7 +234,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     border: 1px solid transparent;
 }
@@ -295,15 +295,15 @@
     }
 
     .music-player-btn i {
-        font-size: 26px;
+        font-size: 23px;
     }
 
     .music-playlist .playlist-title {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .music-playlist .current-song {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .control-btn {
@@ -312,7 +312,7 @@
     }
 
     .control-btn i {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .volume-bar {
@@ -336,15 +336,15 @@
     }
 
     .music-player-btn i {
-        font-size: 24px;
+        font-size: 21px;
     }
 
     .music-playlist .playlist-title {
-        font-size: 16px;
+        font-size: 13px;
     }
 
     .music-playlist .current-song {
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .control-btn {
@@ -353,7 +353,7 @@
     }
 
     .control-btn i {
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .volume-bar {
@@ -362,14 +362,14 @@
 
     .playlist-item {
         padding: 10px 12px;
-        font-size: 13px;
+        font-size: 10px;
     }
 }
 
 /* Footer de copyright */
 .music-footer {
     color: #aaa;
-    font-size: 12px;
+    font-size: 9px;
     text-align: center;
     margin: 10px;
 }

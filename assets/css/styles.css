@@ -6,6 +6,10 @@
     src: url('../fonts/Monocraft.ttf') format('truetype');
 }
 
+html {
+    font-size: 13px;
+}
+
 * {
     margin: 0;
     padding: 0;

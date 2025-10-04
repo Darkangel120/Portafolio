@@ -1,6 +1,5 @@
 /* Estilos principales del portafolio */
 
-
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +9,7 @@
 /* Estilos del body y animaciones globales */
 
 body {
-    font-family:'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
     color: #e0e0e0;

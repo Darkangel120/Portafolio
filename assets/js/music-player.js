@@ -15,29 +15,44 @@ audioPlayer.addEventListener('ended', playNextTrack);
 let isPlaying = false;
 let currentTrackIndex = 0;
 let progressBar;
+let tracks = [];
+let tracksLoaded = false;
 
-// Lista de pistas con rutas locales
-const tracks = [
-    { name: 'Alexandra Stan - Mr.Saxobeat', src: 'assets/audio/Alexandra Stan - Mr.Saxobeat.mp3' },
-    { name: 'Måneskin - GOSSIP ft. Tom Morello', src: 'assets/audio/Måneskin - GOSSIP ft. Tom Morello.mp3' },
-    { name: 'Robin Thicke - Blurred lines ft. Pharrell', src: 'assets/audio/Robin Thicke - Blurred lines ft. Pharrell.MP3' },
-    { name: 'Set It Off - Wolf in Sheeps Clothing Reborn', src: 'assets/audio/Set It Off - Wolf in Sheeps Clothing Reborn.mp3' },
-    { name: 'Skillet - Monster', src: 'assets/audio/Skillet - Monster.mp3' },
-    
-    // Agrega más canciones aquí
-];
+async function loadTracks() {
+    if (tracksLoaded) return;
+    try {
+        const response = await fetch('assets/data/music-tracks.json');
+        tracks = await response.json();
+        tracksLoaded = true;
+    } catch (error) {
+        console.error('Error loading tracks:', error);
+        // fallback
+        tracks = [
+            { name: 'Alexandra Stan - Mr.Saxobeat', src: 'assets/audio/Alexandra Stan - Mr.Saxobeat.mp3' },
+            { name: 'Måneskin - GOSSIP ft. Tom Morello', src: 'assets/audio/Måneskin - GOSSIP ft. Tom Morello.mp3' },
+            { name: 'Robin Thicke - Blurred lines ft. Pharrell', src: 'assets/audio/Robin Thicke - Blurred lines ft. Pharrell.MP3' },
+            { name: 'Set It Off - Wolf in Sheeps Clothing Reborn', src: 'assets/audio/Set It Off - Wolf in Sheeps Clothing Reborn.mp3' },
+            { name: 'Skillet - Monster', src: 'assets/audio/Skillet - Monster.mp3' },
+        ];
+        tracksLoaded = true;
+    }
+}
 
 const playerBtn = document.getElementById('music-player-btn');
 const playlist = document.getElementById('music-playlist');
 const playlistUl = document.getElementById('playlist-ul');
 
-function initPlaylist() {
+async function initPlaylist() {
+    await loadTracks();
     playlistUl.innerHTML = '';
+
+    const lang = window.currentLang || 'es';
+    const t = window.translations[lang].music;
 
     // Crear título del reproductor
     const titleDiv = document.createElement('div');
     titleDiv.classList.add('playlist-title');
-    titleDiv.textContent = 'Mis Gustos Musicales :)';
+    titleDiv.textContent = t.title;
     playlistUl.appendChild(titleDiv);
 
     // Crear nombre de la canción actual
@@ -65,19 +80,19 @@ function initPlaylist() {
 
     const prevBtn = document.createElement('button');
     prevBtn.classList.add('control-btn');
-    prevBtn.setAttribute('aria-label', 'Anterior');
+    prevBtn.setAttribute('aria-label', t.previous);
     prevBtn.innerHTML = '<i class="fas fa-backward"></i>';
     prevBtn.addEventListener('click', playPreviousTrack);
 
     const playPauseBtn = document.createElement('button');
     playPauseBtn.classList.add('control-btn', 'play-pause-btn');
-    playPauseBtn.setAttribute('aria-label', 'Reproducir/Pausar');
+    playPauseBtn.setAttribute('aria-label', t.playPause);
     playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
     playPauseBtn.addEventListener('click', togglePlayPause);
 
     const nextBtn = document.createElement('button');
     nextBtn.classList.add('control-btn');
-    nextBtn.setAttribute('aria-label', 'Siguiente');
+    nextBtn.setAttribute('aria-label', t.next);
     nextBtn.innerHTML = '<i class="fas fa-forward"></i>';
     nextBtn.addEventListener('click', playNextTrack);
 
@@ -103,6 +118,12 @@ function initPlaylist() {
     volumeDiv.appendChild(volumeIcon);
     volumeDiv.appendChild(volumeBar);
     playlistUl.appendChild(volumeDiv);
+
+    // Crear footer
+    const footerDiv = document.createElement('div');
+    footerDiv.classList.add('music-footer');
+    footerDiv.textContent = t.copyright;
+    playlistUl.appendChild(footerDiv);
 
     // Crear lista de canciones
     tracks.forEach((track, index) => {
@@ -190,10 +211,10 @@ function togglePlaylist() {
     }
 }
 
-function showPlaylist() {
+async function showPlaylist() {
     playlist.classList.add('show');
     playerBtn.style.display = 'none';
-    initPlaylist();
+    await initPlaylist();
     if (!isPlaying) {
         audioPlayer.src = tracks[currentTrackIndex].src;
     }

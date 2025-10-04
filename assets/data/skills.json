@@ -51,7 +51,7 @@
       {
         "name": "Flet",
         "icon": "fas fa-object-group",
-        "level": 20
+        "level": 10
       }
     ],
     "databases": [
@@ -81,6 +81,16 @@
         "name": "GitHub",
         "icon": "fab fa-github",
         "level": 40
+      },
+      {
+        "name": "Node Js",
+        "icon": "fa-brands fa-node-js",
+        "level": 10
+      },
+      {
+        "name": "Docker",
+        "icon": "fa-brands fa-docker",
+        "level": 0
       }
     ]
   }

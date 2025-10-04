@@ -47,7 +47,7 @@ function typeWriter(text) {
  */
 async function loadTranslations(lang) {
     try {
-        const [nav, hero, about, skills, projects, testimonials, experience, contact, general, skillsExtra] = await Promise.all([
+        const [nav, hero, about, skills, projects, testimonials, experience, contact, general, skillsExtra, music] = await Promise.all([
             fetch(`assets/data/${lang.toUpperCase()}/nav.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/hero.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/about.json`).then(r => r.json()),
@@ -57,7 +57,8 @@ async function loadTranslations(lang) {
             fetch(`assets/data/${lang.toUpperCase()}/experience.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/contact.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/general.json`).then(r => r.json()),
-            fetch(`assets/data/skills.json`).then(r => r.json()).catch(() => [])
+            fetch(`assets/data/skills.json`).then(r => r.json()).catch(() => []),
+            fetch(`assets/data/${lang.toUpperCase()}/music.json`).then(r => r.json())
         ]);
 
         translations[lang] = {
@@ -70,7 +71,8 @@ async function loadTranslations(lang) {
             experience,
             contact,
             general,
-            skillsExtra
+            skillsExtra,
+            music
         };
 
         return translations[lang];
@@ -337,72 +339,55 @@ async function loadLanguage(lang) {
             if (t.skillsExtra && t.skillsExtra.skills && skillsTitle) {
                 skillsTitle.style.display = 'block';
                 skillsTitle.innerHTML = `<i class="fas fa-tools"></i> ${t.general.sections.skills}`;
+
+                const learningText = window.currentLang === 'es' ? 'En proceso de aprendizaje :)' : 'In learning progress :)';
+
+                function generateSkillCard(skill) {
+                    const iconHTML = skill.icon === 'custom' ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${skill.name.includes('C#') ? '15' : '13'}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>` : `<i class="${skill.icon} skill-icon"></i>`;
+                    return `
+                        <div class="skill-card">
+                            ${iconHTML}
+                            <div class="skill-info">
+                                <h5>${skill.name}</h5>
+                                <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
+                                ${skill.level}%
+                                ${skill.level <= 10 ? `<p class="learning-note" style="font-size: 0.8rem; color: #c7c1c1ff; margin-top: 0.5rem; font-style: italic;">${learningText}</p>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+
                 const skillsHTML = `
                     <h2 id="skills-title"><i class="fas fa-tools"></i> ${t.general.sections.skills}</h2>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> ${t.skills.subsections[0].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.programming.map(skill => `
-                                <div class="skill-card">
-                                    ${skill.icon === 'custom' ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${skill.name.includes('C#') ? '15' : '13'}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>` : `<i class="${skill.icon} skill-icon"></i>`}
-                                    <div class="skill-info">
-                                        <h5>${skill.name}</h5>
-                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                        ${skill.level}%
-                                    </div>
-                                </div>
-                            `).join('')}
+                            ${t.skillsExtra.skills.programming.map(skill => generateSkillCard(skill)).join('')}
                         </div>
                     </div>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> ${t.skills.subsections[1].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.frameworks.map(skill => `
-                                <div class="skill-card">
-                                    <i class="${skill.icon} skill-icon"></i>
-                                    <div class="skill-info">
-                                        <h5>${skill.name}</h5>
-                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                        ${skill.level}%
-                                    </div>
-                                </div>
-                            `).join('')}
+                            ${t.skillsExtra.skills.frameworks.map(skill => generateSkillCard(skill)).join('')}
                         </div>
                     </div>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> ${t.skills.subsections[2].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.databases.map(skill => `
-                                <div class="skill-card">
-                                    <i class="${skill.icon} skill-icon"></i>
-                                    <div class="skill-info">
-                                        <h5>${skill.name}</h5>
-                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                        ${skill.level}%
-                                    </div>
-                                </div>
-                            `).join('')}
+                            ${t.skillsExtra.skills.databases.map(skill => generateSkillCard(skill)).join('')}
                         </div>
                     </div>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> ${t.skills.subsections[3].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.tools.map(skill => `
-                                <div class="skill-card">
-                                    <i class="${skill.icon} skill-icon"></i>
-                                    <div class="skill-info">
-                                        <h5>${skill.name}</h5>
-                                        <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                        ${skill.level}%
-                                    </div>
-                                </div>
-                            `).join('')}
+                            ${t.skillsExtra.skills.tools.map(skill => generateSkillCard(skill)).join('')}
                         </div>
                     </div>
                     <div class="skills-legend">
                         <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
                     </div>
                 `;
+
                 skillsSection.innerHTML = skillsHTML;
             }
         }, 2000);

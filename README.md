@@ -8,11 +8,12 @@ Mi portafolio incluye secciones cuidadosamente diseñadas para mostrar mi trabaj
 
 - **Hero:** Una presentación atractiva con animación de escritura que destaca mi nombre y rol
 - **Sobre Mí:** Cards animados que cuentan mi historia y pasiones
-- **Habilidades:** Barras de progreso que muestran mi nivel en diferentes tecnologías
-- **Proyectos:** Una galería de mis trabajos más destacados con modales interactivos
-- **Testimonios:** Reseñas de personas con las que he trabajado
-- **Experiencia:** Una línea de tiempo de mi trayectoria profesional
+- **Habilidades:** Barras de progreso que muestran mi nivel en diferentes tecnologías, organizadas por categorías
+- **Proyectos:** Una galería de mis trabajos más destacados con sliders y modales interactivos
+- **Testimonios:** Reseñas de personas con las que he trabajado, con slider para navegación
+- **Experiencia:** Una línea de tiempo de mi trayectoria profesional como desarrollador independiente
 - **Contacto:** Formas de comunicarte conmigo
+- **Reproductor de Música:** Un reproductor integrado con lista de reproducción personalizada para ambientar la visita
 
 ## 🚀 Tecnologías que uso
 
@@ -29,7 +30,10 @@ He creado un diseño moderno con:
 - Animaciones suaves en CSS
 - Navegación intuitiva con menú hamburguesa
 - Soporte completo para móviles, tablets y desktop
-- Modales interactivos para ver detalles de proyectos
+- Modales interactivos para ver detalles de proyectos con zoom en imágenes
+- Sliders para navegación en proyectos y testimonios
+- Carga esquelética para una experiencia de usuario fluida
+- Soporte para múltiples idiomas (Español e Inglés)
 
 ## 📞 Contacto
 
@@ -45,4 +49,4 @@ Este proyecto está bajo la Licencia MIT.
 
 ---
 
-¡Gracias por visitar mi portafolio! Espero que te guste lo que ves.
+¡Gracias por visitar mi portafolio! Espero que te guste lo que ves :D .

@@ -45,7 +45,6 @@ header {
     backdrop-filter: blur(10px);
     animation: slideDown 0.8s ease-out;
     transition: padding 0.3s ease;
-    position: sticky;
 }
 
 .language-switcher {
@@ -513,6 +512,9 @@ p {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 15px;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
 }
 
 /* Footer */
@@ -527,31 +529,11 @@ footer {
     animation: footerFadeIn 1s ease-out;
 }
 
-/* Resaltado de la Sección de Proyectos */
-.projects-slider {
-    border-radius: 15px;
-    padding: 1rem;
-    transition: box-shadow 0.3s ease;
-}
-
-/* Resaltado de la Sección de Habilidades */
-.skills-grid {
-    border-radius: 15px;
-    padding: 1rem;
-    transition: box-shadow 0.3s ease;
-}
 
 /* Resaltado de la Sección Acerca de */
 .about {
     border-radius: 15px;
     padding: 4rem 3rem;
-    transition: box-shadow 0.3s ease;
-}
-
-/* Resaltado de la Sección de Contacto */
-.contact-container {
-    border-radius: 15px;
-    padding: 1rem;
     transition: box-shadow 0.3s ease;
 }
 
@@ -777,6 +759,9 @@ footer:hover::before {
     max-width: 920px;
     margin: 0 auto;
     overflow: visible;
+    border-radius: 15px;
+    padding: 1rem;
+    transition: box-shadow 0.3s ease;
 }
 
 .projects-wrapper {
@@ -796,7 +781,6 @@ footer:hover::before {
     text-align: center;
     cursor: pointer;
     min-height: 200px;
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     display: none;
@@ -1137,9 +1121,9 @@ footer:hover::before {
 
     .experience-card {
         width: calc(100% - 40px);
-        margin-left: 40px !important;
-        margin-right: 0 !important;
         text-align: left !important;
+        padding: 1.5rem;
+        margin: 1.5rem 0 1.5rem 40px;
     }
 
     .experience-card::before {
@@ -1157,11 +1141,6 @@ footer:hover::before {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
-    }
-
-    .experience-card {
-        padding: 1.5rem;
-        margin: 1.5rem 0;
     }
 }
 
@@ -1363,6 +1342,7 @@ svg {
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(138, 43, 226, 0.1);
     animation: fadeInUp 1s ease-out;
+    transition: box-shadow 0.3s ease;
 }
 
 .contact-links-container {

@@ -126,8 +126,8 @@
         <!-- Modal para mostrar detalles de proyectos (contenido dinámico) -->
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="projectTitle"></h2>
-                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="projectTitle">Detalles del Proyecto</h2>
+                <button class="close" type="button" onclick="closeModal()" aria-label="Cerrar modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div id="projectContent" class="project-modal-content">
@@ -139,7 +139,7 @@
 
     <div id="imageModal" class="image-modal">
         <!-- Modal para mostrar imágenes ampliadas de los proyectos -->
-        <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
+        <button class="image-modal-close" type="button" onclick="closeImageModal()" aria-label="Cerrar imagen ampliada">&times;</button>
         <div class="image-modal-content">
             <div class="zoom-controls">
                 <button id="zoomIn" title="Zoom In">+</button>

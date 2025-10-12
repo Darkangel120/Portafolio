@@ -1,5 +1,0 @@
-- [x] Crear archivos de traducción para música: assets/data/EN/music.json y assets/data/ES/music.json
-- [x] Crear assets/data/music-tracks.json con la lista de pistas
-- [x] Modificar assets/js/dataLoader.js para cargar traducciones de música
-- [x] Modificar assets/js/music-player.js para usar traducciones y cargar pistas dinámicamente
-- [x] Agregar footer de copyright en el reproductor

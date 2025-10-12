@@ -263,7 +263,26 @@ async function loadLanguage(lang) {
     document.getElementById('experience-title').style.display = 'none';
     document.getElementById('contact-title').style.display = 'none';
 
-    // Nav section
+    setupNavSection(t);
+    setupHeroSection(t);
+    setupAboutSection(t);
+    setupSkillsSection(t);
+    setupProjectsSection(t);
+    setupTestimonialsSection(t);
+    setupExperienceSection(t);
+    setupContactSection(t);
+    setupFooterSection(t);
+
+    initializeSliders();
+
+    if (window.resetSlidersAnimation) {
+        window.resetSlidersAnimation();
+    }
+}
+
+// Helper functions for each section to reduce complexity
+
+function setupNavSection(t) {
     const navLinks = document.getElementById('nav-links');
     if (navLinks) {
         navLinks.innerHTML = `
@@ -289,8 +308,9 @@ async function loadLanguage(lang) {
             });
         });
     }
+}
 
-    // Hero section
+function setupHeroSection(t) {
     const heroName = document.getElementById('hero-name');
     if (heroName) heroName.textContent = t.hero.name;
     const heroDescription = document.getElementById('hero-description');
@@ -298,15 +318,13 @@ async function loadLanguage(lang) {
     const heroCta = document.getElementById('hero-cta');
     if (heroCta) heroCta.textContent = t.hero.ctaText;
     typeWriter(t.hero.role);
+}
 
-    // About section
+function setupAboutSection(t) {
     const aboutTitle = document.getElementById('about-title');
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
-        // Mostrar skeletons primero
         aboutSection.innerHTML = generateAboutSkeletonsHTML(t.about.length);
-
-        // Después de un pequeño delay, cargar contenido real con título
         setTimeout(() => {
             if (t.about && aboutTitle) {
                 aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
@@ -326,24 +344,23 @@ async function loadLanguage(lang) {
             }
         }, 2000);
     }
+}
 
-    // Skills section
+function setupSkillsSection(t) {
     const skillsTitle = document.getElementById('skills-title');
     const skillsSection = document.getElementById('skills');
     if (skillsSection) {
-        // Mostrar skeletons primero
         skillsSection.innerHTML = generateSkillsSkeletonsHTML();
-
-        // Después de un pequeño delay, cargar contenido real con título
         setTimeout(() => {
-            if (t.skillsExtra && t.skillsExtra.skills && skillsTitle) {
+            if (t.skillsExtra?.skills && skillsTitle) {
                 skillsTitle.style.display = 'block';
                 skillsTitle.innerHTML = `<i class="fas fa-tools"></i> ${t.general.sections.skills}`;
-
                 const learningText = window.currentLang === 'es' ? 'En proceso de aprendizaje :)' : 'In learning progress :)';
-
                 function generateSkillCard(skill) {
-                    const iconHTML = skill.icon === 'custom' ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${skill.name.includes('C#') ? '15' : '13'}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>` : `<i class="${skill.icon} skill-icon"></i>`;
+                    let fontSize = skill.name.includes('C#') ? '15' : '13';
+                    const iconHTML = skill.icon === 'custom'
+                        ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${fontSize}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>`
+                        : `<i class="${skill.icon} skill-icon"></i>`;
                     return `
                         <div class="skill-card">
                             ${iconHTML}
@@ -356,7 +373,6 @@ async function loadLanguage(lang) {
                         </div>
                     `;
                 }
-
                 const skillsHTML = `
                     <h2 id="skills-title"><i class="fas fa-tools"></i> ${t.general.sections.skills}</h2>
                     <div class="skill-subsection">
@@ -387,20 +403,17 @@ async function loadLanguage(lang) {
                         <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
                     </div>
                 `;
-
                 skillsSection.innerHTML = skillsHTML;
             }
         }, 2000);
     }
+}
 
-    // Projects section
+function setupProjectsSection(t) {
     const projectsTitle = document.getElementById('projects-title');
     const projectsWrapper = document.querySelector('.projects-wrapper');
     if (projectsWrapper) {
-        // Mostrar skeletons primero
         projectsWrapper.innerHTML = generateProjectSkeletonsHTML(t.projects.length || 3);
-
-        // Después de un pequeño delay, cargar contenido real con título
         setTimeout(() => {
             if (projectsTitle) {
                 projectsTitle.style.display = 'block';
@@ -410,15 +423,13 @@ async function loadLanguage(lang) {
             initializeSliders();
         }, 2000);
     }
+}
 
-    // Testimonials section
+function setupTestimonialsSection(t) {
     const testimonialsTitle = document.getElementById('testimonials-title');
     const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
     if (testimonialsWrapper) {
-        // Mostrar skeletons primero
         testimonialsWrapper.innerHTML = generateTestimonialSkeletonsHTML(t.testimonials.length);
-
-        // Después de un pequeño delay, cargar contenido real con título
         setTimeout(() => {
             if (testimonialsTitle) {
                 testimonialsTitle.style.display = 'block';
@@ -428,21 +439,13 @@ async function loadLanguage(lang) {
             initializeSliders();
         }, 2000);
     }
+}
 
-    initializeSliders();
-
-    if (window.resetSlidersAnimation) {
-        window.resetSlidersAnimation();
-    }
-
-    // Experience section
+function setupExperienceSection(t) {
     const experienceTitle = document.getElementById('experience-title');
     const experienceSection = document.getElementById('experience');
     if (experienceSection) {
-        // Mostrar skeletons primero
         experienceSection.innerHTML = generateExperienceSkeletonsHTML();
-
-        // Después de un pequeño delay, cargar contenido real con título
         setTimeout(() => {
             if (t.experience && t.experience.length > 0 && experienceTitle) {
                 experienceTitle.style.display = 'block';
@@ -481,15 +484,13 @@ async function loadLanguage(lang) {
             }
         }, 2000);
     }
+}
 
-    // Contact section
+function setupContactSection(t) {
     const contactTitle = document.getElementById('contact-title');
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-        // Mostrar skeletons primero
         contactSection.innerHTML = generateContactSkeletonsHTML();
-
-        // Después de un pequeño delay, cargar contenido real con título
         setTimeout(() => {
             if (t.contact && contactTitle) {
                 contactTitle.style.display = 'block';
@@ -525,14 +526,13 @@ async function loadLanguage(lang) {
             }
         }, 2000);
     }
+}
 
-    // General section (footer)
+function setupFooterSection(t) {
     const footer = document.querySelector('footer');
     if (footer) {
         footer.innerHTML = generateFooterHTML(t.general.footer);
     }
-
-    // SkillsExtra section (already handled in skills)
 }
 
 // Función para inicializar sliders

@@ -1,0 +1,82 @@
+{
+    "title": "Dark Bot",
+    "logo": "assets/img/darkbot/robot.png",
+    "about": [
+        "Dark Bot is an intelligent web chatbot developed with Flask that answers questions based on a database of Q&A stored in JSON files. With a modern and responsive dark-themed interface, it offers a natural and fluid conversation experience.",
+        "The system uses text similarity algorithms to find the best answers to user queries, including a typing indicator that simulates a real conversation. It includes dynamic question suggestions that appear when interacting with the text input.",
+        "Developed with modern web technologies, Dark Bot offers an intuitive user experience with responsive design that adapts perfectly to mobile devices and tablets, eliminating the need for native applications.",
+        "Ideal for companies looking to implement a virtual assistant on their websites, providing instant answers to frequently asked questions and improving user experience without constant human intervention."
+    ],
+    "features": [
+        {
+            "icon": "fas fa-robot",
+            "text": "Intelligent Chatbot"
+        },
+        {
+            "icon": "fas fa-brain",
+            "text": "Similarity-Based Responses"
+        },
+        {
+            "icon": "fas fa-lightbulb",
+            "text": "Dynamic Suggestions"
+        },
+        {
+            "icon": "fas fa-mobile-alt",
+            "text": "Responsive Design"
+        },
+        {
+            "icon": "fas fa-moon",
+            "text": "Dark Theme"
+        },
+        {
+            "icon": "fas fa-search",
+            "text": "Intelligent Search"
+        }
+    ],
+    "tech": [
+        {
+            "icon": "fab fa-python",
+            "title": "Python",
+            "desc": "Main programming language for the backend and chatbot logic."
+        },
+        {
+            "icon": "fas fa-flask",
+            "title": "Flask",
+            "desc": "Lightweight web framework to create the chatbot's REST API."
+        },
+        {
+            "icon": "fab fa-html5",
+            "title": "HTML5",
+            "desc": "Semantic structure for the chatbot's user interface."
+        },
+        {
+            "icon": "fab fa-css3",
+            "title": "CSS3",
+            "desc": "Modern styles with dark theme and responsive design."
+        },
+        {
+            "icon": "fab fa-js-square",
+            "title": "JavaScript",
+            "desc": "Frontend interactivity, event handling, and AJAX."
+        },
+        {
+            "icon": "fas fa-database",
+            "title": "JSON",
+            "desc": "Storage of questions and answers in JSON files."
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/img/darkbot/chat-interface.webp",
+            "alt": "Chat Interface",
+            "title": "Chat Interface",
+            "desc": "Main view of the chatbot with user and bot messages."
+        },
+        {
+            "src": "assets/img/darkbot/suggestions.webp",
+            "alt": "Dynamic Suggestions",
+            "title": "Dynamic Suggestions",
+            "desc": "Question suggestions that appear when focusing on the input."
+        }
+    ]
+}

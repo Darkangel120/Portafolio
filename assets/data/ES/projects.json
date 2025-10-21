@@ -12,5 +12,12 @@
     "image": "assets/img/ventasentreprise/dashboard.webp",
     "fileName": "ventasenterprise",
     "ctaText": "Ver detalles"
+  },
+  {
+    "title": "Dark Bot",
+    "description": "Chatbot web inteligente desarrollado con Flask que responde preguntas basadas en una base de datos de preguntas y respuestas almacenadas en archivos JSON. Con una interfaz moderna y responsiva con tema oscuro, ofrece una experiencia de conversación natural y fluida.",
+    "image": "assets/img/darkbot/chat-interface.webp",
+    "fileName": "darkbot",
+    "ctaText": "Ver detalles"
   }
 ]

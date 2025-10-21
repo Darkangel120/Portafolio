@@ -1,0 +1,82 @@
+{
+    "title": "Dark Bot",
+    "logo": "assets/img/darkbot/robot.png",
+    "about": [
+        "Dark Bot es un chatbot web inteligente desarrollado con Flask que responde preguntas basadas en una base de datos de preguntas y respuestas almacenadas en archivos JSON. Con una interfaz moderna y responsiva con tema oscuro, ofrece una experiencia de conversación natural y fluida.",
+        "El sistema utiliza algoritmos de similitud de texto para encontrar las mejores respuestas a las consultas del usuario, incluyendo un indicador de escritura que simula una conversación real. Incluye sugerencias dinámicas de preguntas que aparecen al interactuar con el input de texto.",
+        "Desarrollado con tecnologías web modernas, Dark Bot ofrece una experiencia de usuario intuitiva con diseño responsivo que se adapta perfectamente a dispositivos móviles y tablets, eliminando la necesidad de aplicaciones nativas.",
+        "Ideal para empresas que buscan implementar un asistente virtual en sus sitios web, proporcionando respuestas instantáneas a preguntas frecuentes y mejorando la experiencia del usuario sin necesidad de intervención humana constante."
+    ],
+    "features": [
+        {
+            "icon": "fas fa-robot",
+            "text": "Chatbot Inteligente"
+        },
+        {
+            "icon": "fas fa-brain",
+            "text": "Respuestas por Similitud"
+        },
+        {
+            "icon": "fas fa-lightbulb",
+            "text": "Sugerencias Dinámicas"
+        },
+        {
+            "icon": "fas fa-mobile-alt",
+            "text": "Diseño Responsivo"
+        },
+        {
+            "icon": "fas fa-moon",
+            "text": "Tema Oscuro"
+        },
+        {
+            "icon": "fas fa-search",
+            "text": "Búsqueda Inteligente"
+        }
+    ],
+    "tech": [
+        {
+            "icon": "fab fa-python",
+            "title": "Python",
+            "desc": "Lenguaje de programación principal para el backend y lógica del chatbot."
+        },
+        {
+            "icon": "fas fa-flask",
+            "title": "Flask",
+            "desc": "Framework web ligero para crear la API REST del chatbot."
+        },
+        {
+            "icon": "fab fa-html5",
+            "title": "HTML5",
+            "desc": "Estructura semántica para la interfaz de usuario del chatbot."
+        },
+        {
+            "icon": "fab fa-css3",
+            "title": "CSS3",
+            "desc": "Estilos modernos con tema oscuro y diseño responsivo."
+        },
+        {
+            "icon": "fab fa-js-square",
+            "title": "JavaScript",
+            "desc": "Interactividad del frontend, manejo de eventos y AJAX."
+        },
+        {
+            "icon": "fas fa-database",
+            "title": "JSON",
+            "desc": "Almacenamiento de preguntas y respuestas en archivos JSON."
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/img/darkbot/chat-interface.webp",
+            "alt": "Interfaz de Chat",
+            "title": "Interfaz de Chat",
+            "desc": "Vista principal del chatbot con mensajes de usuario y bot."
+        },
+        {
+            "src": "assets/img/darkbot/suggestions.webp",
+            "alt": "Sugerencias Dinámicas",
+            "title": "Sugerencias Dinámicas",
+            "desc": "Sugerencias de preguntas que aparecen al hacer foco en el input."
+        }
+    ]
+}

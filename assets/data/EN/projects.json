@@ -1,21 +1,21 @@
 [
   {
     "title": "Inicio-XAMPP",
-    "description": "Visual and modern dashboard to manage local projects when changing the `htdocs` path in XAMPP. It replaces Apache's basic listing with an attractive and functional interface.",
+    "description": "Modern dashboard to manage local projects in XAMPP, replacing Apache's basic listing with an attractive interface.",
     "image": "assets/img/inicio-xampp/inicio.webp",
     "fileName": "inicio-xampp",
     "ctaText": "View details"
   },
   {
     "title": "VentaEnterprise",
-    "description": "Desktop application developed in Python that facilitates comprehensive sales and inventory management for businesses. With an intuitive and modern interface.",
+    "description": "Desktop application in Python for sales and inventory management, with an intuitive and modern interface.",
     "image": "assets/img/ventasentreprise/dashboard.webp",
     "fileName": "ventasenterprise",
     "ctaText": "View details"
   },
   {
     "title": "Dark Bot",
-    "description": "Intelligent web chatbot developed with Flask that answers questions based on a database of Q&A stored in JSON files. With a modern and responsive dark-themed interface, it offers a natural and fluid conversation experience.",
+    "description": "Intelligent web chatbot with Flask, answers questions from JSON database, modern interface with dark theme.",
     "image": "assets/img/darkbot/chat-interface.webp",
     "fileName": "darkbot",
     "ctaText": "View details"

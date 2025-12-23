@@ -3,94 +3,77 @@
     "programming": [
       {
         "name": "Python",
-        "icon": "fab fa-python",
-        "level": 60
+        "icon": "fab fa-python"
       },
       {
         "name": "HTML5",
-        "icon": "fab fa-html5",
-        "level": 60
+        "icon": "fab fa-html5"
       },
       {
         "name": "CSS3",
-        "icon": "fab fa-css3-alt",
-        "level": 60
+        "icon": "fab fa-css3-alt"
       },
       {
         "name": "JavaScript",
-        "icon": "fab fa-js-square",
-        "level": 40
+        "icon": "fab fa-js-square"
       },
       {
         "name": "Java",
-        "icon": "fab fa-java",
-        "level": 40
+        "icon": "fab fa-java"
       },
       {
         "name": "C#",
-        "icon": "custom",
-        "level": 40
+        "icon": "custom"
       },
       {
         "name": "PHP",
-        "icon": "fab fa-php",
-        "level": 40
+        "icon": "fab fa-php"
       },
       {
         "name": "C++",
-        "icon": "custom",
-        "level": 20
+        "icon": "custom"
       }
     ],
     "frameworks": [
       {
         "name": "Flask",
-        "icon": "fas fa-flask",
-        "level": 20
+        "icon": "fas fa-flask"
       },
       {
         "name": "Flet",
-        "icon": "fas fa-object-group",
-        "level": 10
+        "icon": "fas fa-object-group"
       }
     ],
     "databases": [
       {
         "name": "MySQL",
-        "icon": "fas fa-database",
-        "level": 60
+        "icon": "fas fa-database"
       },
       {
         "name": "SQLite",
-        "icon": "fas fa-database",
-        "level": 60
+        "icon": "fas fa-database"
       },
       {
         "name": "SQL",
-        "icon": "fas fa-database",
-        "level": 60
+        "icon": "fas fa-database"
       }
     ],
     "tools": [
       {
         "name": "Git",
-        "icon": "fab fa-git-alt",
-        "level": 40
+        "icon": "fab fa-git-alt"
       },
       {
         "name": "GitHub",
-        "icon": "fab fa-github",
-        "level": 40
+        "icon": "fab fa-github"
       },
       {
         "name": "Node Js",
-        "icon": "fa-brands fa-node-js",
-        "level": 10
+        "icon": "fa-brands fa-node-js"
       },
       {
         "name": "Docker",
-        "icon": "fa-brands fa-docker",
-        "level": 0
+        "icon": "fa-brands fa-docker"
       }
     ]
   }

@@ -366,9 +366,6 @@ function setupSkillsSection(t) {
                             ${iconHTML}
                             <div class="skill-info">
                                 <h5>${skill.name}</h5>
-                                <div class="progress-bar"><div class="progress-fill" style="width: ${skill.level}%;"></div></div>
-                                ${skill.level}%
-                                ${skill.level <= 10 ? `<p class="learning-note" style="font-size: 0.8rem; color: #c7c1c1ff; margin-top: 0.5rem; font-style: italic;">${learningText}</p>` : ''}
                             </div>
                         </div>
                     `;

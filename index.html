@@ -9,13 +9,19 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/modals.css" />
     <link rel="stylesheet" href="assets/css/skeleton-loading.css" />
-    <link rel="stylesheet" href="assets/css/music-player.css" />
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
     <header>
         <!-- Sección de navegación principal -->
     <nav class="navbar">
@@ -37,17 +43,7 @@
         </div>
     </header>
 
-    <!-- Música de fondo del menú -->
-    
-    <!-- Botón del reproductor de música -->
-    <button id="music-player-btn" class="music-player-btn" aria-label="Reproductor de música">
-        <i class="fas fa-music"></i>
-    </button>
 
-    <!-- Lista de reproducción -->
-    <div id="music-playlist" class="music-playlist">
-        <ul id="playlist-ul"></ul>
-    </div>
 
     <main>
         <!-- Sección principal del portafolio -->
@@ -154,10 +150,17 @@
         <!-- Contenido dinámico: pie de página -->
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Background Particles -->
+    <div id="particles-container" class="particles-container"></div>
+
     <script src="assets/js/dataLoader.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/modals.js"></script>
-    <script src="assets/js/music-player.js"></script>
 </body>
 
 </html>

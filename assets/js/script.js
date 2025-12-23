@@ -110,4 +110,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const langEnBtn = document.getElementById('lang-en');
     if (langEsBtn) langEsBtn.replaceWith(langEsBtn.cloneNode(true));
     if (langEnBtn) langEnBtn.replaceWith(langEnBtn.cloneNode(true));
+
+    // Back to Top Button functionality
+    const backToTopBtn = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Background Particles
+    const particlesContainer = document.getElementById('particles-container');
+    const particleCount = 50;
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        // Random size between 2px and 6px
+        const size = Math.random() * 4 + 2;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+
+        // Random position
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+
+        // Random animation delay
+        particle.style.animationDelay = Math.random() * 20 + 's';
+
+        particlesContainer.appendChild(particle);
+    }
 });

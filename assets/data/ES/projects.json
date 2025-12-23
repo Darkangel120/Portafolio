@@ -1,21 +1,21 @@
 [
   {
     "title": "Inicio-XAMPP",
-    "description": "Dashboard visual y moderno para gestionar proyectos locales al cambiar la ruta `htdocs` en XAMPP. Reemplaza el listado básico de Apache con una interfaz atractiva y funcional.",
+    "description": "Dashboard moderno para gestionar proyectos locales en XAMPP, reemplazando el listado básico de Apache con una interfaz atractiva.",
     "image": "assets/img/inicio-xampp/inicio.webp",
     "fileName": "inicio-xampp",
     "ctaText": "Ver detalles"
   },
   {
     "title": "VentaEnterprise",
-    "description": "Aplicación de escritorio desarrollada en Python que facilita la gestión integral de ventas e inventario para empresas. Con interfaz intuitiva y moderna.",
+    "description": "Aplicación de escritorio en Python para gestión de ventas e inventario, con interfaz intuitiva y moderna.",
     "image": "assets/img/ventasentreprise/dashboard.webp",
     "fileName": "ventasenterprise",
     "ctaText": "Ver detalles"
   },
   {
     "title": "Dark Bot",
-    "description": "Chatbot web inteligente desarrollado con Flask que responde preguntas basadas en una base de datos de preguntas y respuestas almacenadas en archivos JSON. Con una interfaz moderna y responsiva con tema oscuro, ofrece una experiencia de conversación natural y fluida.",
+    "description": "Chatbot web inteligente con Flask, responde preguntas desde base de datos JSON, interfaz moderna con tema oscuro.",
     "image": "assets/img/darkbot/chat-interface.webp",
     "fileName": "darkbot",
     "ctaText": "Ver detalles"

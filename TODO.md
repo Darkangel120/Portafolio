@@ -1,0 +1,7 @@
+- [ ] Update name and subtitle in main content from hero.json
+- [ ] Replace bio section with about.json texts
+- [ ] Update experience section with experience.json data
+- [ ] Replace "Herramientas digitales" with actual skills from skills.json
+- [ ] Update contact section with contact.json data
+- [ ] Update "Habilidades" list with skills
+- [ ] Verify the updated curriculum

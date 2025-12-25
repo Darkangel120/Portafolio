@@ -289,8 +289,6 @@ header.shrunk {
 
 .section {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(138, 43, 226, 0.2);
     padding: 4rem 3rem;
     margin: 4rem auto;
     max-width: 1000px;
@@ -408,10 +406,36 @@ p {
 .hero-text h1 {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.name-part {
     background: linear-gradient(45deg,#274eb8, #be3bf6,#8a2be2, #da70d6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.name-part.first {
+    animation: nameFadeOut 12s infinite alternate;
+}
+
+.name-part.second {
+    animation: nameFadeIn 12s infinite alternate 6s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+@keyframes nameFadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes nameFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .hero-subtitle {
@@ -494,6 +518,83 @@ p {
 .cta-button:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 12px 40px rgba(138, 43, 226, 0.8);
+}
+
+/* Hero Contact Links */
+.hero-contact {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.hero-contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(168, 85, 247, 0.1);
+    border-radius: 8px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.hero-contact a:hover {
+    background: rgba(168, 85, 247, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.hero-contact a i {
+    font-size: 1.5rem;
+    color: #8a2be2;
+    transition: all 0.3s ease;
+}
+
+.hero-contact a:hover i {
+    color: #da70d6;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .hero-contact {
+        gap: 0.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .hero-contact a {
+        padding: 0.4rem 0.8rem;
+        min-width: 45px;
+        min-height: 45px;
+        gap: 0.4rem;
+    }
+
+    .hero-contact a i {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-contact {
+        gap: 0.6rem;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .hero-contact a {
+        padding: 0.3rem 0.6rem;
+        min-width: 40px;
+        min-height: 40px;
+        gap: 0.3rem;
+    }
+
+    .hero-contact a i {
+        font-size: 1.2rem;
+    }
 }
 
 /* Sección Acerca de */

@@ -261,7 +261,6 @@ async function loadLanguage(lang) {
     document.getElementById('projects-title').style.display = 'none';
     document.getElementById('testimonials-title').style.display = 'none';
     document.getElementById('experience-title').style.display = 'none';
-    document.getElementById('contact-title').style.display = 'none';
 
     setupNavSection(t);
     setupHeroSection(t);
@@ -270,7 +269,6 @@ async function loadLanguage(lang) {
     setupProjectsSection(t);
     setupTestimonialsSection(t);
     setupExperienceSection(t);
-    setupContactSection(t);
     setupFooterSection(t);
 
     initializeSliders();
@@ -292,7 +290,6 @@ function setupNavSection(t) {
             <li><a href="#projects">${t.nav.proyectos}</a></li>
             <li><a href="#testimonials">${t.nav.testimonios}</a></li>
             <li><a href="#experience">${t.nav.experiencia}</a></li>
-            <li><a href="#contact">${t.nav.contacto}</a></li>
         `;
         const menuToggle = document.getElementById('menu-toggle');
         if (menuToggle) {
@@ -311,8 +308,8 @@ function setupNavSection(t) {
 }
 
 function setupHeroSection(t) {
-    const heroName = document.getElementById('hero-name');
-    if (heroName) heroName.textContent = t.hero.name;
+    // const heroName = document.getElementById('hero-name');
+    // if (heroName) heroName.textContent = t.hero.name; // Commented out to preserve animation spans
     const heroDescription = document.getElementById('hero-description');
     if (heroDescription) heroDescription.textContent = t.hero.description;
     const heroCta = document.getElementById('hero-cta');
@@ -395,9 +392,6 @@ function setupSkillsSection(t) {
                         <div class="skills-grid">
                             ${t.skillsExtra.skills.tools.map(skill => generateSkillCard(skill)).join('')}
                         </div>
-                    </div>
-                    <div class="skills-legend">
-                        <p id="skills-legend" style="text-align: center;">${t.skills.legend}</p>
                     </div>
                 `;
                 skillsSection.innerHTML = skillsHTML;

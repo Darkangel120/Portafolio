@@ -9,6 +9,8 @@ body {
     display: flex;
     min-height: 100vh;
     background: white;
+    margin-left:20% ;
+    width: 60%;
 }
 
 .sidebar {
@@ -381,5 +383,136 @@ h1 {
     @page {
         size: A4;
         margin: 0;
+    }
+}
+@media (max-width: 400px) {
+    .print-button {
+        margin: 0;
+        padding: 10px;
+        border-radius: 50%;
+    }
+    .print-button p{
+        display: none !important;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .sidebar {
+        width: 40%;
+        padding: 30px 20px;
+    }
+
+    .main-content {
+        height: 100%;
+        padding: 30px 40px;
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+
+    .border-profile{
+        width: 120px;
+        height: 120px;
+        margin-left: 1px;
+    }
+
+    .bio {
+        font-size: 9px;
+    }
+
+    .section-title {
+        font-size: 11px;
+        margin-bottom: 10px;
+    }
+
+    .info-item {
+        font-size: 8px;
+        margin-bottom: 8px;
+    }
+
+    .skill-item {
+        font-size: 8px;
+        margin-bottom: 8px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 9px;
+        margin-bottom: 25px;
+    }
+
+    .decoration {
+        margin-bottom: 13px;
+    }
+
+    .content-section {
+        margin-bottom: 25px;
+    }
+
+    .content-section h2 {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .experience-item,
+    .education-item {
+        margin-bottom: 15px;
+    }
+
+    .exp-description li,
+    .skills-list li {
+        font-size: 9px;
+        margin-bottom: 5px;
+        line-height: 1.4;
+    }
+
+    .exp-title {
+        font-size: 9px;
+    }
+
+    .exp-company {
+        font-size: 9px;
+    }
+
+    .exp-period {
+        font-size: 9px;
+        margin-right: 5px;
+    }
+
+    .education-item:nth-child(3) .exp-period{
+        padding-right: 25px;
+    }
+
+    .section-title{
+        font-size: 9px;
+    }
+
+    .social-items{
+        gap: 10px;
+    }
+
+    .social-items .item a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+
+    .social-items .item a i{
+        font-size: 15px;
+    }
+
+    .social-items .item span{
+        font-size: 5px;
     }
 }

@@ -210,7 +210,6 @@ function generateProjectCardsHTML(data) {
             <img src="${project.image}" alt="${project.title}" loading="lazy" />
             <h3>${project.title}</h3>
             <p>${project.description}</p>
-            <button class="cta-button">${project.ctaText || 'Ver detalles'}</button>
         </div>
     `).join('');
 }

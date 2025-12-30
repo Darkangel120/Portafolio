@@ -42,6 +42,10 @@
       {
         "name": "Flet",
         "icon": "fas fa-object-group"
+      },
+      {
+        "name": "Spring Boot",
+        "icon": "fa-solid fa-leaf"
       }
     ],
     "databases": [

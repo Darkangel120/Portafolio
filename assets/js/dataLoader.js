@@ -47,7 +47,7 @@ function typeWriter(text) {
  */
 async function loadTranslations(lang) {
     try {
-        const [nav, hero, about, skills, projects, testimonials, experience, contact, general, skillsExtra, music] = await Promise.all([
+        const [nav, hero, about, skills, projects, testimonials, experience, contact, general, skillsExtra] = await Promise.all([
             fetch(`assets/data/${lang.toUpperCase()}/nav.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/hero.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/about.json`).then(r => r.json()),
@@ -57,8 +57,7 @@ async function loadTranslations(lang) {
             fetch(`assets/data/${lang.toUpperCase()}/experience.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/contact.json`).then(r => r.json()),
             fetch(`assets/data/${lang.toUpperCase()}/general.json`).then(r => r.json()),
-            fetch(`assets/data/skills.json`).then(r => r.json()).catch(() => []),
-            fetch(`assets/data/${lang.toUpperCase()}/music.json`).then(r => r.json())
+            fetch(`assets/data/skills.json`).then(r => r.json()).catch(() => [])
         ]);
 
         translations[lang] = {
@@ -71,8 +70,7 @@ async function loadTranslations(lang) {
             experience,
             contact,
             general,
-            skillsExtra,
-            music
+            skillsExtra
         };
 
         return translations[lang];
@@ -232,7 +230,7 @@ function generateTestimonialCardsHTML(data) {
 
 
 function generateFooterHTML(data) {
-    return `© 2024 Oswaldo Gómez. ${data}`;
+    return `© ${new Date().getFullYear()} Oswaldo Gómez. ${data}`;
 }
 
 /**
@@ -307,8 +305,6 @@ function setupNavSection(t) {
 }
 
 function setupHeroSection(t) {
-    // const heroName = document.getElementById('hero-name');
-    // if (heroName) heroName.textContent = t.hero.name; // Commented out to preserve animation spans
     const heroDescription = document.getElementById('hero-description');
     if (heroDescription) heroDescription.textContent = t.hero.description;
     const heroCta = document.getElementById('hero-cta');
@@ -324,7 +320,7 @@ function setupAboutSection(t) {
         setTimeout(() => {
             if (t.about && aboutTitle) {
                 aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
-                const icons = ['fas fa-user-graduate', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-book-open', 'fas fa-music'];
+                const icons = ['fas fa-user-graduate', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-book-open'];
                 const aboutHTML = `
                     <h2 id="about-title"><i class="fas fa-user"></i> ${t.general.sections.about}</h2>
                     <div class="about-grid">

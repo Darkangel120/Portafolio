@@ -1,6 +1,7 @@
 {
     "title": "VentaEnterprise",
     "logo": "assets/img/ventasentreprise/ventasentreprise-logo.png",
+    "githubUrl": "https://github.com/Darkangel120/VentaEnterprise",
     "about": [
         "VentaEnterprise es una aplicación de escritorio en Python para gestión integral de ventas e inventario. Permite administrar productos, procesar ventas y generar reportes con interfaz intuitiva.",
         "Incluye control de stock, integración con tasas de cambio y módulo de reportes. Desarrollado con Python y Flet, ofrece experiencia fluida con modo oscuro/claro y diseño responsivo."

@@ -1,12 +1,5 @@
 [
   {
-    "title": "Inicio-XAMPP",
-    "description": "Dashboard moderno para gestionar proyectos locales en XAMPP, reemplazando el listado básico de Apache con una interfaz atractiva.",
-    "image": "assets/img/inicio-xampp/inicio.webp",
-    "fileName": "inicio-xampp",
-    "ctaText": "Ver detalles"
-  },
-  {
     "title": "VentaEnterprise",
     "description": "Aplicación de escritorio en Python para gestión de ventas e inventario, con interfaz intuitiva y moderna.",
     "image": "assets/img/ventasentreprise/dashboard.webp",

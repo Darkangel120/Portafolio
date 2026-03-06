@@ -134,8 +134,19 @@ function openProjectModal(card) {
             const projectTitleElement = document.getElementById('projectTitle');
             projectTitleElement.innerHTML = logoSrc ? `<img src="${logoSrc}" alt="Logo del proyecto" style="width: 50px; height: auto; margin-right: 10px; vertical-align: middle;"> ${data.title}` : data.title;
 
+            // Generar botón de GitHub si existe la URL - se agrega al header
+            const projectActionsElement = document.getElementById('projectActions');
+            if (projectActionsElement) {
+                projectActionsElement.innerHTML = data.githubUrl ? `
+                    <a href="${data.githubUrl}" target="_blank" rel="noopener noreferrer" class="modal-header-github">
+                        <i class="fab fa-github"></i> ${window.translations[window.currentLang].general.viewCode || 'Ver código'}
+                    </a>
+                ` : '';
+            }
+
             const content = document.getElementById('projectContent');
             const modalTitles = window.translations[window.currentLang].general.modal;
+
             content.innerHTML = `
                 <div class="modal-section modal-about">
                     <h3><i class="fas fa-info-circle"></i> ${modalTitles.about}</h3>
@@ -179,3 +190,4 @@ document.addEventListener('keydown', function(event) {
         closeImageModal();
     }
 });
+

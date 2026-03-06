@@ -1,6 +1,7 @@
 {
     "title": "VentaEnterprise",
     "logo": "assets/img/ventasentreprise/ventasentreprise-logo.png",
+    "githubUrl": "https://github.com/Darkangel120/VentaEnterprise",
     "about": [
         "VentaEnterprise is a desktop application in Python for comprehensive sales and inventory management. It allows managing products, processing sales, and generating reports with an intuitive interface.",
         "Includes stock control, integration with exchange rates, and reporting module. Developed with Python and Flet, it offers a smooth experience with dark/light mode and responsive design."

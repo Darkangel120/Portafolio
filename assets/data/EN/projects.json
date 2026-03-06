@@ -1,12 +1,5 @@
 [
   {
-    "title": "Inicio-XAMPP",
-    "description": "Modern dashboard to manage local projects in XAMPP, replacing Apache's basic listing with an attractive interface.",
-    "image": "assets/img/inicio-xampp/inicio.webp",
-    "fileName": "inicio-xampp",
-    "ctaText": "View details"
-  },
-  {
     "title": "VentaEnterprise",
     "description": "Desktop application in Python for sales and inventory management, with an intuitive and modern interface.",
     "image": "assets/img/ventasentreprise/dashboard.webp",

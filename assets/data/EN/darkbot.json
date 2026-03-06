@@ -1,6 +1,7 @@
 {
     "title": "Dark Bot",
     "logo": "assets/img/darkbot/robot.png",
+    "githubUrl": "https://github.com/Darkangel120/Dark_Bot",
     "about": [
         "Dark Bot is an intelligent web chatbot developed with Flask that answers questions based on a database of Q&A stored in JSON files. With a modern and responsive dark-themed interface, it offers a natural and fluid conversation experience.",
         "The system uses text similarity algorithms to find the best answers to user queries, including a typing indicator that simulates a real conversation. It includes dynamic question suggestions that appear when interacting with the text input.",

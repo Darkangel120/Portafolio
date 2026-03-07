@@ -28,6 +28,10 @@
         "icon": "fas fa-flask"
       },
       {
+        "name": "Flet",
+        "icon": "fa-brands fa-flutter"
+      },
+      {
         "name": "Spring Boot",
         "icon": "fa-solid fa-leaf"
       }

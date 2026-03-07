@@ -417,25 +417,30 @@ p {
 }
 
 .name-part.first {
-    animation: nameFadeOut 12s infinite alternate;
+    animation: nameFadeOut 10s infinite;
 }
 
 .name-part.second {
-    animation: nameFadeIn 12s infinite alternate 6s;
+    animation: nameFadeIn 10s infinite;
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0;
 }
 
 @keyframes nameFadeOut {
     0% { opacity: 1; }
-    100% { opacity: 0; }
+    45% { opacity: 1; }
+    50% { opacity: 0; }
+    95% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 @keyframes nameFadeIn {
     0% { opacity: 0; }
-    100% { opacity: 1; }
+    45% { opacity: 0; }
+    50% { opacity: 1; }
+    95% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .hero-subtitle {
@@ -532,49 +537,87 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    width: 50px;
+    height: 50px;
     background: rgba(168, 85, 247, 0.1);
-    border-radius: 8px;
+    border-radius: 50%;
     color: #ccc;
     text-decoration: none;
-    transition: all 0.3s ease;
-    min-width: 50px;
-    min-height: 50px;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-contact a .link-text {
+    position: absolute;
+    left: 60px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #8a2be2;
+    pointer-events: none;
 }
 
 .hero-contact a:hover {
+    width: 140px;
+    border-radius: 30px;
+    justify-content: flex-start;
+    padding-left: 15px;
     background: rgba(168, 85, 247, 0.2);
-    transform: translateY(-2px);
+    border-color: rgba(168, 85, 247, 0.4);
     box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
+.hero-contact a:hover .link-text {
+    opacity: 1;
+    transform: translateX(0);
+    left: 50px;
+}
+
 .hero-contact a i {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #8a2be2;
     transition: all 0.3s ease;
+    min-width: 25px;
+    text-align: center;
 }
 
 .hero-contact a:hover i {
     color: #da70d6;
-    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
     .hero-contact {
         gap: 0.8rem;
         margin-top: 1.5rem;
+        justify-content: center;
     }
 
     .hero-contact a {
-        padding: 0.4rem 0.8rem;
-        min-width: 45px;
-        min-height: 45px;
-        gap: 0.4rem;
+        width: 45px;
+        height: 45px;
+    }
+
+    .hero-contact a:hover {
+        width: 120px;
+        padding-left: 12px;
     }
 
     .hero-contact a i {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    .hero-contact a .link-text {
+        font-size: 0.75rem;
+        left: 52px;
+    }
+
+    .hero-contact a:hover .link-text {
+        left: 45px;
     }
 }
 
@@ -586,10 +629,8 @@ p {
     }
 
     .hero-contact a {
-        padding: 0.3rem 0.6rem;
-        min-width: 40px;
-        min-height: 40px;
-        gap: 0.3rem;
+        width: 40px;
+        height: 40px;
     }
 
     .hero-contact a i {
@@ -1503,7 +1544,7 @@ svg {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: -10%;
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.2), transparent);

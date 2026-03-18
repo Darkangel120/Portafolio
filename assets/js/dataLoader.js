@@ -1,6 +1,6 @@
 let translations = {};
 window.translations = translations;
-window.currentLang = localStorage.getItem('selectedLanguage') || 'es';
+window.currentLang = localStorage.getItem("selectedLanguage") || "es";
 let currentLang = window.currentLang;
 
 /**
@@ -11,7 +11,7 @@ let currentLang = window.currentLang;
  * @param {string} text - El texto a escribir y borrar
  */
 function typeWriter(text) {
-    const typedTextElement = document.getElementById('typed-text');
+    const typedTextElement = document.getElementById("typed-text");
     let index = 0;
     let isDeleting = false;
 
@@ -47,17 +47,50 @@ function typeWriter(text) {
  */
 async function loadTranslations(lang) {
     try {
-        const [nav, hero, about, skills, projects, testimonials, experience, contact, general, skillsExtra] = await Promise.all([
-            fetch(`assets/data/${lang.toUpperCase()}/nav.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/hero.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/about.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/skills.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/projects.json`).then(r => r.json()).catch(() => []),
-            fetch(`assets/data/${lang.toUpperCase()}/testimonials.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/experience.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/contact.json`).then(r => r.json()),
-            fetch(`assets/data/${lang.toUpperCase()}/general.json`).then(r => r.json()),
-            fetch(`assets/data/skills.json`).then(r => r.json()).catch(() => [])
+        const [
+            nav,
+            hero,
+            about,
+            skills,
+            projects,
+            testimonials,
+            experience,
+            contact,
+            general,
+            categories,
+            skillsExtra,
+        ] = await Promise.all([
+            fetch(`assets/data/${lang.toUpperCase()}/nav.json`).then((r) => r.json()),
+            fetch(`assets/data/${lang.toUpperCase()}/hero.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/about.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/skills.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/projects.json`)
+                .then((r) => r.json())
+                .catch(() => []),
+            fetch(`assets/data/${lang.toUpperCase()}/testimonials.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/experience.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/contact.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/general.json`).then((r) =>
+                r.json(),
+            ),
+            fetch(`assets/data/${lang.toUpperCase()}/categories.json`)
+                .then((r) => r.json())
+                .catch(() => []),
+            fetch(`assets/data/skills.json`)
+                .then((r) => r.json())
+                .catch(() => []),
         ]);
 
         translations[lang] = {
@@ -70,21 +103,23 @@ async function loadTranslations(lang) {
             experience,
             contact,
             general,
-            skillsExtra
+            categories,
+            skillsExtra,
         };
 
         return translations[lang];
     } catch (error) {
-        console.error('Error loading translations:', error);
+        console.error("Error loading translations:", error);
         return null;
     }
 }
 
-
-
 // Función para generar skeletons de proyectos
 function generateProjectSkeletonsHTML(count = 3) {
-    return Array(count).fill().map(() => `
+    return Array(count)
+        .fill()
+        .map(
+            () => `
         <div class="skeleton-project-card">
             <div class="skeleton skeleton-project-image"></div>
             <div class="skeleton skeleton-project-title"></div>
@@ -92,12 +127,17 @@ function generateProjectSkeletonsHTML(count = 3) {
             <div class="skeleton skeleton-project-description"></div>
             <div class="skeleton skeleton-project-button"></div>
         </div>
-    `).join('');
+    `,
+        )
+        .join("");
 }
 
 // Función para generar skeletons de testimonios
 function generateTestimonialSkeletonsHTML(count = 3) {
-    return Array(count).fill().map(() => `
+    return Array(count)
+        .fill()
+        .map(
+            () => `
         <div class="skeleton-testimonial-card">
             <div class="skeleton skeleton-testimonial-name"></div>
             <div class="skeleton skeleton-testimonial-role"></div>
@@ -105,17 +145,24 @@ function generateTestimonialSkeletonsHTML(count = 3) {
             <div class="skeleton skeleton-testimonial-text"></div>
             <div class="skeleton skeleton-testimonial-text"></div>
         </div>
-    `).join('');
+    `,
+        )
+        .join("");
 }
 
 // Función para generar skeletons de habilidades
 function generateSkillsSkeletonsHTML() {
-    const subsections = ['programming', 'frameworks', 'databases', 'tools'];
-    return subsections.map(subsection => `
+    const subsections = ["programming", "frameworks", "databases", "tools"];
+    return subsections
+        .map(
+            (subsection) => `
         <div class="skill-subsection">
             <h4><i class="fas fa-tools"></i> <div class="skeleton" style="height: 1.6rem; width: 200px; display: inline-block;"></div></h4>
             <div class="skills-grid">
-                ${Array(4).fill().map(() => `
+                ${Array(4)
+                    .fill()
+                    .map(
+                        () => `
                     <div class="skeleton-skill-card">
                         <div class="skeleton skeleton-skill-icon"></div>
                         <div class="skeleton-skill-info">
@@ -123,23 +170,32 @@ function generateSkillsSkeletonsHTML() {
                             <div class="skeleton skeleton-skill-progress"></div>
                         </div>
                     </div>
-                `).join('')}
+                `,
+                    )
+                    .join("")}
             </div>
         </div>
-    `).join('');
+    `,
+        )
+        .join("");
 }
 
 // Función para generar skeletons de about
 function generateAboutSkeletonsHTML(count = 5) {
     return `
         <div class="about-grid">
-            ${Array(count).fill().map(() => `
+            ${Array(count)
+            .fill()
+            .map(
+                () => `
                 <div class="skeleton-about-card">
                     <div class="skeleton skeleton-about-icon"></div>
                     <div class="skeleton skeleton-about-text"></div>
                     <div class="skeleton skeleton-about-text"></div>
                 </div>
-            `).join('')}
+            `,
+            )
+            .join("")}
         </div>
     `;
 }
@@ -168,10 +224,10 @@ function generateExperienceSkeletonsHTML() {
     `;
 }
 
-
-
 // Función para generar skeletons de contacto
 function generateContactSkeletonsHTML() {
+    // ELIMINADO: funciones moved to global scope
+
     return `
         <p class="contact-description"><div class="skeleton" style="height: 1.2rem; width: 80%; margin: 0 auto;"></div></p>
         <div class="skeleton-contact-container">
@@ -201,20 +257,26 @@ function generateContactSkeletonsHTML() {
 // Función para generar solo las tarjetas de proyectos
 function generateProjectCardsHTML(data) {
     if (!data || data.length === 0) {
-        return '<p>No hay proyectos disponibles.</p>';
+        return "<p>No hay proyectos disponibles.</p>";
     }
-    return data.map(project => `
+    return data
+        .map(
+            (project) => `
         <div class="project-card" data-project="${project.fileName}" onclick="openProjectModal(this)">
             <img src="${project.image}" alt="${project.title}" loading="lazy" />
             <h3>${project.title}</h3>
             <p>${project.description}</p>
         </div>
-    `).join('');
+    `,
+        )
+        .join("");
 }
 
 // Función para generar solo las tarjetas de testimonios
 function generateTestimonialCardsHTML(data) {
-    return data.map(testimonial => `
+    return data
+        .map(
+            (testimonial) => `
         <div class="testimonial-card">
             <div class="testimonial-content">
                 <div class="testimonial-author">
@@ -224,10 +286,10 @@ function generateTestimonialCardsHTML(data) {
                 <p>"${testimonial.text}"</p>
             </div>
         </div>
-    `).join('');
+    `,
+        )
+        .join("");
 }
-
-
 
 function generateFooterHTML(data) {
     return `© ${new Date().getFullYear()} Oswaldo Gómez. ${data}`;
@@ -248,16 +310,16 @@ async function loadLanguage(lang) {
 
     const t = translations[lang];
 
-    localStorage.setItem('selectedLanguage', lang);
+    localStorage.setItem("selectedLanguage", lang);
     currentLang = lang;
     window.currentLang = lang;
 
     // Ocultar títulos inicialmente para mostrar solo skeletons
-    document.getElementById('about-title').style.display = 'none';
-    document.getElementById('skills-title').style.display = 'none';
-    document.getElementById('projects-title').style.display = 'none';
-    document.getElementById('testimonials-title').style.display = 'none';
-    document.getElementById('experience-title').style.display = 'none';
+    document.getElementById("about-title").style.display = "none";
+    document.getElementById("skills-title").style.display = "none";
+    document.getElementById("projects-title").style.display = "none";
+    document.getElementById("testimonials-title").style.display = "none";
+    document.getElementById("experience-title").style.display = "none";
 
     setupNavSection(t);
     setupHeroSection(t);
@@ -278,7 +340,7 @@ async function loadLanguage(lang) {
 // Helper functions for each section to reduce complexity
 
 function setupNavSection(t) {
-    const navLinks = document.getElementById('nav-links');
+    const navLinks = document.getElementById("nav-links");
     if (navLinks) {
         navLinks.innerHTML = `
             <li><a href="#hero">${t.nav.inicio}</a></li>
@@ -288,48 +350,57 @@ function setupNavSection(t) {
             <li><a href="#testimonials">${t.nav.testimonios}</a></li>
             <li><a href="#experience">${t.nav.experiencia}</a></li>
         `;
-        const menuToggle = document.getElementById('menu-toggle');
+        const menuToggle = document.getElementById("menu-toggle");
         if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
             });
         }
         // Close menu when clicking on a nav link
-        const navLinkElements = navLinks.querySelectorAll('a');
-        navLinkElements.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+        const navLinkElements = navLinks.querySelectorAll("a");
+        navLinkElements.forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
             });
         });
     }
 }
 
 function setupHeroSection(t) {
-    const heroDescription = document.getElementById('hero-description');
+    const heroDescription = document.getElementById("hero-description");
     if (heroDescription) heroDescription.textContent = t.hero.description;
-    const heroCta = document.getElementById('hero-cta');
+    const heroCta = document.getElementById("hero-cta");
     if (heroCta) heroCta.textContent = t.hero.ctaText;
     typeWriter(t.hero.role);
 }
 
 function setupAboutSection(t) {
-    const aboutTitle = document.getElementById('about-title');
-    const aboutSection = document.getElementById('about');
+    const aboutTitle = document.getElementById("about-title");
+    const aboutSection = document.getElementById("about");
     if (aboutSection) {
         aboutSection.innerHTML = generateAboutSkeletonsHTML(t.about.length);
         setTimeout(() => {
             if (t.about && aboutTitle) {
                 aboutTitle.innerHTML = `<i class="fas fa-user"></i> ${t.general.sections.about}`;
-                const icons = ['fas fa-user-graduate', 'fas fa-code', 'fas fa-lightbulb', 'fas fa-book-open'];
+                const icons = [
+                    "fas fa-user-graduate",
+                    "fas fa-code",
+                    "fas fa-lightbulb",
+                    "fas fa-book-open",
+                ];
                 const aboutHTML = `
                     <h2 id="about-title"><i class="fas fa-user"></i> ${t.general.sections.about}</h2>
                     <div class="about-grid">
-                        ${t.about.map((item, index) => `
+                        ${t.about
+                        .map(
+                            (item, index) => `
                             <div class="about-card">
-                                <i class="${icons[index] || 'fas fa-user'}"></i>
+                                <i class="${icons[index] || "fas fa-user"}"></i>
                                 <p>${item.text}</p>
                             </div>
-                        `).join('')}
+                        `,
+                        )
+                        .join("")}
                     </div>
                 `;
                 aboutSection.innerHTML = aboutHTML;
@@ -339,20 +410,24 @@ function setupAboutSection(t) {
 }
 
 function setupSkillsSection(t) {
-    const skillsTitle = document.getElementById('skills-title');
-    const skillsSection = document.getElementById('skills');
+    const skillsTitle = document.getElementById("skills-title");
+    const skillsSection = document.getElementById("skills");
     if (skillsSection) {
         skillsSection.innerHTML = generateSkillsSkeletonsHTML();
         setTimeout(() => {
             if (t.skillsExtra?.skills && skillsTitle) {
-                skillsTitle.style.display = 'block';
+                skillsTitle.style.display = "block";
                 skillsTitle.innerHTML = `<i class="fas fa-tools"></i> ${t.general.sections.skills}`;
-                const learningText = window.currentLang === 'es' ? 'En proceso de aprendizaje :)' : 'In learning progress :)';
+                const learningText =
+                    window.currentLang === "es"
+                        ? "En proceso de aprendizaje :)"
+                        : "In learning progress :)";
                 function generateSkillCard(skill) {
-                    let fontSize = skill.name.includes('C#') ? '15' : '13';
-                    const iconHTML = skill.icon === 'custom'
-                        ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${fontSize}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>`
-                        : `<i class="${skill.icon} skill-icon"></i>`;
+                    let fontSize = skill.name.includes("C#") ? "15" : "13";
+                    const iconHTML =
+                        skill.icon === "custom"
+                            ? `<svg class="skill-icon" viewBox="0 0 24 24"><text x="12" y="15" text-anchor="middle" font-size="${fontSize}" fill="currentColor" font-weight="bold" font-family="Arial, sans-serif">${skill.name}</text></svg>`
+                            : `<i class="${skill.icon} skill-icon"></i>`;
                     return `
                         <div class="skill-card">
                             ${iconHTML}
@@ -367,25 +442,25 @@ function setupSkillsSection(t) {
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-0"><i class="fas fa-laptop-code"></i> ${t.skills.subsections[0].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.programming.map(skill => generateSkillCard(skill)).join('')}
+                            ${t.skillsExtra.skills.programming.map((skill) => generateSkillCard(skill)).join("")}
                         </div>
                     </div>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-1"><i class="fas fa-rocket"></i> ${t.skills.subsections[1].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.frameworks.map(skill => generateSkillCard(skill)).join('')}
+                            ${t.skillsExtra.skills.frameworks.map((skill) => generateSkillCard(skill)).join("")}
                         </div>
                     </div>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-2"><i class="fas fa-database"></i> ${t.skills.subsections[2].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.databases.map(skill => generateSkillCard(skill)).join('')}
+                            ${t.skillsExtra.skills.databases.map((skill) => generateSkillCard(skill)).join("")}
                         </div>
                     </div>
                     <div class="skill-subsection">
                         <h4 id="skills-sub-title-3"><i class="fas fa-tools"></i> ${t.skills.subsections[3].title}</h4>
                         <div class="skills-grid">
-                            ${t.skillsExtra.skills.tools.map(skill => generateSkillCard(skill)).join('')}
+                            ${t.skillsExtra.skills.tools.map((skill) => generateSkillCard(skill)).join("")}
                         </div>
                     </div>
                 `;
@@ -396,14 +471,20 @@ function setupSkillsSection(t) {
 }
 
 function setupProjectsSection(t) {
-    const projectsTitle = document.getElementById('projects-title');
-    const projectsWrapper = document.querySelector('.projects-wrapper');
+    const projectsTitle = document.getElementById("projects-title");
+    const projectsWrapper = document.querySelector(".projects-wrapper");
     if (projectsWrapper) {
-        projectsWrapper.innerHTML = generateProjectSkeletonsHTML(t.projects.length || 3);
+        projectsWrapper.innerHTML = generateProjectSkeletonsHTML(
+            t.projects.length || 3,
+        );
         setTimeout(() => {
             if (projectsTitle) {
-                projectsTitle.style.display = 'block';
+                projectsTitle.style.display = "block";
                 projectsTitle.innerHTML = `<i class="fas fa-folder-open"></i> ${t.general.sections.projects}`;
+            }
+            // Renderizar filtro de proyectos
+            if (t.categories) {
+                renderProjectFilter(t.categories);
             }
             projectsWrapper.innerHTML = generateProjectCardsHTML(t.projects);
             initializeSliders();
@@ -412,29 +493,33 @@ function setupProjectsSection(t) {
 }
 
 function setupTestimonialsSection(t) {
-    const testimonialsTitle = document.getElementById('testimonials-title');
-    const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
+    const testimonialsTitle = document.getElementById("testimonials-title");
+    const testimonialsWrapper = document.querySelector(".testimonials-wrapper");
     if (testimonialsWrapper) {
-        testimonialsWrapper.innerHTML = generateTestimonialSkeletonsHTML(t.testimonials.length);
+        testimonialsWrapper.innerHTML = generateTestimonialSkeletonsHTML(
+            t.testimonials.length,
+        );
         setTimeout(() => {
             if (testimonialsTitle) {
-                testimonialsTitle.style.display = 'block';
+                testimonialsTitle.style.display = "block";
                 testimonialsTitle.innerHTML = `<i class="fas fa-comments"></i> ${t.general.sections.testimonials}`;
             }
-            testimonialsWrapper.innerHTML = generateTestimonialCardsHTML(t.testimonials);
+            testimonialsWrapper.innerHTML = generateTestimonialCardsHTML(
+                t.testimonials,
+            );
             initializeSliders();
         }, 2000);
     }
 }
 
 function setupExperienceSection(t) {
-    const experienceTitle = document.getElementById('experience-title');
-    const experienceSection = document.getElementById('experience');
+    const experienceTitle = document.getElementById("experience-title");
+    const experienceSection = document.getElementById("experience");
     if (experienceSection) {
         experienceSection.innerHTML = generateExperienceSkeletonsHTML();
         setTimeout(() => {
             if (t.experience && t.experience.length > 0 && experienceTitle) {
-                experienceTitle.style.display = 'block';
+                experienceTitle.style.display = "block";
                 experienceTitle.innerHTML = `<i class="fas fa-briefcase"></i> ${t.general.sections.experience}`;
                 const exp = t.experience[0];
                 const experienceHTML = `
@@ -455,12 +540,16 @@ function setupExperienceSection(t) {
                                     <p>${exp.description}</p>
                                 </div>
                                 <div class="experience-highlights">
-                                    ${exp.highlights.map(highlight => `
+                                    ${exp.highlights
+                        .map(
+                            (highlight) => `
                                         <div class="highlight-item">
                                             <i class="fas fa-check-circle"></i>
                                             <span>${highlight}</span>
                                         </div>
-                                    `).join('')}
+                                    `,
+                        )
+                        .join("")}
                                 </div>
                             </div>
                         </div>
@@ -473,13 +562,13 @@ function setupExperienceSection(t) {
 }
 
 function setupContactSection(t) {
-    const contactTitle = document.getElementById('contact-title');
-    const contactSection = document.getElementById('contact');
+    const contactTitle = document.getElementById("contact-title");
+    const contactSection = document.getElementById("contact");
     if (contactSection) {
         contactSection.innerHTML = generateContactSkeletonsHTML();
         setTimeout(() => {
             if (t.contact && contactTitle) {
-                contactTitle.style.display = 'block';
+                contactTitle.style.display = "block";
                 contactTitle.innerHTML = `<i class="fas fa-envelope"></i> ${t.general.sections.contact}`;
                 const contactHTML = `
                     <h2 id="contact-title"><i class="fas fa-envelope"></i> ${t.general.sections.contact}</h2>
@@ -515,7 +604,7 @@ function setupContactSection(t) {
 }
 
 function setupFooterSection(t) {
-    const footer = document.querySelector('footer');
+    const footer = document.querySelector("footer");
     if (footer) {
         footer.innerHTML = generateFooterHTML(t.general.footer);
     }
@@ -524,25 +613,27 @@ function setupFooterSection(t) {
 // Función para inicializar sliders
 function initializeSliders() {
     // Inicializar slider de proyectos
-    const projectsWrapper = document.querySelector('.projects-wrapper');
-    const projectCards = document.querySelectorAll('.project-card');
-    const prevBtnProjects = document.querySelector('.projects-slider .prev-btn');
-    const nextBtnProjects = document.querySelector('.projects-slider .next-btn');
-    const dotsContainerProjects = document.querySelector('.projects-slider .slider-dots');
+    const projectsWrapper = document.querySelector(".projects-wrapper");
+    const projectCards = document.querySelectorAll(".project-card");
+    const prevBtnProjects = document.querySelector(".projects-slider .prev-btn");
+    const nextBtnProjects = document.querySelector(".projects-slider .next-btn");
+    const dotsContainerProjects = document.querySelector(
+        ".projects-slider .slider-dots",
+    );
 
     if (projectsWrapper && projectCards.length > 0) {
         let currentIndexProjects = 0;
 
         // Activar primera tarjeta
-        projectCards[0].classList.add('active');
+        projectCards[0].classList.add("active");
 
         // Crear puntos
-        dotsContainerProjects.innerHTML = '';
+        dotsContainerProjects.innerHTML = "";
         projectCards.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => {
                 currentIndexProjects = index;
                 updateProjectsSlider();
             });
@@ -551,13 +642,15 @@ function initializeSliders() {
 
         // Eventos de botones
         if (prevBtnProjects) {
-            prevBtnProjects.addEventListener('click', () => {
-                currentIndexProjects = (currentIndexProjects - 1 + projectCards.length) % projectCards.length;
+            prevBtnProjects.addEventListener("click", () => {
+                currentIndexProjects =
+                    (currentIndexProjects - 1 + projectCards.length) %
+                    projectCards.length;
                 updateProjectsSlider();
             });
         }
         if (nextBtnProjects) {
-            nextBtnProjects.addEventListener('click', () => {
+            nextBtnProjects.addEventListener("click", () => {
                 currentIndexProjects = (currentIndexProjects + 1) % projectCards.length;
                 updateProjectsSlider();
             });
@@ -566,14 +659,14 @@ function initializeSliders() {
         function updateProjectsSlider() {
             projectCards.forEach((card, index) => {
                 if (index === currentIndexProjects) {
-                    card.classList.add('active');
+                    card.classList.add("active");
                 } else {
-                    card.classList.remove('active');
+                    card.classList.remove("active");
                 }
             });
-            const dots = dotsContainerProjects.querySelectorAll('.dot');
+            const dots = dotsContainerProjects.querySelectorAll(".dot");
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndexProjects);
+                dot.classList.toggle("active", index === currentIndexProjects);
             });
         }
 
@@ -585,25 +678,31 @@ function initializeSliders() {
     }
 
     // Inicializar slider de testimonios
-    const testimonialsWrapper = document.querySelector('.testimonials-wrapper');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const prevBtnTestimonials = document.querySelector('.testimonials-slider .prev-btn');
-    const nextBtnTestimonials = document.querySelector('.testimonials-slider .next-btn');
-    const dotsContainerTestimonials = document.querySelector('.testimonials-slider .slider-dots');
+    const testimonialsWrapper = document.querySelector(".testimonials-wrapper");
+    const testimonialCards = document.querySelectorAll(".testimonial-card");
+    const prevBtnTestimonials = document.querySelector(
+        ".testimonials-slider .prev-btn",
+    );
+    const nextBtnTestimonials = document.querySelector(
+        ".testimonials-slider .next-btn",
+    );
+    const dotsContainerTestimonials = document.querySelector(
+        ".testimonials-slider .slider-dots",
+    );
 
     if (testimonialsWrapper && testimonialCards.length > 0) {
         let currentIndexTestimonials = 0;
 
         // Activar primera tarjeta
-        testimonialCards[0].classList.add('active');
+        testimonialCards[0].classList.add("active");
 
         // Crear puntos
-        dotsContainerTestimonials.innerHTML = '';
+        dotsContainerTestimonials.innerHTML = "";
         testimonialCards.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
+            const dot = document.createElement("div");
+            dot.classList.add("dot");
+            if (index === 0) dot.classList.add("active");
+            dot.addEventListener("click", () => {
                 currentIndexTestimonials = index;
                 updateTestimonialsSlider();
             });
@@ -612,14 +711,17 @@ function initializeSliders() {
 
         // Eventos de botones
         if (prevBtnTestimonials) {
-            prevBtnTestimonials.addEventListener('click', () => {
-                currentIndexTestimonials = (currentIndexTestimonials - 1 + testimonialCards.length) % testimonialCards.length;
+            prevBtnTestimonials.addEventListener("click", () => {
+                currentIndexTestimonials =
+                    (currentIndexTestimonials - 1 + testimonialCards.length) %
+                    testimonialCards.length;
                 updateTestimonialsSlider();
             });
         }
         if (nextBtnTestimonials) {
-            nextBtnTestimonials.addEventListener('click', () => {
-                currentIndexTestimonials = (currentIndexTestimonials + 1) % testimonialCards.length;
+            nextBtnTestimonials.addEventListener("click", () => {
+                currentIndexTestimonials =
+                    (currentIndexTestimonials + 1) % testimonialCards.length;
                 updateTestimonialsSlider();
             });
         }
@@ -627,20 +729,21 @@ function initializeSliders() {
         function updateTestimonialsSlider() {
             testimonialCards.forEach((card, index) => {
                 if (index === currentIndexTestimonials) {
-                    card.classList.add('active');
+                    card.classList.add("active");
                 } else {
-                    card.classList.remove('active');
+                    card.classList.remove("active");
                 }
             });
-            const dots = dotsContainerTestimonials.querySelectorAll('.dot');
+            const dots = dotsContainerTestimonials.querySelectorAll(".dot");
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndexTestimonials);
+                dot.classList.toggle("active", index === currentIndexTestimonials);
             });
         }
 
         // Auto-slide para testimonios cada 6 segundos
         setInterval(() => {
-            currentIndexTestimonials = (currentIndexTestimonials + 1) % testimonialCards.length;
+            currentIndexTestimonials =
+                (currentIndexTestimonials + 1) % testimonialCards.length;
             updateTestimonialsSlider();
         }, 6000);
     }

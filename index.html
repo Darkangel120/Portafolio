@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/modals.css" />
     <link rel="stylesheet" href="assets/css/skeleton-loading.css" />
+    <link rel="stylesheet" href="assets/css/project-filter.css" />
     <link rel="icon" href="assets/img/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -91,7 +92,13 @@
 
         <section id="projects" class="section projects">
             <!-- Sección de proyectos destacados -->
-            <h2 id="projects-title"><i class="fas fa-folder-open"></i> Proyectos Destacados</h2>
+            <h2 id="projects-title"><i class="fas fa-folder-open"></i> Proyectos Destacados</h2>           
+            <div class="projects-filter">              
+                <label for="projectFilter"><i class="fas fa-filter"></i> Filtrar por:</label>               
+                <select id="projectFilter">                    
+                    <option value="todas">Todas</option>              
+                </select>           
+            </div>     
             <div class="projects-slider">
                 <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
                 <div class="projects-wrapper">
@@ -168,8 +175,10 @@
     <div id="particles-container" class="particles-container"></div>
 
     <script src="assets/js/dataLoader.js"></script>
+    <script src="assets/js/projectFilters.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/modals.js"></script>
+
 </body>
 
 </html>

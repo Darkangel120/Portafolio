@@ -4,13 +4,15 @@
     "description": "Desktop application in Python for sales and inventory management, with an intuitive and modern interface.",
     "image": "assets/img/ventasentreprise/dashboard.webp",
     "fileName": "ventasenterprise",
-    "ctaText": "View details"
+    "ctaText": "View details",
+    "category": "desktop"
   },
   {
     "title": "Dark Bot",
     "description": "Intelligent web chatbot with Flask, answers questions from JSON database, modern interface with dark theme.",
     "image": "assets/img/darkbot/chat-interface.webp",
     "fileName": "darkbot",
-    "ctaText": "View details"
+    "ctaText": "View details",
+    "category": "web"
   }
 ]

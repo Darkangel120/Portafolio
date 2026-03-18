@@ -4,13 +4,15 @@
     "description": "Aplicación de escritorio en Python para gestión de ventas e inventario, con interfaz intuitiva y moderna.",
     "image": "assets/img/ventasentreprise/dashboard.webp",
     "fileName": "ventasenterprise",
-    "ctaText": "Ver detalles"
+    "ctaText": "Ver detalles",
+    "category": "desktop"
   },
   {
     "title": "Dark Bot",
     "description": "Chatbot web inteligente con Flask, responde preguntas desde base de datos JSON, interfaz moderna con tema oscuro.",
     "image": "assets/img/darkbot/chat-interface.webp",
     "fileName": "darkbot",
-    "ctaText": "Ver detalles"
+    "ctaText": "Ver detalles",
+    "category": "web"
   }
 ]

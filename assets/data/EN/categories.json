@@ -1,0 +1,18 @@
+[
+    {
+        "id": "todas",
+        "name": "All"
+    },
+    {
+        "id": "web",
+        "name": "Web"
+    },
+    {
+        "id": "desktop",
+        "name": "Desktop"
+    },
+    {
+        "id": "data",
+        "name": "Data Science/Analyst"
+    }
+] 

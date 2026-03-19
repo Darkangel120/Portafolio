@@ -16,24 +16,24 @@
       {
         "name": "JavaScript",
         "icon": "fab fa-js-square"
-      },
-      {
-        "name": "Java",
-        "icon": "fab fa-java"
       }
     ],
     "frameworks": [
       {
         "name": "Flask",
-        "icon": "fas fa-flask"
+        "icon": "fa-solid fa-globe"
+      },
+      {
+        "name": "Numpy",
+        "icon": "fa-solid fa-table-cells"
+      },
+      {
+        "name": "Pandas",
+        "icon": "fa-solid fa-magnifying-glass-chart"
       },
       {
         "name": "Flet",
         "icon": "fa-brands fa-flutter"
-      },
-      {
-        "name": "Spring Boot",
-        "icon": "fa-solid fa-leaf"
       }
     ],
     "databases": [

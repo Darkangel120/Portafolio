@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO: Título y descripción -->
+    <title>Oswaldo Gómez · Desarrollador Web | Portafolio</title>
+    <meta name="description" content="Portafolio de Oswaldo Gómez (Darkangel120), desarrollador web. Proyectos destacados, habilidades técnicas y experiencia laboral." />
+    <meta name="keywords" content="Oswaldo Gómez, Darkangel120, desarrollador web, portafolio, frontend, backend, programación" />
+    <meta name="author" content="Oswaldo Gómez" />
+    <link rel="canonical" href="https://TU-DOMINIO.com/" />
+
+    <!-- SEO: Open Graph (Facebook, WhatsApp, Discord) -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:url"         content="https://TU-DOMINIO.com/" />
+    <meta property="og:title"       content="Oswaldo Gómez · Portafolio" />
+    <meta property="og:description" content="Desarrollador web con proyectos, habilidades técnicas y experiencia laboral. Disponible para proyectos." />
+    <meta property="og:image"       content="https://TU-DOMINIO.com/assets/img/og-preview.jpg" />
+    <meta property="og:locale"      content="es_ES" />
+
+    <!-- SEO: Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Oswaldo Gómez · Portafolio" />
+    <meta name="twitter:description" content="Desarrollador web — proyectos, habilidades y experiencia." />
+    <meta name="twitter:image"       content="https://TU-DOMINIO.com/assets/img/og-preview.jpg" />
+
+    <!-- SEO: Datos estructurados (Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Oswaldo Gómez",
+      "alternateName": "Darkangel120",
+      "email": "dark_angel_12011@hotmail.com",
+      "url": "https://TU-DOMINIO.com/",
+      "sameAs": [
+        "https://github.com/Darkangel120",
+        "https://www.linkedin.com/in/oswaldo-rafael-g%C3%B3mez-mata-5b6570383"
+      ],
+      "jobTitle": "Desarrollador Web",
+      "knowsAbout": ["Desarrollo web", "Frontend", "Backend"]
+    }
+    </script>
+
+    <!-- Google Search Console -->
     <meta name="google-site-verification" content="WJWvOFqp9myLKKqiQ71EhhB_qpxE5i_IDOT_trmd3Ks" />
-    <meta name="author" content="Oswaldo Gómez">
-    <title>Portafolio de Oswaldo Gómez</title>
+
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/modals.css" />
     <link rel="stylesheet" href="assets/css/skeleton-loading.css" />
@@ -27,7 +67,7 @@
     <header>
         <!-- Sección de navegación principal -->
     <nav class="navbar">
-            <div class="logo"><img src="assets/img/logo.png" alt="logo">Darkangel120</div>
+            <div class="logo"><img src="assets/img/logo.png" alt="Logo Darkangel120" width="32" height="32">Darkangel120</div>
             <ul class="nav-links" id="nav-links">
                 <!-- Contenido dinámico: enlaces de navegación -->
             </ul>
@@ -50,7 +90,7 @@
         <section id="hero" class="hero">
             <!-- Sección de presentación (Hero) -->
             <div class="hero-content">
-                <img src="assets/img/foto.webp" alt="Foto de Oswaldo Gómez" class="hero-photo">
+                <img src="assets/img/foto.webp" alt="Foto de Oswaldo Gómez, desarrollador web" class="hero-photo" width="200" height="200" loading="eager" fetchpriority="high">
                 <div class="hero-text">
                     <h1 id="hero-name"><span class="name-part first">Oswaldo Gómez</span><span class="name-part second">Darkangel120</span></h1>
                     
@@ -62,15 +102,15 @@
                     <p class="hero-description"><span id="typed-text" class="typed-text"></span> <br><span id="hero-description"></span></p>
                     <!-- Contenido dinámico: nombre, descripción y texto animado -->
                     <div class="hero-contact">
-                            <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank">
+                            <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-github"></i>
                                 <span class="link-text">GitHub</span>
                             </a>
-                            <a href="https://www.linkedin.com/in/oswaldo-rafael-g%C3%B3mez-mata-5b6570383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="contact-link linkedin-link" target="_blank">
+                            <a href="https://www.linkedin.com/in/oswaldo-rafael-g%C3%B3mez-mata-5b6570383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="contact-link linkedin-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fab fa-linkedin"></i>
                                 <span class="link-text">LinkedIn</span>
                             </a>
-                            <a href="assets/data/Curriculum - Oswaldo Gómez.pdf" class="contact-link instagram-link" target="_blank">
+                            <a href="assets/data/Curriculum - Oswaldo Gómez.pdf" class="contact-link instagram-link" target="_blank" rel="noopener noreferrer">
                                 <i class="fa-regular fa-file"></i>
                                 <span class="link-text">Curriculum</span>
                             </a>
@@ -183,4 +223,3 @@
 </body>
 
 </html>
-

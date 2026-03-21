@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://TU-DOMINIO.com/sitemap.xml
+Sitemap: https://darkangel120.github.io/Portafolio/sitemap.xml

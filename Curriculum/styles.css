@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0d0f1a;
+    min-height: 100vh;
+    padding: 30px 20px;
+}
+
+/* ── BARRA DE CONTROL ── */
+.control-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+.tab-group,
+.lang-toggle {
+    display: flex;
+    background: #11131e;
+    border-radius: 12px;
+    padding: 5px;
+    gap: 4px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.tab-btn {
+    padding: 9px 28px;
+    border: none;
+    background: transparent;
+    color: #888;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.25s;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.tab-btn:hover {
+    color: #ccc;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #a855f7, #5a37f2);
+    color: white;
+    box-shadow: 0 3px 12px rgba(168, 85, 247, 0.4);
+}
+
+.lang-btn {
+    padding: 7px 18px;
+    border: none;
+    background: transparent;
+    color: #888;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.25s;
+    font-family: inherit;
+}
+
+.lang-btn:hover {
+    color: #ccc;
+}
+
+.lang-btn.active {
+    background: rgba(168, 85, 247, 0.2);
+    color: #a855f7;
+}
+
+/* ── CV WRAPPER ── */
+.cv-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    display: none;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cv-wrapper.active {
+    display: block;
+}
+
+/* ── MAIN CONTENT ── */
+.main-content {
+    padding: 48px 56px;
+}
+
+/* ── CABECERA CON FOTO ── */
+.cv-header {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 14px;
+}
+
+.cv-photo-wrap {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+}
+
+.cv-photo-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7, #5a37f2);
+    z-index: 0;
+}
+
+.cv-photo-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+.cv-photo-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv-photo-inner img.fallback-hidden {
+    display: none;
+}
+
+.photo-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e2035, #2a2d4a);
+    flex-direction: column;
+}
+
+.photo-fallback.show {
+    display: flex;
+}
+
+.photo-fallback i {
+    font-size: 38px;
+    color: rgba(168, 85, 247, 0.6);
+}
+
+.cv-header-right {
+    flex: 1;
+}
+
+.cv-name {
+    font-size: 38px;
+    font-weight: 800;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.cv-title-text {
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    color: #a855f7;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.cv-contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 12.5px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.cv-contact-row span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cv-contact-row i {
+    color: #a855f7;
+    font-size: 11px;
+}
+
+.cv-links-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    font-size: 12px;
+}
+
+.cv-links-row a {
+    color: #5a37f2;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cv-links-row a:hover {
+    color: #a855f7;
+}
+
+.cv-links-row i {
+    font-size: 11px;
+}
+
+/* ── DIVISOR ── */
+.cv-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #a855f7, #5a37f2);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+/* ── SECCIONES ── */
+.section {
+    margin-bottom: 20px;
+}
+
+.section-h2 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-bottom: 7px;
+    margin-bottom: 14px;
+    border-bottom: 2px solid #e0e0e0;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.section-h2 i {
+    color: #a855f7;
+    font-size: 14px;
+}
+
+.highlight-box {
+    background: white;
+    border-left: 4px solid #a855f7;
+    padding: 13px 17px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.exp-block {
+    margin-bottom: 10px;
+}
+
+.item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+.item-period {
+    color: #888;
+    font-size: 12px;
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+.item-title {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: #111;
+}
+
+.item-sub {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+ul.bullet-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.bullet-list li {
+    padding-left: 17px;
+    position: relative;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+ul.bullet-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #a855f7;
+    font-weight: 700;
+}
+
+/* ── SKILLS GRID (americana) ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.skill-tag {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 8px 13px;
+    border-radius: 7px;
+    font-size: 13px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-tag::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a855f7;
+    flex-shrink: 0;
+}
+
+/* ── FILAS EUROPASS ── */
+.euro-row {
+    display: grid;
+    grid-template-columns: 155px 1fr;
+    gap: 0 16px;
+    margin-bottom: 12px;
+}
+
+.euro-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    color: #a855f7;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-align: right;
+    padding-right: 12px;
+    border-right: 2px solid #e0e0e0;
+    padding-top: 2px;
+    line-height: 1.4;
+}
+
+.euro-val {
+    font-size: 13.5px;
+    color: #333;
+    line-height: 1.6;
+    padding-left: 12px;
+}
+
+.euro-val strong {
+    color: #111;
+    font-size: 14px;
+}
+
+/* ── TABLA CEFR ── */
+.cefr-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.cefr-table th {
+    background: #a855f7;
+    color: white;
+    padding: 6px 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.cefr-table td {
+    padding: 5px 8px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    color: #444;
+}
+
+.cefr-table tr:nth-child(even) td {
+    background: #fafafa;
+}
+
+.cefr-table td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #222;
+}
+
+/* ── DIGITAL GRID (europea) ── */
+.digital-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.digital-tag {
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 7px;
+    font-size: 12.5px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.digital-tag i {
+    color: #a855f7;
+    font-size: 13px;
+}
+
+/* ── BOTÓN IMPRIMIR ── */
+.print-button {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: linear-gradient(135deg, #a855f7, #5a37f2);
+    color: white;
+    border: none;
+    padding: 13px 26px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.5);
+    transition: all 0.3s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.print-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.6);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 28px 24px;
+    }
+
+    .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .cv-name {
+        font-size: 26px;
+    }
+
+    .skills-grid,
+    .digital-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .euro-row {
+        grid-template-columns: 1fr;
+    }
+
+    .euro-lbl {
+        text-align: left;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        margin-bottom: 3px;
+    }
+}
+
+/* ── Información personal en 2 columnas (europea) ── */
+.euro-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+}
+
+.euro-info-col .euro-row {
+    grid-template-columns: 120px 1fr;
+}
+
+/* ── Bloque compacto experiencia/educación europea ── */
+.euro-block {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: white;
+    border-left: 3px solid #a855f7;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.euro-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.euro-block-left {
+    flex: 1;
+}
+
+.euro-block-title {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: #111;
+    margin-bottom: 2px;
+}
+
+.euro-block-sub {
+    font-size: 13px;
+    color: #777;
+}
+
+.euro-block-period {
+    font-size: 11.5px;
+    color: #a855f7;
+    font-weight: 600;
+    white-space: nowrap;
+    padding-top: 2px;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .control-bar,
+    .print-button {
+        display: none !important;
+    }
+
+    .cv-wrapper {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .main-content {
+        padding: 0;
+    }
+
+    /* No cortar elementos a la mitad */
+    .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .euro-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .exp-block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .highlight-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cv-header {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .skills-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .digital-grid {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .cefr-table {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .lang-list {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    @page {
+        size: A4;
+        margin: 10mm 12mm;
+    }
+}
+
+/* ── Idiomas (americana) ── */
+.lang-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lang-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border: 1px solid #e0e0e0;
+    padding: 8px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.lang-name {
+    color: #333;
+    font-weight: 600;
+}
+
+.lang-level {
+    color: #a855f7;
+    font-weight: 700;
+    font-size: 12px;
+    background: rgba(168, 85, 247, 0.08);
+    padding: 2px 10px;
+    border-radius: 20px;
+}
+
+/* ── Etiqueta Europass ── */
+.euro-label {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    color: #a855f7;
+    font-weight: 700;
+    margin-bottom: -17px;
+    margin-left: 140px;
+}
+
+/* ── Links en euro-val ── */
+.euro-val a {
+    color: #5a37f2;
+    text-decoration: none;
+}
+
+.euro-val a:hover {
+    color: #a855f7;
+}

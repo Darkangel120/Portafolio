@@ -109,7 +109,6 @@ async function loadTranslations(lang) {
 
         return translations[lang];
     } catch (error) {
-        console.error("Error loading translations:", error);
         return null;
     }
 }

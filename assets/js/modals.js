@@ -177,7 +177,6 @@ function openProjectModal(card) {
             openModal('projectModal');
         })
         .catch(error => {
-            console.error('Error loading project data:', error);
             document.getElementById('projectTitle').textContent = 'Error';
             document.getElementById('projectContent').innerHTML = '<p>Error al cargar los datos del proyecto.</p>';
             openModal('projectModal');

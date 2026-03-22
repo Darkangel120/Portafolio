@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página principal -->
   <url>
     <loc>https://darkangel120.github.io/Portafolio/</loc>
+    <lastmod>2025-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <!-- Versión en inglés -->
+    <xhtml:link rel="alternate" hreflang="es" href="https://darkangel120.github.io/Portafolio/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://darkangel120.github.io/Portafolio/?lang=en" />
   </url>
+
+  <!-- Sección: Sobre mí -->
+  <url>
+    <loc>https://darkangel120.github.io/Portafolio/#about</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección: Habilidades -->
+  <url>
+    <loc>https://darkangel120.github.io/Portafolio/#skills</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sección: Proyectos -->
+  <url>
+    <loc>https://darkangel120.github.io/Portafolio/#projects</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sección: Testimonios -->
+  <url>
+    <loc>https://darkangel120.github.io/Portafolio/#testimonials</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Sección: Experiencia -->
+  <url>
+    <loc>https://darkangel120.github.io/Portafolio/#experience</loc>
+    <lastmod>2025-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

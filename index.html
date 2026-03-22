@@ -1,180 +1,353 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- SEO: Título y descripción -->
-    <title>Oswaldo Gómez · Desarrollador Web | Portafolio</title>
-    <meta name="description" content="Portafolio de Oswaldo Gómez (Darkangel120), desarrollador web. Proyectos destacados, habilidades técnicas y experiencia laboral." />
-    <meta name="keywords" content="Oswaldo Gómez, Darkangel120, desarrollador web, portafolio, frontend, backend, programación" />
+    <!-- ═══════════════════════════════════════════
+         SEO PRIMARIO
+    ═══════════════════════════════════════════ -->
+    <!-- Título optimizado: keyword principal al frente, marca al final -->
+    <title>Desarrollador Web Freelance | Oswaldo Gómez (Darkangel120) · Portafolio</title>
+
+    <meta name="description" content="Oswaldo Gómez, desarrollador web freelance especializado en frontend y backend. Proyectos reales, habilidades en JavaScript, HTML, CSS y más. Disponible para proyectos." />
+    <meta name="keywords" content="Oswaldo Gómez, Darkangel120, desarrollador web freelance, portafolio desarrollador, frontend developer, backend developer, JavaScript, HTML CSS, programación web" />
     <meta name="author" content="Oswaldo Gómez" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Canonical + hreflang para versión multiidioma -->
     <link rel="canonical" href="https://darkangel120.github.io/Portafolio/" />
+    <link rel="alternate" hreflang="es" href="https://darkangel120.github.io/Portafolio/" />
+    <link rel="alternate" hreflang="en" href="https://darkangel120.github.io/Portafolio/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="https://darkangel120.github.io/Portafolio/" />
 
-    <!-- SEO: Open Graph (Facebook, WhatsApp, Discord) -->
-    <meta property="og:type"        content="website" />
-    <meta property="og:url"         content="https://darkangel120.github.io/Portafolio/" />
-    <meta property="og:title"       content="Oswaldo Gómez · Portafolio" />
-    <meta property="og:description" content="Desarrollador web con proyectos, habilidades técnicas y experiencia laboral. Disponible para proyectos." />
-    <meta property="og:image"       content="https://darkangel120.github.io/Portafolio/assets/img/og-preview.jpg" />
-    <meta property="og:locale"      content="es_ES" />
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH (Facebook, WhatsApp, Discord, LinkedIn)
+    ═══════════════════════════════════════════ -->
+    <meta property="og:type"              content="website" />
+    <meta property="og:url"               content="https://darkangel120.github.io/Portafolio/" />
+    <meta property="og:site_name"         content="Portafolio de Oswaldo Gómez" />
+    <meta property="og:title"             content="Oswaldo Gómez · Desarrollador Web Freelance" />
+    <meta property="og:description"       content="Desarrollador web freelance con proyectos reales, habilidades técnicas en frontend y backend. Disponible para colaborar." />
+    <meta property="og:image"             content="https://darkangel120.github.io/Portafolio/assets/img/og-preview.jpg" />
+    <meta property="og:image:width"       content="1200" />
+    <meta property="og:image:height"      content="630" />
+    <meta property="og:image:alt"         content="Oswaldo Gómez – Portafolio de Desarrollador Web" />
+    <meta property="og:locale"            content="es_ES" />
+    <meta property="og:locale:alternate"  content="en_US" />
 
-    <!-- SEO: Twitter Card -->
+    <!-- ═══════════════════════════════════════════
+         TWITTER CARD
+    ═══════════════════════════════════════════ -->
     <meta name="twitter:card"        content="summary_large_image" />
-    <meta name="twitter:title"       content="Oswaldo Gómez · Portafolio" />
-    <meta name="twitter:description" content="Desarrollador web — proyectos, habilidades y experiencia." />
+    <meta name="twitter:site"        content="@Darkangel120" />
+    <meta name="twitter:creator"     content="@Darkangel120" />
+    <meta name="twitter:title"       content="Oswaldo Gómez · Desarrollador Web Freelance" />
+    <meta name="twitter:description" content="Portafolio real: proyectos, habilidades frontend/backend y experiencia laboral. Disponible para proyectos." />
     <meta name="twitter:image"       content="https://darkangel120.github.io/Portafolio/assets/img/og-preview.jpg" />
+    <meta name="twitter:image:alt"   content="Oswaldo Gómez – Portafolio de Desarrollador Web" />
 
-    <!-- SEO: Datos estructurados (Google) -->
+    <!-- ═══════════════════════════════════════════
+         DATOS ESTRUCTURADOS (Schema.org / JSON-LD)
+         Múltiples schemas aumentan la probabilidad
+         de Rich Results en Google.
+    ═══════════════════════════════════════════ -->
+
+    <!-- 1. Person – quién eres -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://darkangel120.github.io/Portafolio/#person",
       "name": "Oswaldo Gómez",
       "alternateName": "Darkangel120",
       "email": "dark_angel_12011@hotmail.com",
       "url": "https://darkangel120.github.io/Portafolio/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://darkangel120.github.io/Portafolio/assets/img/foto.webp",
+        "width": 200,
+        "height": 200
+      },
       "sameAs": [
         "https://github.com/Darkangel120",
         "https://www.linkedin.com/in/oswaldo-rafael-g%C3%B3mez-mata-5b6570383"
       ],
-      "jobTitle": "Desarrollador Web",
-      "knowsAbout": ["Desarrollo web", "Frontend", "Backend"]
+      "jobTitle": "Desarrollador Web Freelance",
+      "description": "Desarrollador web especializado en frontend y backend, con experiencia en JavaScript, HTML, CSS y más.",
+      "knowsAbout": ["Desarrollo web", "Frontend", "Backend", "JavaScript", "HTML", "CSS"],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Desarrollador Web",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Venezuela"
+        }
+      }
     }
     </script>
 
-    <!-- Google Search Console -->
+    <!-- 2. WebSite – habilita el Sitelinks Search Box en Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://darkangel120.github.io/Portafolio/#website",
+      "url": "https://darkangel120.github.io/Portafolio/",
+      "name": "Portafolio · Oswaldo Gómez",
+      "description": "Portafolio profesional de Oswaldo Gómez, desarrollador web freelance.",
+      "inLanguage": ["es", "en"],
+      "author": {
+        "@id": "https://darkangel120.github.io/Portafolio/#person"
+      }
+    }
+    </script>
+
+    <!-- 3. WebPage – página principal -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://darkangel120.github.io/Portafolio/#webpage",
+      "url": "https://darkangel120.github.io/Portafolio/",
+      "name": "Desarrollador Web Freelance | Oswaldo Gómez (Darkangel120) · Portafolio",
+      "description": "Portafolio de Oswaldo Gómez, desarrollador web freelance con proyectos, habilidades técnicas y experiencia laboral.",
+      "isPartOf": { "@id": "https://darkangel120.github.io/Portafolio/#website" },
+      "about": { "@id": "https://darkangel120.github.io/Portafolio/#person" },
+      "datePublished": "2024-01-01",
+      "dateModified": "2025-03-01",
+      "inLanguage": "es",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://darkangel120.github.io/Portafolio/"
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- 4. ItemList – secciones del portafolio (ayuda a Google a indexar anclas) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Secciones del Portafolio",
+      "itemListElement": [
+        { "@type": "SiteLinksSearchBox", "potentialAction": { "@type": "SearchAction" } },
+        { "@type": "ListItem", "position": 1, "name": "Sobre mí",              "url": "https://darkangel120.github.io/Portafolio/#about" },
+        { "@type": "ListItem", "position": 2, "name": "Habilidades Técnicas",  "url": "https://darkangel120.github.io/Portafolio/#skills" },
+        { "@type": "ListItem", "position": 3, "name": "Proyectos Destacados",  "url": "https://darkangel120.github.io/Portafolio/#projects" },
+        { "@type": "ListItem", "position": 4, "name": "Testimonios",           "url": "https://darkangel120.github.io/Portafolio/#testimonials" },
+        { "@type": "ListItem", "position": 5, "name": "Experiencia Laboral",   "url": "https://darkangel120.github.io/Portafolio/#experience" }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         GOOGLE SEARCH CONSOLE VERIFICATION
+    ═══════════════════════════════════════════ -->
     <meta name="google-site-verification" content="WJWvOFqp9myLKKqiQ71EhhB_qpxE5i_IDOT_trmd3Ks" />
 
+    <!-- ═══════════════════════════════════════════
+         PERFORMANCE (Core Web Vitals → ranking factor)
+         preconnect reduce latencia de terceros
+         preload de recursos críticos above-the-fold
+    ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://github.com" />
+    <link rel="dns-prefetch" href="https://www.linkedin.com" />
+
+    <!-- Preload foto hero (LCP crítico para ranking) -->
+    <link rel="preload" as="image" href="assets/img/foto.webp" fetchpriority="high" />
+
+    <!-- Preload CSS crítico -->
+    <link rel="preload" as="style" href="assets/css/styles.css" />
+
+    <!-- ═══════════════════════════════════════════
+         ESTILOS
+    ═══════════════════════════════════════════ -->
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/modals.css" />
     <link rel="stylesheet" href="assets/css/skeleton-loading.css" />
     <link rel="stylesheet" href="assets/css/project-filter.css" />
-    <link rel="icon" href="assets/img/logo.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icono y manifest -->
+    <link rel="icon" href="assets/img/logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/img/logo.png" />
+
+    <!-- Font Awesome (defer para no bloquear render) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" /></noscript>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Loading Screen -->
-    <div id="loading-screen" class="loading-screen">
+    <div id="loading-screen" class="loading-screen" aria-hidden="true">
         <div class="loading-content">
             <div class="loading-spinner"></div>
         </div>
     </div>
 
     <header>
-        <!-- Sección de navegación principal -->
-    <nav class="navbar">
-            <div class="logo"><img src="assets/img/logo.png" alt="Logo Darkangel120" width="32" height="32">Darkangel120</div>
-            <ul class="nav-links" id="nav-links">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Logo Darkangel120" width="32" height="32" loading="eager">
+                Darkangel120
+            </div>
+            <ul class="nav-links" id="nav-links" role="list">
                 <!-- Contenido dinámico: enlaces de navegación -->
             </ul>
-            <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+            <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" role="button" tabindex="0">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
         </nav>
-        <div class="language-switcher">
-            <!-- Selector de idioma, cambia entre ES y EN -->
+        <div class="language-switcher" role="navigation" aria-label="Selector de idioma">
             <div class="dropdown">
-                <button id="lang-btn" class="lang-btn dropdown-btn">ES <i class="fas fa-chevron-down"></i></button>
-                <ul id="lang-list" class="dropdown-list">
-                    <li data-lang="es" class="active">ES</li>
-                    <li data-lang="en">EN</li>
+                <button id="lang-btn" class="lang-btn dropdown-btn" aria-haspopup="listbox" aria-expanded="false">
+                    ES <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <ul id="lang-list" class="dropdown-list" role="listbox" aria-label="Idiomas disponibles">
+                    <li data-lang="es" class="active" role="option" aria-selected="true">ES</li>
+                    <li data-lang="en" role="option" aria-selected="false">EN</li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <main>
-        <!-- Sección principal del portafolio -->
-        <section id="hero" class="hero">
-            <!-- Sección de presentación (Hero) -->
+    <main id="main-content">
+
+        <!-- ── HERO ── -->
+        <section id="hero" class="hero" aria-label="Presentación">
             <div class="hero-content">
-                <img src="assets/img/foto.webp" alt="Foto de Oswaldo Gómez, desarrollador web" class="hero-photo" width="200" height="200" loading="eager" fetchpriority="high">
+                <!-- Imagen hero: alt descriptivo + loading eager para LCP -->
+                <img
+                    src="assets/img/foto.webp"
+                    alt="Oswaldo Gómez, desarrollador web freelance"
+                    class="hero-photo"
+                    width="200"
+                    height="200"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                />
                 <div class="hero-text">
-                    <h1 id="hero-name"><span class="name-part first">Oswaldo Gómez</span><span class="name-part second">Darkangel120</span></h1>
-                    
+                    <!-- H1 único y rico en keywords -->
+                    <h1 id="hero-name">
+                        <span class="name-part first">Oswaldo Gómez</span>
+                        <span class="name-part second">Darkangel120</span>
+                    </h1>
                     <div>
-                        <div>
-                            <p class="hero-subtitle">dark_angel_12011@hotmail.com</p>
-                        </div>                        
+                        <p class="hero-subtitle">dark_angel_12011@hotmail.com</p>
                     </div>
-                    <p class="hero-description"><span id="typed-text" class="typed-text"></span> <br><span id="hero-description"></span></p>
-                    <!-- Contenido dinámico: nombre, descripción y texto animado -->
-                    <div class="hero-contact">
-                            <a href="https://github.com/Darkangel120" class="contact-link github-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-github"></i>
-                                <span class="link-text">GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/oswaldo-rafael-g%C3%B3mez-mata-5b6570383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="contact-link linkedin-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin"></i>
-                                <span class="link-text">LinkedIn</span>
-                            </a>
-                            <a href="assets/data/Curriculum - Oswaldo Gómez.pdf" class="contact-link instagram-link" target="_blank" rel="noopener noreferrer">
-                                <i class="fa-regular fa-file"></i>
-                                <span class="link-text">Curriculum</span>
-                            </a>
-                        </div>
+                    <p class="hero-description">
+                        <span id="typed-text" class="typed-text"></span>
+                        <br>
+                        <span id="hero-description"></span>
+                    </p>
+                    <div class="hero-contact" role="list" aria-label="Redes y contacto">
+                        <a href="https://github.com/Darkangel120"
+                           class="contact-link github-link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Perfil de GitHub de Oswaldo Gómez"
+                           role="listitem">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="link-text">GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/oswaldo-rafael-g%C3%B3mez-mata-5b6570383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                           class="contact-link linkedin-link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Perfil de LinkedIn de Oswaldo Gómez"
+                           role="listitem">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="link-text">LinkedIn</span>
+                        </a>
+                        <a href="assets/data/Curriculum - Oswaldo Gómez.pdf"
+                           class="contact-link instagram-link"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Descargar currículum de Oswaldo Gómez en PDF"
+                           role="listitem">
+                            <i class="fa-regular fa-file" aria-hidden="true"></i>
+                            <span class="link-text">Curriculum</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section about">
-            <!-- Sección Sobre mí -->
-            <h2 id="about-title"><i class="fas fa-user"></i> Sobre mí</h2>
+        <!-- ── SOBRE MÍ ── -->
+        <section id="about" class="section about" aria-labelledby="about-title">
+            <h2 id="about-title"><i class="fas fa-user" aria-hidden="true"></i> Sobre mí</h2>
             <!-- Contenido dinámico -->
         </section>
 
-        <section id="skills" class="section skills">
-            <!-- Sección de habilidades -->
-            <h2 id="skills-title"><i class="fas fa-tools"></i> Habilidades Técnicas</h2>
+        <!-- ── HABILIDADES ── -->
+        <section id="skills" class="section skills" aria-labelledby="skills-title">
+            <h2 id="skills-title"><i class="fas fa-tools" aria-hidden="true"></i> Habilidades Técnicas</h2>
             <!-- Contenido dinámico: habilidades -->
         </section>
 
-        <section id="projects" class="section projects">
-            <!-- Sección de proyectos destacados -->
-            <h2 id="projects-title"><i class="fas fa-folder-open"></i> Proyectos Destacados</h2>           
-            <div class="projects-filter">              
-                <label for="projectFilter"><i class="fas fa-filter"></i> Filtrar por:</label>               
-                <select id="projectFilter">                    
-                    <option value="todas">Todas</option>              
-                </select>           
-            </div>     
-            <div class="projects-slider">
-                <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="projects-wrapper">
+        <!-- ── PROYECTOS ── -->
+        <section id="projects" class="section projects" aria-labelledby="projects-title">
+            <h2 id="projects-title"><i class="fas fa-folder-open" aria-hidden="true"></i> Proyectos Destacados</h2>
+            <div class="projects-filter">
+                <label for="projectFilter"><i class="fas fa-filter" aria-hidden="true"></i> Filtrar por:</label>
+                <select id="projectFilter" aria-label="Filtrar proyectos por categoría">
+                    <option value="todas">Todas</option>
+                </select>
+            </div>
+            <div class="projects-slider" role="region" aria-label="Slider de proyectos">
+                <button class="slider-btn prev-btn" aria-label="Proyecto anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="projects-wrapper" role="list">
                     <!-- Contenido dinámico: proyectos -->
                 </div>
-                <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-                <div class="slider-dots">
+                <button class="slider-btn next-btn" aria-label="Proyecto siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                <div class="slider-dots" role="tablist" aria-label="Indicadores de proyectos">
                     <!-- Contenido dinámico: indicadores de slider -->
                 </div>
             </div>
         </section>
 
-        <section id="testimonials" class="section testimonials">
-            <!-- Sección de testimonios -->
-            <h2 id="testimonials-title"><i class="fas fa-comments"></i> Testimonios</h2>
-            <div class="testimonials-slider">
-                <button class="slider-btn prev-btn" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <div class="testimonials-wrapper">
+        <!-- ── TESTIMONIOS ── -->
+        <section id="testimonials" class="section testimonials" aria-labelledby="testimonials-title">
+            <h2 id="testimonials-title"><i class="fas fa-comments" aria-hidden="true"></i> Testimonios</h2>
+            <div class="testimonials-slider" role="region" aria-label="Slider de testimonios">
+                <button class="slider-btn prev-btn" aria-label="Testimonio anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                <div class="testimonials-wrapper" role="list">
                     <!-- Contenido dinámico: testimonios -->
                 </div>
-                <button class="slider-btn next-btn" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-                <div class="slider-dots">
+                <button class="slider-btn next-btn" aria-label="Testimonio siguiente"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                <div class="slider-dots" role="tablist" aria-label="Indicadores de testimonios">
                     <!-- Contenido dinámico: indicadores de slider -->
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section experience">
-            <!-- Sección de experiencia laboral -->
-            <h2 id="experience-title"><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
+        <!-- ── EXPERIENCIA ── -->
+        <section id="experience" class="section experience" aria-labelledby="experience-title">
+            <h2 id="experience-title"><i class="fas fa-briefcase" aria-hidden="true"></i> Experiencia Laboral</h2>
             <!-- Contenido dinámico -->
         </section>
+
     </main>
 
-    <div id="projectModal" class="modal">
-        <!-- Modal para mostrar detalles de proyectos (contenido dinámico) -->
+    <!-- Modal Proyecto -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="projectTitle" hidden>
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="projectTitle">Detalles del Proyecto</h2>
@@ -189,44 +362,36 @@
         </div>
     </div>
 
-    <div id="imageModal" class="image-modal">
-        <!-- Modal para mostrar imágenes ampliadas de los proyectos -->
+    <!-- Modal Imagen -->
+    <div id="imageModal" class="image-modal" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
         <button class="image-modal-close" type="button" onclick="closeImageModal()" aria-label="Cerrar imagen ampliada">&times;</button>
         <div class="image-modal-content">
-            <div class="zoom-controls">
-                <button id="zoomIn" title="Zoom In">+</button>
-                <button id="zoomOut" title="Zoom Out">-</button>
-                <button id="resetZoom" title="Reset">Reset</button>
+            <div class="zoom-controls" role="group" aria-label="Controles de zoom">
+                <button id="zoomIn" title="Acercar" aria-label="Acercar imagen">+</button>
+                <button id="zoomOut" title="Alejar" aria-label="Alejar imagen">-</button>
+                <button id="resetZoom" title="Restablecer" aria-label="Restablecer zoom">Reset</button>
             </div>
-            <img id="imageModalImg" src="" alt="" style="cursor: grab;">
+            <img id="imageModalImg" src="" alt="" style="cursor: grab;" />
         </div>
     </div>
 
-    <footer>
+    <footer role="contentinfo">
         <!-- Contenido dinámico: pie de página -->
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-arrow-up"></i>
+    <!-- Back to Top -->
+    <button id="back-to-top" class="back-to-top" aria-label="Volver al inicio de la página">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <!-- Background Particles -->
-    <div id="particles-container" class="particles-container"></div>
+    <div id="particles-container" class="particles-container" aria-hidden="true"></div>
 
-    <script src="assets/js/dataLoader.js"></script>
-    <script src="assets/js/projectFilters.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/modals.js"></script>
-
-</body>
-
-</html>
-    <script src="assets/js/projectFilters.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/modals.js"></script>
+    <script src="assets/js/dataLoader.js" defer></script>
+    <script src="assets/js/projectFilters.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/modals.js" defer></script>
 
 </body>
 
 </html>
-

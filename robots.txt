@@ -1,3 +1,13 @@
 User-agent: *
 Allow: /
+
+# Bloquear parámetros que crean contenido duplicado
+Disallow: /*?*lang=
+Allow: /*?lang=es
+Allow: /*?lang=en
+
+# Archivos de assets (opcional: pueden indexarse imágenes)
+Allow: /assets/img/
+Allow: /assets/data/
+
 Sitemap: https://darkangel120.github.io/Portafolio/sitemap.xml

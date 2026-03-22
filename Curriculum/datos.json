@@ -59,7 +59,7 @@
 
   "idiomas": [
     { "es": "Español", "en": "Spanish", "nivel": "Nativo", "nivelEn": "Native", "barras": 6 },
-    { "es": "Inglés",  "en": "English", "nivel": "A1–A2",  "nivelEn": "A1–A2",  "barras": 2 }
+    { "es": "Inglés",  "en": "English", "nivel": "A2-B1",  "nivelEn": "A2-B1",  "barras": 2 }
   ],
 
   "experiencia": [
@@ -109,11 +109,11 @@
     },
     {
       "idioma":    { "es": "Inglés", "en": "English" },
-      "comprOral": "A1",
-      "comprLect": "A2",
-      "interOral": "A1",
-      "exprOral":  "A1",
-      "escritura": "A1"
+      "comprOral": "A2",
+      "comprLect": "B1",
+      "interOral": "A2",
+      "exprOral":  "A2",
+      "escritura": "A2"
     }
   ]
 }

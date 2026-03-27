@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV – Oswaldo Gómez</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Oswaldo Rafael Gómez Mata</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ── BARRA DE CONTROL ── -->
+<!-- ── CONTROL BAR ─────────────────────────────────── -->
 <div class="control-bar">
-    <div class="tab-group">
-        <button class="tab-btn active" data-cv="americana" onclick="switchCV('americana')">
-            <i class="fa-solid fa-flag-usa"></i> Americana
-        </button>
-        <button class="tab-btn" data-cv="europea" onclick="switchCV('europea')">
-            <i class="fa-solid fa-star"></i> Europea
-        </button>
-    </div>
-    <div class="lang-toggle">
-        <button class="lang-btn active" id="btnES" onclick="setLang('es')">ES</button>
-        <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
-    </div>
-</div>
 
-<!-- Los CVs se construyen aquí desde datos.json -->
-<div class="cv-wrapper active" id="cv-americana"></div>
-<div class="cv-wrapper"        id="cv-europea"></div>
+  <span class="ctrl-label">Formato</span>
+  <div class="ctrl-group" id="format-tabs">
+    <button class="tab-btn active" onclick="setFormat('americana')">🇺🇸 Americano</button>
+    <button class="tab-btn" onclick="setFormat('europea')">🇪🇺 Europeo</button>
+    <button class="tab-btn" onclick="setFormat('ats')">🤖 ATS</button>
+  </div>
 
-<button class="print-button" onclick="window.print()">
+  <span class="ctrl-label" style="margin-left:10px">Perfil</span>
+  <div class="ctrl-group" id="profile-tabs">
+    <button class="tab-btn active" onclick="setProfile('general')">🧑‍💻 General</button>
+    <button class="tab-btn" onclick="setProfile('datascience')">📊 Data Science</button>
+    <button class="tab-btn" onclick="setProfile('backend')">🐍 Backend Python</button>
+    <button class="tab-btn" onclick="setProfile('frontend')">🎨 Frontend</button>
+    <button class="tab-btn" onclick="setProfile('webdev')">🌐 Web Dev</button>
+    <button class="tab-btn" onclick="setProfile('fullstack')">⚡ Full Stack</button>
+  </div>
+
+  <div class="ctrl-group" style="margin-left:auto">
+    <span class="ctrl-label">Idioma</span>
+    <button class="lang-btn active" id="btnES" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" id="btnEN" onclick="setLang('en')">EN</button>
+  </div>
+
+  <button class="print-btn" onclick="window.print()">
     <i class="fa-solid fa-file-arrow-down"></i>
     <span id="printLabel">Descargar PDF</span>
-</button>
+  </button>
+</div>
+
+<!-- ── CV VIEWS ────────────────────────────────────── -->
+<div class="cv-view active" id="view-americana">
+  <div class="paper" id="cv-americana"></div>
+</div>
+<div class="cv-view" id="view-europea">
+  <div class="paper" id="cv-europea"></div>
+</div>
+<div class="cv-view" id="view-ats">
+  <div class="paper" id="cv-ats"></div>
+</div>
 <script src="scripts.js"></script>
 </body>
 </html>
